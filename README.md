@@ -3,7 +3,7 @@
 Looking at relationships between distributions through code
 
 ## Continuous Distributions
-for now, the starting point is the normal in code and the gamma in theory, due to the point of reference the game serves for other distributions.
+for now, the starting point is the normal in code and the gamma in theory, due to the point of reference the gamma serves for other distributions.
 
 ### normal distribution
 two parameters
@@ -35,7 +35,7 @@ can be thought of multiple ways
 - as an Erlang distribution with the shape parameter `k=1`
   - by extension, as a gamma distribution
 - as the probability distribution of time between events of a poisson distribution
-- backwards, `n` independent and identically distributed  exponential distributions random variables  sum to a gammma distribution with shape `n` and rate `λ`
+- backwards, `n` independent and identically distributed  exponential distributions random variables  sum to a gamma distribution with shape `n` and rate `λ`
 
 ##### chi-squared distribution
 chi-squared is also a special case of the gamma distribution with `ν` degrees of freedom, where gamma(ν/2 ,2) = to χ2(ν)
@@ -63,9 +63,9 @@ number of successes in a sequence of independent and identically distributed (ii
 
 can view the negative binomial as poisson distribution with `λ` being a random variable with a gamma distribution with shape `r` and scale `θ = p/(1-p)`
 
-under certain paramters the negative binomial converges to the poisson
+under certain parameters the negative binomial converges to the poisson
 
 
-Sources
+## Sources
 
 [wiki list of distribitions](https://en.wikipedia.org/wiki/List_of_probability_distributions)
