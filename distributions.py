@@ -36,4 +36,6 @@ def gamma_distribution(x, k, theta):
 # print(gamma_distribution(1.4, 3, 1))
 
 # get values (0,20) to plot
-print(len(np.arange(0, 20, .1)))
+x_gamma_values = np.arange(0, 20, .1)[1:]
+# print(len(np.arange(0, 20, .1)))
+# print(x_gamma_values)

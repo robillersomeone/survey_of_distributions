@@ -59,9 +59,24 @@ two independent standard normal divided by one another
 
 
 #### dirichlet distribution
+two parameters
+- categories (`k`, where `k` is a integer ≥ 2)
+- concentration (`𝛼`, where `𝛼 > 0`)
+
+
 multivariate generalization of beta distribution
+can be thought of as 'a distribution over distributions'
+  - sampling from a dirichlet results in a distribution
+
 
 #### beta distribution
+
+
+'distribution over distributions'
+
+
+in relation to gamma
+
 is a gamma distribution divided by the sum of that gamma distribution with another.
  a gamma(1) / (gamma(1) + gamma(2))
 
