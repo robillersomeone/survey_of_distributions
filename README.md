@@ -23,8 +23,8 @@ gamma function:
 
 #### Erlang is a case of gamma
 two parameters
-- shape (positive **integer** know as `k`)
-- rate (positive real number `λ`, 'scale' - reciprocal of rate can also be used)
+- shape (`k` positive **integer**)
+- rate (`λ` positive real number, 'scale' - reciprocal of rate can also be used)
 
 **in relation to gamma**
 
@@ -49,7 +49,7 @@ in relation to discrete distributions it's the continuous case of the geometric
 
 #### chi-squared distribution
 one parameter
-- degrees of freedom `k`
+- degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
 
 **in relation to gamma**
 
@@ -59,15 +59,23 @@ used in hypothesis testing, as goodness of fit and
 
 #### normal distribution
 two parameters
-- location (mean, mu)
-- scale (variance, sigma^2)
+- location (`μ` mean parameter)
+- scale (`σ^2` variance parameter)
 
 
 for large `k` the gamma distribution converges to the normal distribution
 
 #### cauchy distribution
+two parameters
+- location
+- scale
+
 two independent standard normal divided by one another
 
+cauchy distribution has no mean, variance, or higher moments defined.
+The mode and median are deifne and equal to the location parameter.
+
+cauchy(0,1) is a student's t with 1 degree of freedom t(df=1), this is also called the standard cauchy distribution
 
 #### dirichlet distribution
 two parameters
