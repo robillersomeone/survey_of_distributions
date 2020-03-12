@@ -72,7 +72,7 @@ can be thought of as 'a distribution over distributions'
 #### beta distribution
 
 
-'distribution over distributions'
+'distribution over distributions', defining binomial coefficient for continuous variables
 
 
 in relation to gamma
