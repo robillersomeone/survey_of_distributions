@@ -7,8 +7,8 @@ for now, the starting point is the normal in code and the gamma in theory, due t
 
 ### normal distribution
 two parameters
-- mean (location parameter)
-- variance (scale parameter)
+- mean (`μ` location parameter)
+- variance (`σ^2` scale parameter)
 
 ### gamma distribution and special cases
 two parameters
@@ -16,7 +16,7 @@ two parameters
 - scale (`θ`, positive real numbers, `β` the inverse scale - 'rate' can also be used where `β=1/θ`)
 
 known as maximum entropy distribution
-for processes with waiting times between events... like the wating time between poisson distributed events
+for processes with waiting times between events... like the waiting time between poisson distributed events
 
 gamma function:
 `Γ(k) = (k − 1)!`
@@ -26,16 +26,20 @@ two parameters
 - shape (positive **integer** know as `k`)
 - rate (positive real number `λ`, 'scale' - reciprocal of rate can also be used)
 
+**in relation to gamma**
+
+it's the gamma distribution with the shape parameter as an integer
+
 the sum of `k` independent exponentially distributed random variables with mean `θ`
 thought of as probability distribution of waiting time until `k-th` arrival.
 
 #### exponential distribution
 one parameter
-- rate (`λ` over the interval [0,∞))
+- rate (`λ` over the interval ``[0,∞)``)
 
-can be thought of multiple ways
+**in relation to gamma**
 
-- as an Erlang distribution with the shape parameter `k=1`
+- as an Erlang distribution with the shape parameter 'fixed' as `k=1`
   - the sum of `k` exponential distributions is an Erlang distribution with `(k,λ)`
   - by extension, as a gamma distribution
 - as the probability distribution of time between events of a poisson distribution
@@ -47,11 +51,18 @@ in relation to discrete distributions it's the continuous case of the geometric
 one parameter
 - degrees of freedom `k`
 
+**in relation to gamma**
+
 chi-squared is a special case of the gamma distribution with `ν` degrees of freedom, where gamma(ν/2 ,2) = to χ2(ν)
 
 used in hypothesis testing, as goodness of fit and
 
 #### normal distribution
+two parameters
+- location (mean, mu)
+- scale (variance, sigma^2)
+
+
 for large `k` the gamma distribution converges to the normal distribution
 
 #### cauchy distribution
@@ -64,6 +75,10 @@ two parameters
 - concentration (`𝛼`, where `𝛼 > 0`)
 
 
+**in relation to gamma**
+
+the gamma distribution can generate random vectors that form a dirichlet distribution
+
 multivariate generalization of beta distribution
 can be thought of as 'a distribution over distributions'
   - sampling from a dirichlet results in a distribution
@@ -75,7 +90,7 @@ can be thought of as 'a distribution over distributions'
 'distribution over distributions', defining binomial coefficient for continuous variables
 
 
-in relation to gamma
+**in relation to gamma**
 
 is a gamma distribution divided by the sum of that gamma distribution with another.
  a gamma(1) / (gamma(1) + gamma(2))
