@@ -3,7 +3,7 @@
 Looking at relationships between distributions through code
 
 ## Continuous Distributions
-for now, the starting point is the normal in code and the gamma in theory, due to the point of reference the gamma serves for other distributions.
+for now, the starting point is the gamma in theory and code in `distributions.py`, due to the point of reference the gamma serves for other distributions.
 
 ### normal distribution
 two parameters
@@ -18,7 +18,7 @@ two parameters
 known as maximum entropy distribution
 for processes with waiting times between events... like the waiting time between poisson distributed events
 
-gamma function:
+constructed using exponentials and the gamma function for positive integers:
 `Γ(k) = (k − 1)!`
 
 ### Erlang is a case of gamma
@@ -26,9 +26,7 @@ two parameters
 - shape (`k` positive **integer**)
 - rate (`λ` positive real number, 'scale' - reciprocal of rate can also be used)
 
-**in relation to gamma**
-
-it's the gamma distribution with the shape parameter as an integer
+**in relation to gamma** it's the gamma distribution with the shape parameter as an integer
 
 the sum of `k` independent exponentially distributed random variables with mean `θ`
 thought of as probability distribution of waiting time until `k-th` arrival.
@@ -38,7 +36,6 @@ one parameter
 - rate (`λ` over the interval ``[0,∞)``)
 
 **in relation to gamma**
-
 - as an Erlang distribution with the shape parameter 'fixed' as `k=1`
   - the sum of `k` exponential distributions is an Erlang distribution with `(k,λ)`
   - by extension, as a gamma distribution
@@ -51,9 +48,7 @@ in relation to discrete distributions it's the continuous case of the geometric
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
 
-**in relation to gamma**
-
-chi-squared is a special case of the gamma distribution with `ν` degrees of freedom, where gamma(ν/2 ,2) = to χ2(ν)
+**in relation to gamma** chi-squared is a special case of the gamma distribution with `ν` degrees of freedom, where gamma(ν/2 ,2) = to χ2(ν)
 
 used in hypothesis testing, as goodness of fit and
 
@@ -83,9 +78,7 @@ two parameters
 - concentration (`𝛼`, where `𝛼 > 0`)
 
 
-**in relation to gamma**
-
-the gamma distribution can generate random vectors that form a dirichlet distribution
+**in relation to gamma** the gamma distribution can generate random vectors that form a dirichlet distribution
 
 multivariate generalization of beta distribution
 can be thought of as 'a distribution over distributions'

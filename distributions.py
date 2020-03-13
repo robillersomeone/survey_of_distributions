@@ -1,27 +1,15 @@
 import math
 import numpy as np
+from scipy.integrate import quad
 import matplotlib.pyplot as plt
-
-# using the central limit theorem
-
-# numpy normal distribution method
-mu, sigma = 0, 1
-standard_normal = np.random.normal(mu, sigma, 1000)
-
-
-# this appraoches zero
-# print(sum(standard_normal)/ len(standard_normal))
-
-# chi-squared, as the sum of normals
-# start with degree of freedom equal to one
-
-chi_from_normal = [x**2 for x in standard_normal]
 
 
 # gamma function
 def gamma_function(k):
     # only works fot integers
     return math.factorial((k-1))
+# implement the integral function
+# may use quad function for real numbers
 
 # print(gamma_function(4))
 
@@ -67,7 +55,7 @@ def beta_distribution(x, alpha, beta):
     return num / dem
 
 x_beta_values = np.arange(0, 1, .01)[1:]
-print(x_beta_values)
+# print(x_beta_values)
 
 y_beta_values = beta_distribution(x_beta_values, 2, 5)
 
