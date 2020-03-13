@@ -20,6 +20,7 @@ chi_from_normal = [x**2 for x in standard_normal]
 
 # gamma function
 def gamma_function(k):
+    # only works fot integers
     return math.factorial((k-1))
 
 # print(gamma_function(4))
@@ -40,17 +41,52 @@ def gamma_distribution(x, k, theta):
 
 # get values (0,20) to plot
 x_gamma_values = np.arange(0, 20, .1)[1:]
+# print(x_gamma_values)
 
-y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
+y_gamma_values = gamma_distribution(x_gamma_values, 2, .2)
 
-plt.title('gamma with k=2, θ=2')
-plt.plot(x_gamma_values, y_gamma_values)
-plt.show()
-plt.savefig('gamma_2_2.png')
+# plt.title('gamma with k=2, θ=2')
+# plt.plot(x_gamma_values, y_gamma_values)
+# plt.savefig('gamma_2_2.png', format="png")
+# plt.show()
 # print(len(np.arange(0, 20, .1)))
 # print(x_gamma_values)
 
 
 # beta in relation to gamma
+
+# beta_function in terms of gamma
+def beta_function(x, y):
+    num = gamma_function(x) * gamma_function(y)
+    dem = gamma_function(x + y)
+    return num / dem
+
+def beta_distribution(x, alpha, beta):
+    num = (x**(alpha -1)) * ((1-x)**(beta - 1))
+    dem = beta_function(alpha, beta)
+    return num / dem
+
+x_beta_values = np.arange(0, 1, .01)[1:]
+print(x_beta_values)
+
+y_beta_values = beta_distribution(x_beta_values, 2, 5)
+
+plt.plot(x_beta_values, y_beta_values)
+plt.show()
+
+# revisit
+# def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
+#     '''four parameters -  shape k, scale theta for each gamma
+#     value x a random variable to pass in
+#
+#     will add case if rate parameter beta is used'''
+#     X_1 = gamma_distribution(x, k_1, theta_1)
+#     X_2 = gamma_distribution(x, k_2, theta_2)
+#     return X_1 / (X_1 + X_2)
+
+# need to generate numbers to pass into the beta
+
+
+# y_gamma_values = beta_from_gamma(x_gamma_values,1,1,3,1)
 
 # Erlang in relation to gamma

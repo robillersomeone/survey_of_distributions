@@ -21,7 +21,7 @@ for processes with waiting times between events... like the waiting time between
 gamma function:
 `Γ(k) = (k − 1)!`
 
-#### Erlang is a case of gamma
+### Erlang is a case of gamma
 two parameters
 - shape (`k` positive **integer**)
 - rate (`λ` positive real number, 'scale' - reciprocal of rate can also be used)
@@ -33,7 +33,7 @@ it's the gamma distribution with the shape parameter as an integer
 the sum of `k` independent exponentially distributed random variables with mean `θ`
 thought of as probability distribution of waiting time until `k-th` arrival.
 
-#### exponential distribution
+### exponential distribution
 one parameter
 - rate (`λ` over the interval ``[0,∞)``)
 
@@ -47,7 +47,7 @@ one parameter
 
 in relation to discrete distributions it's the continuous case of the geometric
 
-#### chi-squared distribution
+### chi-squared distribution
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
 
@@ -57,7 +57,7 @@ chi-squared is a special case of the gamma distribution with `ν` degrees of fre
 
 used in hypothesis testing, as goodness of fit and
 
-#### normal distribution
+### normal distribution
 two parameters
 - location (`μ` mean parameter)
 - scale (`σ^2` variance parameter)
@@ -65,7 +65,7 @@ two parameters
 
 for large `k` the gamma distribution converges to the normal distribution
 
-#### cauchy distribution
+### cauchy distribution
 two parameters
 - location
 - scale
@@ -77,7 +77,7 @@ The mode and median are deifne and equal to the location parameter.
 
 cauchy(0,1) is a student's t with 1 degree of freedom t(df=1), this is also called the standard cauchy distribution
 
-#### dirichlet distribution
+### dirichlet distribution
 two parameters
 - categories (`k`, where `k` is a integer ≥ 2)
 - concentration (`𝛼`, where `𝛼 > 0`)
@@ -92,8 +92,10 @@ can be thought of as 'a distribution over distributions'
   - sampling from a dirichlet results in a distribution
 
 
-#### beta distribution
-
+### beta distribution
+two parameters
+- shape (`𝛼`)
+- shape (`β`)
 
 'distribution over distributions', defining binomial coefficient for continuous variables
 
