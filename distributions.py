@@ -31,7 +31,7 @@ def gamma_distribution(x, k, theta):
 x_gamma_values = np.arange(0, 20, .1)[1:]
 # print(x_gamma_values)
 
-y_gamma_values = gamma_distribution(x_gamma_values, 2, .2)
+y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
 
 # plt.title('gamma with k=2, θ=2')
 # plt.plot(x_gamma_values, y_gamma_values)
@@ -43,7 +43,7 @@ y_gamma_values = gamma_distribution(x_gamma_values, 2, .2)
 
 # beta in relation to gamma
 
-# beta_function in terms of gamma
+# beta_function in terms of the gamma function
 def beta_function(x, y):
     num = gamma_function(x) * gamma_function(y)
     dem = gamma_function(x + y)

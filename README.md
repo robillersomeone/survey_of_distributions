@@ -93,9 +93,7 @@ two parameters
 'distribution over distributions', defining binomial coefficient for continuous variables
 
 
-**in relation to gamma**
-
-is a gamma distribution divided by the sum of that gamma distribution with another.
+**in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another.
  a gamma(1) / (gamma(1) + gamma(2))
 
  the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
