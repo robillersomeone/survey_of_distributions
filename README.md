@@ -44,13 +44,25 @@ one parameter
 
 in relation to discrete distributions it's the continuous case of the geometric
 
+has a memoryless property - past is not helpful in predicting the future.
+
 ### chi-squared distribution
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
 
-**in relation to gamma** chi-squared is a special case of the gamma distribution with `ν` degrees of freedom, where gamma(ν/2 ,2) = to χ2(ν)
+**in relation to gamma** chi-squared is a special case of the gamma distribution with `ν` degrees of freedom, where `gamma(ν/2 ,2) = χ2(ν)`
 
 used in hypothesis testing, as goodness of fit and
+
+
+### f-distribution
+two parameters
+- degrees of freedom in numerator (`n`, positive integer)
+- degrees of freedom in denominator (`m`, positive integer)
+
+**in relation to gamma** f-distribution is the ratio of two chi squared distributions (where the chi-squared is a special case of the gamma distribution)
+
+used to model ratio of sample variances, for ANalysis Of VAriance (ANOVA) and regression
 
 ### normal distribution
 two parameters
@@ -119,7 +131,6 @@ four continuous distributions
 
 ### t-distribution
 
-### f-distribution
 
 
 ## Sources

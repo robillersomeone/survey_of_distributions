@@ -3,6 +3,8 @@ import numpy as np
 from scipy.integrate import quad
 import matplotlib.pyplot as plt
 
+# 'distribution' functions map the pdf of a numpy range for their respective ranges
+
 
 # gamma function
 def gamma_function(k):
@@ -78,3 +80,4 @@ plt.show()
 # y_gamma_values = beta_from_gamma(x_gamma_values,1,1,3,1)
 
 # Erlang in relation to gamma
+erlang_distribution = gamma_distribution()
