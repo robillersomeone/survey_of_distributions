@@ -74,13 +74,13 @@ for large `k` the gamma distribution converges to the normal distribution
 
 ### cauchy distribution
 two parameters
-- location
-- scale
+- location (`x` where `x` is real)
+- scale (`γ` where `γ > 0`)
 
 two independent standard normal divided by one another
 
 cauchy distribution has no mean, variance, or higher moments defined.
-The mode and median are deifne and equal to the location parameter.
+The mode and median are defined and equal to the location parameter.
 
 cauchy(0,1) is a student's t with 1 degree of freedom t(df=1), this is also called the standard cauchy distribution
 
@@ -106,7 +106,7 @@ two parameters
 
 
 **in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another.
- a gamma(1) / (gamma(1) + gamma(2))
+ a `gamma(1) / (gamma(1) + gamma(2))`
 
  the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
 
@@ -116,6 +116,11 @@ starting with the negative binomial distribution, due to relationship with gamma
 
 
 ### negative binomial
+parameters
+ - number of failures ('r' where `r > 0`)
+ - probability of success (`p`, for each experiment)
+
+
 number of successes in a sequence of independent and identically distributed (iid) **Bernoulli** trials before `r` failures
 
 can view the negative binomial as **poisson** distribution with `λ` being a random variable with a gamma distribution with shape `r` and scale `θ = p/(1-p)`

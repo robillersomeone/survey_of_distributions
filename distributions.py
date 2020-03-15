@@ -4,6 +4,8 @@ from scipy.integrate import quad
 import matplotlib.pyplot as plt
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
+# distribitions so far
+# gamma, beta, erlang, exponential
 
 
 # gamma function
@@ -19,7 +21,7 @@ def gamma_function(k):
 # pdf of gamma distribution
 def gamma_distribution(x, k, theta):
     '''two parameters -  shape k, scale theta
-    value x a random variable to pass in
+    x value is a random variable to pass in
 
     will add case if rate parameter beta is used'''
     num = (x ** (k-1)) * (math.e ** (-x/theta))
@@ -52,6 +54,9 @@ def beta_function(x, y):
     return num / dem
 
 def beta_distribution(x, alpha, beta):
+    '''two parameters -  shape alpha, shape beta
+
+    x value is a random variable to pass in'''
     num = (x**(alpha -1)) * ((1-x)**(beta - 1))
     dem = beta_function(alpha, beta)
     return num / dem
@@ -77,7 +82,24 @@ plt.show()
 # need to generate numbers to pass into the beta
 
 
-# y_gamma_values = beta_from_gamma(x_gamma_values,1,1,3,1)
-
 # Erlang in relation to gamma
-erlang_distribution = gamma_distribution()
+# built directly from the gammma distribution
+def erlang_distribution(x, k, theta):
+    # might have to account for 'scale' vs 'rate' parameterization
+    # for right now, rate parameter is used
+    '''two parameters -  shape k, scale theta
+    where k is an integer
+    x value is a random variable to pass in'''
+    if isinstance(k, int):
+        return gamma_distribution(x, k, theta)
+     else:
+        return 'shape parameter is not an integer'
+
+def exponential_distribution(x, k=1, lambda_):
+    '''one parameters - rate lambda
+    the lambda is converted to scale theta for the gamma_distribution function
+    rate is a more common parameterization of the exp
+    k (the shape param for gamma is set to one as a default)
+    x value is a random variable to pass in'''
+    theta = 1 / lambda_
+    return gamma_distribution(x, k, theta)
