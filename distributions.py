@@ -61,13 +61,14 @@ def beta_distribution(x, alpha, beta):
     dem = beta_function(alpha, beta)
     return num / dem
 
+# this is the support for beta
 x_beta_values = np.arange(0, 1, .01)[1:]
 # print(x_beta_values)
 
 y_beta_values = beta_distribution(x_beta_values, 2, 5)
 
-plt.plot(x_beta_values, y_beta_values)
-plt.show()
+# plt.plot(x_beta_values, y_beta_values)
+# plt.show()
 
 # revisit
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
@@ -92,10 +93,10 @@ def erlang_distribution(x, k, theta):
     x value is a random variable to pass in'''
     if isinstance(k, int):
         return gamma_distribution(x, k, theta)
-     else:
+    else:
         return 'shape parameter is not an integer'
 
-def exponential_distribution(x, k=1, lambda_):
+def exponential_distribution(x, lambda_, k=1):
     '''one parameters - rate lambda
     the lambda is converted to scale theta for the gamma_distribution function
     rate is a more common parameterization of the exp
@@ -103,3 +104,27 @@ def exponential_distribution(x, k=1, lambda_):
     x value is a random variable to pass in'''
     theta = 1 / lambda_
     return gamma_distribution(x, k, theta)
+
+# getting to normal
+# at first, increase k as a parameter
+# may implement a limit
+
+def normal_distribution(x, k, theta):
+    '''two parameters -  shape k, scale theta
+    scale theta refers to a theta = standard deviation of the normal
+    updated_x and updated_theta are to keep the distribution stationary (updated_x, for stationary) and
+    keep the standard deviation (updated_theta, scale param)
+    x value is a random variable to pass in'''
+    updated_x = (k-1) * (((1/k)**(1/2)) * theta) + x
+    updated_theta = ((1/k)**(1/2)) * theta
+    return gamma_distribution(updated_x, k, updated_theta)
+
+
+x_gamma_values = np.arange(-4, 4, .01)[1:]
+# print(x_gamma_values)
+
+y_normal_values = normal_distribution(x_gamma_values, 1, 2)
+
+
+plt.plot(x_gamma_values, y_gamma_values)
+plt.show()

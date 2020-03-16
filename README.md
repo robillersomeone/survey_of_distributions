@@ -46,6 +46,19 @@ in relation to discrete distributions it's the continuous case of the geometric
 
 has a memoryless property - past is not helpful in predicting the future.
 
+### beta distribution
+two parameters
+- shape (`𝛼`)
+- shape (`β`)
+
+'distribution over distributions', defining binomial coefficient for continuous variables
+
+
+**in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another.
+ a `gamma(1) / (gamma(1) + gamma(2))`
+
+ the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
+
 ### chi-squared distribution
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
@@ -70,7 +83,7 @@ two parameters
 - scale (`σ^2` variance parameter)
 
 
-for large `k` the gamma distribution converges to the normal distribution
+as the 'shape' parameter increases (for large `k`, or a `k -> ∞`) the gamma distribution converges to the normal distribution
 
 ### cauchy distribution
 two parameters
@@ -97,18 +110,6 @@ can be thought of as 'a distribution over distributions'
   - sampling from a dirichlet results in a distribution
 
 
-### beta distribution
-two parameters
-- shape (`𝛼`)
-- shape (`β`)
-
-'distribution over distributions', defining binomial coefficient for continuous variables
-
-
-**in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another.
- a `gamma(1) / (gamma(1) + gamma(2))`
-
- the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
 
 
 ## Discrete Distributions
