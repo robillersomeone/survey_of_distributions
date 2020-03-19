@@ -105,6 +105,24 @@ def exponential_distribution(x, lambda_, k=1):
     theta = 1 / lambda_
     return gamma_distribution(x, k, theta)
 
+
+
+def chi_squared_distribution(x, k, theta=2):
+    '''one parameters -  shape k (known as degrees of freedom)
+    x value is a random variable to pass in
+
+    '''
+    return gamma_distribution(x, (k/2), theta)
+
+#
+y_chi_squared_values = chi_squared_distribution(x_gamma_values, 8)
+
+
+plt.plot(x_gamma_values, y_chi_squared_values)
+plt.show()
+
+
+
 # getting to normal
 # at first, increase k as a parameter
 # may implement a limit
@@ -120,11 +138,11 @@ def normal_distribution(x, k, theta):
     return gamma_distribution(updated_x, k, updated_theta)
 
 
-x_gamma_values = np.arange(-4, 4, .01)[1:]
+# x_gamma_values = np.arange(-4, 4, .01)[1:]
 # print(x_gamma_values)
-
-y_normal_values = normal_distribution(x_gamma_values, 1, 2)
-
-
-plt.plot(x_gamma_values, y_gamma_values)
-plt.show()
+#
+# y_normal_values = normal_distribution(x_gamma_values, 1, 2)
+#
+#
+# plt.plot(x_gamma_values, y_gamma_values)
+# plt.show()
