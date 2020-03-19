@@ -109,16 +109,30 @@ def exponential_distribution(x, lambda_, k=1):
 
 def chi_squared_distribution(x, k, theta=2):
     '''one parameters -  shape k (known as degrees of freedom)
-    x value is a random variable to pass in
-
-    '''
+    x value is a random variable to pass in'''
     return gamma_distribution(x, (k/2), theta)
 
+# just takes x_gamma_values, chi-squared and gamma have the same support
+# y_chi_squared_values = chi_squared_distribution(x_gamma_values, 8)
 #
-y_chi_squared_values = chi_squared_distribution(x_gamma_values, 8)
+#
+# plt.plot(x_gamma_values, y_chi_squared_values)
+# plt.show()
+
+def f_distribution(x, degree_1, degree_2, theta=2):
+    '''two parameters -  degrees of freedoms degree_1, degree_2
+    for the two chi_squared distributions
+    x value is a random variable to pass in'''
+    num = gamma_distribution(x, (degree_1/2), theta) / degree_1
+    dem = gamma_distribution(x, (degree_2/2), theta) / degree_2
+    return num/dem
+
+# right now, the num and dem are not independent
+# instead, randomly sample from the x_gamma_values for each distribution
+y_f_values = f_distribution(x_gamma_values, 2,6)
 
 
-plt.plot(x_gamma_values, y_chi_squared_values)
+plt.plot(x_gamma_values, y_f_values)
 plt.show()
 
 

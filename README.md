@@ -21,7 +21,7 @@ for processes with waiting times between events... like the waiting time between
 constructed using exponentials and the gamma function for positive integers:
 `Γ(k) = (k − 1)!`
 
-### Erlang is a case of gamma
+### erlang is a case of gamma
 two parameters
 - shape (`k` positive **integer**)
 - rate (`λ` positive real number, 'scale' - reciprocal of rate can also be used)
@@ -65,7 +65,7 @@ one parameter
 
 **in relation to gamma** chi-squared is a special case of the gamma distribution with `ν` degrees of freedom, where `gamma(ν/2 ,2) = χ2(ν)`
 
-used in hypothesis testing, as goodness of fit and
+used in hypothesis testing, as goodness of fit and independence.
 
 
 ### f-distribution
@@ -75,7 +75,9 @@ two parameters
 
 **in relation to gamma** f-distribution is the ratio of two chi squared distributions (where the chi-squared is a special case of the gamma distribution)
 
-used to model ratio of sample variances, for ANalysis Of VAriance (ANOVA) and regression
+used to model ratio of sample variances, for Analysis Of Variance (ANOVA) and regression
+
+f-distribution is also a specific parameterization of the beta prime distribution (inverted beta distribution)
 
 ### normal distribution
 two parameters
@@ -95,7 +97,7 @@ two independent standard normal divided by one another
 cauchy distribution has no mean, variance, or higher moments defined.
 The mode and median are defined and equal to the location parameter.
 
-cauchy(0,1) is a student's t with 1 degree of freedom t(df=1), this is also called the standard cauchy distribution
+`cauchy(0,1)` is a student's t with 1 degree of freedom `t(df=1)`, this is also called the standard cauchy distribution
 
 ### dirichlet distribution
 two parameters
