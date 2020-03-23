@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far
-# gamma, beta, erlang, exponential
+# gamma, beta, erlang, exponential, chi-squared
+# need to fix - f, normal, t 
 
 
 # gamma function
@@ -97,7 +98,7 @@ def erlang_distribution(x, k, theta):
         return 'shape parameter is not an integer'
 
 def exponential_distribution(x, lambda_, k=1):
-    '''one parameters - rate lambda
+    '''one parameter - rate lambda
     the lambda is converted to scale theta for the gamma_distribution function
     rate is a more common parameterization of the exp
     k (the shape param for gamma is set to one as a default)
@@ -108,12 +109,12 @@ def exponential_distribution(x, lambda_, k=1):
 
 
 def chi_squared_distribution(x, k, theta=2):
-    '''one parameters -  shape k (known as degrees of freedom)
+    '''one parameter -  shape k (known as degrees of freedom)
     x value is a random variable to pass in'''
     return gamma_distribution(x, (k/2), theta)
 
 # just takes x_gamma_values, chi-squared and gamma have the same support
-# y_chi_squared_values = chi_squared_distribution(x_gamma_values, 8)
+# y_chi_squared_values = chi_squared_distribution(x_gamma_values, 2)
 #
 #
 # plt.plot(x_gamma_values, y_chi_squared_values)
@@ -129,11 +130,11 @@ def f_distribution(x, degree_1, degree_2, theta=2):
 
 # right now, the num and dem are not independent
 # instead, randomly sample from the x_gamma_values for each distribution
-y_f_values = f_distribution(x_gamma_values, 2,6)
+# y_f_values = f_distribution(x_gamma_values, 10,1)
 
 
-plt.plot(x_gamma_values, y_f_values)
-plt.show()
+# plt.plot(x_gamma_values, y_f_values)
+# plt.show()
 
 
 
@@ -155,9 +156,12 @@ def normal_distribution(x, k, theta):
 # sampling for the t-distribution
 
 def t_distribution(t, nu):
+    '''one parameter -  shape nu (known as degrees of freedom)
+    t value is a random variable to pass in
+    from samples of a normally distributed population'''
     num = gamma_function((nu + 1)/2) * ((1 + ((t**2)/ nu))**(-((nu + 1)/2)))
     dem = ((nu * math.pi)**(1/2)) * gamma_function(nu/2)
-    return num / dem 
+    return num / dem
 
 # x_gamma_values = np.arange(-4, 4, .01)[1:]
 # print(x_gamma_values)
