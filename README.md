@@ -10,7 +10,7 @@ two parameters
 - mean (`μ` location parameter)
 - variance (`σ^2` scale parameter)
 
-### gamma distribution and special cases
+### gamma distribution and special cases (Pearson type III)
 two parameters
 - shape (`k`, positive real numbers)
 - scale (`θ`, positive real numbers, `β` the inverse scale - 'rate' can also be used where `β=1/θ`)
@@ -31,7 +31,7 @@ two parameters
 the sum of `k` independent exponentially distributed random variables with mean `θ`
 thought of as probability distribution of waiting time until `k-th` arrival.
 
-### exponential distribution
+### exponential distribution (Pearson type III)
 one parameter
 - rate (`λ` over the interval ``[0,∞)``)
 
@@ -46,7 +46,7 @@ in relation to discrete distributions it's the continuous case of the geometric
 
 has a memoryless property - past is not helpful in predicting the future.
 
-### beta distribution
+### beta distribution (Pearson type I)
 two parameters
 - shape (`𝛼`)
 - shape (`β`)
@@ -59,7 +59,7 @@ two parameters
 
  the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
 
-### chi-squared distribution
+### chi-squared distribution (Pearson type III)
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
 
@@ -87,7 +87,20 @@ two parameters
 
 as the 'shape' parameter increases (for large `k`, or a `k -> ∞`) the gamma distribution converges to the normal distribution
 
-### cauchy distribution
+### t-distribution
+one parameters
+- degrees of freedom `𝜈`
+
+**in relation to the gamma** the probability density function is given by the gamma function with the degrees of freedom
+
+
+arises from sampling, estimate the mean of a normally distributed population
+- sample size is small
+- population standard deviation is unknown
+
+
+
+### cauchy distribution (Pearson type IV)
 two parameters
 - location (`x` where `x` is real)
 - scale (`γ` where `γ > 0`)
@@ -137,7 +150,7 @@ four continuous distributions
 
 ### Tweedie distribution
 
-### t-distribution
+
 
 
 

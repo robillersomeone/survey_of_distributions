@@ -152,6 +152,13 @@ def normal_distribution(x, k, theta):
     return gamma_distribution(updated_x, k, updated_theta)
 
 
+# sampling for the t-distribution
+
+def t_distribution(t, nu):
+    num = gamma_function((nu + 1)/2) * ((1 + ((t**2)/ nu))**(-((nu + 1)/2)))
+    dem = ((nu * math.pi)**(1/2)) * gamma_function(nu/2)
+    return num / dem 
+
 # x_gamma_values = np.arange(-4, 4, .01)[1:]
 # print(x_gamma_values)
 #
