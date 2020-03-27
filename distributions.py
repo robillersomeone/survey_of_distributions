@@ -6,19 +6,24 @@ import matplotlib.pyplot as plt
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far
-# gamma, beta, erlang, exponential, chi-squared
-# need to fix - f, normal, t
-
+# gamma, beta, erlang, exponential, chi-squared, normal (apprx)
+# need to fix - f, t
 
 # gamma function
 def gamma_function(k):
     # only works fot integers
     return math.factorial((k-1))
 # implement the integral function
-# may use quad function for real numbers
-# using the scipy gamma function for integral implementation for now
+# using quad function for real numbers
+def intergrandt(t, k):
+    return np.power(t, (k-1)) * np.exp(-t)
+    # return (t **(k-1)) * np.exp(-t)
+def integral_gamma_function(k):
+    return quad(intergrandt, 0, np.inf, args=(k))[0]
 
+# vec_integral_gamma_function = np.vectorize(integral_gamma_function)
 # print(gamma_function(4))
+# print(integral_gamma_function(2))
 
 # pdf of gamma distribution
 def gamma_distribution(x, k, theta):
@@ -42,9 +47,22 @@ def gamma_distribution_scipy(x, k ,theta):
     dem = gamma(k) * (theta**k)
     return num / dem
 
+def int_gamma_distribution(x, k, theta):
+    '''two parameters -  shape k, scale theta
+    x value is a random variable to pass in
+
+    will add case if rate parameter beta is used'''
+    num = (x ** (k-1)) * (math.e ** (-x/theta))
+    dem = integral_gamma_function(k) * (theta**k)
+    return num / dem
+
 # get values (0,20) to plot
 x_gamma_values = np.arange(0, 20, .1)[1:]
 y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
+int_y_gamma_values = int_gamma_distribution(x_gamma_values, 2, 2)
+
+# if y_gamma_values.all() == int_y_gamma_values.all():
+#     print('cool')
 
 # beta in relation to gamma
 
@@ -104,7 +122,7 @@ def exponential_distribution(x, lambda_, k=1):
     return gamma_distribution(x, k, theta)
 
 y_exponential_values = exponential_distribution(x_gamma_values, 1)
-print(y_exponential_values)
+# print(y_exponential_values)
 
 def chi_squared_distribution(x, k, theta=2):
     '''one parameter -  shape k (known as degrees of freedom)
@@ -112,7 +130,7 @@ def chi_squared_distribution(x, k, theta=2):
     return gamma_distribution(x, (k/2), theta)
 
 # just takes x_gamma_values, chi-squared and gamma have the same support
-y_chi_squared_values = chi_squared_distribution(x_gamma_values, 2)
+y_chi_squared_values = chi_squared_distribution(x_gamma_values, 6)
 
 
 def f_distribution(x, degree_1, degree_2, theta=2):
@@ -146,10 +164,6 @@ def normal_distribution(x, k, theta):
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
 y_gamma_values_int = gamma_distribution_scipy(x_gamma_values_getting_normal, 25, 1/25)
 
-# x_gamma_values = np.arange(-4, 4, .01)[1:]
-# y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
-
-# y_normal_values = normal_distribution(x_gamma_values_getting_normal, 50, 1/50 )
 
 # sampling for the t-distribution
 
@@ -159,24 +173,4 @@ def t_distribution(t, nu):
     from samples of a normally distributed population'''
     num = gamma_function((nu + 1)/2) * ((1 + ((t**2)/ nu))**(-((nu + 1)/2)))
     dem = ((nu * math.pi)**(1/2)) * gamma_function(nu/2)
-    return num / dem
-
-# may use quad function for real numbers
-def intergrandt(k, t):
-    return np.power(t, (k-1)) * np.exp(-t)
-    # return (t **(k-1)) * np.exp(-t)
-def integral_gamma_function(k):
-    return quad(intergrandt, 0, np.inf, args=(k))[0]
-
-# vec_integral_gamma_function = np.vectorize(integral_gamma_function)
-# print(gamma_function(4))
-# print(integral_gamma_function(2))
-
-def int_gamma_distribution(x, k, theta):
-    '''two parameters -  shape k, scale theta
-    x value is a random variable to pass in
-
-    will add case if rate parameter beta is used'''
-    num = (x ** (k-1)) * (math.e ** (-x/theta))
-    dem = integral_gamma_function(k) * (theta**k)
     return num / dem

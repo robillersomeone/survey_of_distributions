@@ -21,17 +21,23 @@ import matplotlib.pyplot as plt
 
 # exponential
 
-plt.title('exponential distribution \n λ=1')
-plt.plot(ds.x_gamma_values, ds.y_exponential_values)
-plt.savefig('imgs/exponential_distribution_1.png', format="png")
-plt.show()
-print(ds.x_gamma_values)
-print(ds.y_exponential_values)
-
-
+# plt.title('exponential distribution \n λ=1')
+# plt.plot(ds.x_gamma_values, ds.y_exponential_values)
+# plt.savefig('imgs/exponential_distribution_1.png', format="png")
+# plt.show()
+# print(ds.x_gamma_values)
+# print(ds.y_exponential_values)
 
 # chi-squared
 # y_chi_squared_values
+
+plt.title('chi-squared distribution \n k=3')
+plt.plot(ds.x_gamma_values, ds.y_chi_squared_values)
+plt.savefig('imgs/chi_squared_distribution_3.png', format="png")
+plt.show()
+# print(ds.x_gamma_values)
+# print(ds.y_chi_squared_values)
+
 
 # normal
 
