@@ -92,6 +92,8 @@ def erlang_distribution(x, k, theta):
     else:
         return 'shape parameter is not an integer'
 
+y_erlang_values = erlang_distribution(x_gamma_values, 9, 1)
+
 def exponential_distribution(x, lambda_, k=1):
     '''one parameter - rate lambda
     the lambda is converted to scale theta for the gamma_distribution function
@@ -101,7 +103,8 @@ def exponential_distribution(x, lambda_, k=1):
     theta = 1 / lambda_
     return gamma_distribution(x, k, theta)
 
-
+y_exponential_values = exponential_distribution(x_gamma_values, 1)
+print(y_exponential_values)
 
 def chi_squared_distribution(x, k, theta=2):
     '''one parameter -  shape k (known as degrees of freedom)
@@ -109,7 +112,7 @@ def chi_squared_distribution(x, k, theta=2):
     return gamma_distribution(x, (k/2), theta)
 
 # just takes x_gamma_values, chi-squared and gamma have the same support
-# y_chi_squared_values = chi_squared_distribution(x_gamma_values, 2)
+y_chi_squared_values = chi_squared_distribution(x_gamma_values, 2)
 
 
 def f_distribution(x, degree_1, degree_2, theta=2):
