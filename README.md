@@ -87,6 +87,8 @@ two parameters
 
 as the 'shape' parameter increases (for large `k`, or a `k -> ∞`) the gamma distribution converges to the normal distribution
 
+**in relation to gamma** using the central limit theorem, the gamma (or any distribution with finite variance) will converge to the normal distribution 
+
 ### t-distribution
 one parameters
 - degrees of freedom `𝜈`
