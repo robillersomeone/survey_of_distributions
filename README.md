@@ -23,6 +23,8 @@ two constructions
 `Γ(k) = (k − 1)!`
 - using the improper integral from `[0,∞)` for complex numbers
 
+<img src="./imgs/gamma_2_2.png" height="300px" width="400px">
+
 ### erlang is a case of gamma
 two parameters
 - shape (`k` positive **integer**)
@@ -32,6 +34,8 @@ two parameters
 
 the sum of `k` independent exponentially distributed random variables with mean `θ`
 thought of as probability distribution of waiting time until `k-th` arrival.
+
+<img src="./imgs/erlang_distribution_9_1.png" height="300px" width="400px">
 
 ### exponential distribution (Pearson type III)
 one parameter
@@ -48,6 +52,8 @@ in relation to discrete distributions it's the continuous case of the geometric
 
 has a memoryless property - past is not helpful in predicting the future.
 
+<img src="./imgs/exponential_distribution_1.png" height="300px" width="400px">
+
 ### beta distribution (Pearson type I)
 two parameters
 - shape (`𝛼`)
@@ -61,6 +67,8 @@ two parameters
 
  the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
 
+ <img src="./imgs/beta_distribution_2_5.png" height="300px" width="400px">
+
 ### chi-squared distribution (Pearson type III)
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
@@ -69,6 +77,7 @@ one parameter
 
 used in hypothesis testing, as goodness of fit and independence.
 
+<img src="./imgs/chi_squared_distribution_3.png" height="300px" width="400px">
 
 ### f-distribution
 two parameters
@@ -90,6 +99,8 @@ two parameters
 as the 'shape' parameter increases (for large `k`, or a `k -> ∞`) the gamma distribution converges to the normal distribution
 
 **in relation to gamma** using the central limit theorem, the gamma (or any distribution with finite variance) will converge to the normal distribution
+
+<img src="./imgs/approximated_normal_distribution_25.png" height="300px" width="400px">
 
 ### t-distribution
 one parameters

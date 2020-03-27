@@ -29,12 +29,11 @@ import matplotlib.pyplot as plt
 # print(ds.y_exponential_values)
 
 # chi-squared
-# y_chi_squared_values
 
-plt.title('chi-squared distribution \n k=3')
-plt.plot(ds.x_gamma_values, ds.y_chi_squared_values)
-plt.savefig('imgs/chi_squared_distribution_3.png', format="png")
-plt.show()
+# plt.title('chi-squared distribution \n k=3')
+# plt.plot(ds.x_gamma_values, ds.y_chi_squared_values)
+# plt.savefig('imgs/chi_squared_distribution_3.png', format="png")
+# plt.show()
 # print(ds.x_gamma_values)
 # print(ds.y_chi_squared_values)
 
