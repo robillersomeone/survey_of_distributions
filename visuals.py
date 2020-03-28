@@ -46,3 +46,12 @@ import matplotlib.pyplot as plt
 # plt.show()
 # print(ds.x_gamma_values_getting_normal)
 # print(ds.y_gamma_values_int)
+
+# f
+
+plt.title('f distribution \n k=??, θ=1?')
+plt.plot(ds.x_f_values, ds.y_f_values)
+# plt.savefig('imgs/approximated normal distribution_25.png', format="png")
+plt.show()
+# print(ds.x_gamma_values_getting_normal)
+print(ds.y_f_values)
