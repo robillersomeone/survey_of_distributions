@@ -5,9 +5,9 @@ from scipy.special import gamma
 import matplotlib.pyplot as plt
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
-# distribitions so far
-# gamma, beta, erlang, exponential, chi-squared, normal (apprx)
-# need to fix - f, t
+# distribitions so far - gamma, beta, erlang, exponential, chi-squared, normal (apprx)
+# to fix - f, t
+# to add - cauchy, dirichlet
 
 # gamma function
 def gamma_function(k):
@@ -57,9 +57,13 @@ def int_gamma_distribution(x, k, theta):
     return num / dem
 
 # get values (0,20) to plot
-x_gamma_values = np.arange(0, 20, .1)[1:]
+x_gamma_values = np.arange(0, 20, .05)[1:]
 y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
-int_y_gamma_values = int_gamma_distribution(x_gamma_values, 2, 2)
+int_y_gamma_values_1_2 = int_gamma_distribution(x_gamma_values, 1, 2)
+int_y_gamma_values_2_2 = int_gamma_distribution(x_gamma_values, 2, 2)
+int_y_gamma_values_3_2 = int_gamma_distribution(x_gamma_values, 3, 2)
+int_y_gamma_values_5_1 = int_gamma_distribution(x_gamma_values, 5, 1)
+int_y_gamma_values_9_1 = int_gamma_distribution(x_gamma_values, 9, 1)
 
 # if y_gamma_values.all() == int_y_gamma_values.all():
 #     print('cool')
@@ -79,23 +83,10 @@ def beta_distribution(x, alpha, beta):
     num = (x**(alpha -1)) * ((1-x)**(beta - 1))
     dem = beta_function(alpha, beta)
     return num / dem
-
 # this is the support for beta
 x_beta_values = np.arange(0, 1, .01)[1:]
 # print(x_beta_values)
 y_beta_values = beta_distribution(x_beta_values, 2, 5)
-
-# revisit
-# def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
-#     '''four parameters -  shape k, scale theta for each gamma
-#     value x a random variable to pass in
-#
-#     will add case if rate parameter beta is used'''
-#     X_1 = gamma_distribution(x, k_1, theta_1)
-#     X_2 = gamma_distribution(x, k_2, theta_2)
-#     return X_1 / (X_1 + X_2)
-
-# need to generate numbers to pass into the beta
 
 # Erlang in relation to gamma
 # built directly from the gammma distribution
@@ -137,14 +128,31 @@ def f_distribution(x, degree_1, degree_2, theta=2):
     '''two parameters -  degrees of freedoms degree_1, degree_2
     for the two chi_squared distributions
     x value is a random variable to pass in'''
-    num = gamma_distribution(x, (degree_1/2), theta) / degree_1
-    dem = gamma_distribution(x, (degree_2/2), theta) / degree_2
+    # x_1 = np.random.choice(x_gamma_values, 100)
+    # x_2 = np.random.choice(x_gamma_values, 100)
+    # num = int_gamma_distribution(x_1, (degree_1/2), theta) / degree_1
+    # dem = int_gamma_distribution(x_2, (degree_2/2), theta) / degree_2
+    num = int_gamma_distribution(x, (degree_1/2), theta) / degree_1
+    dem = int_gamma_distribution(x, (degree_2/2), theta) / degree_2
     return num/dem
-
+x_f_values = np.arange(0, 5, .05)[1:]
+y_f_values = f_distribution(x_f_values, 20,2)
 # right now, the num and dem are not independent
 # instead, randomly sample from the x_gamma_values for each distribution
+# x_1 = np.random.choice(x_gamma_values, 100)
+# x_2 = np.random.choice(x_gamma_values, 100)
+# x_f_distr = np.append(x_1, x_2)
+# x_f_distr = x_1/x_2
+# print(x_1)
+# print(x_2)
+# print(np.append(x_1, x_2))
+# y_f_values = f_distribution(x_1, x_2, 10,1)
+# print(len(x_1/x_2))
+# print(len(y_f_values))
 # y_f_values = f_distribution(x_gamma_values, 10,1)
 
+# print(np.random.choice(x_gamma_values, 10))
+# print(len(x_gamma_values))
 # getting to normal
 # at first, increase k as a parameter
 # may implement a limit
@@ -174,3 +182,16 @@ def t_distribution(t, nu):
     num = gamma_function((nu + 1)/2) * ((1 + ((t**2)/ nu))**(-((nu + 1)/2)))
     dem = ((nu * math.pi)**(1/2)) * gamma_function(nu/2)
     return num / dem
+
+
+# revisit
+# def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
+#     '''four parameters -  shape k, scale theta for each gamma
+#     value x a random variable to pass in
+#
+#     will add case if rate parameter beta is used'''
+#     X_1 = gamma_distribution(x, k_1, theta_1)
+#     X_2 = gamma_distribution(x, k_2, theta_2)
+#     return X_1 / (X_1 + X_2)
+
+# need to generate numbers to pass into the beta

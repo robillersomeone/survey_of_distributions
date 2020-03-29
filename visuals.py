@@ -1,9 +1,29 @@
 import distributions as ds
 import matplotlib.pyplot as plt
 
+# gamma
+# ds.int_y_gamma_values_1_2
+# ds.int_y_gamma_values_2_2
+# ds.int_y_gamma_values_3_2
+# ds.int_y_gamma_values_5_1
+# ds.int_y_gamma_values_9_1
+
+plt.title('gamma distributions')
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
+# plt.savefig('imgs/gamma_distributions.png', format="png")
+plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=2'], loc='upper right')
+plt.show()
+# print(ds.x_beta_values)
+# print(ds.y_beta_values)
+
+
 # beta
 
-# plt.title('beta distribution \n 𝛼=2, β=5')
+# plt.title('beta distribution \n alpha=2, β=5')
 # plt.plot(ds.x_beta_values, ds.y_beta_values)
 # plt.savefig('imgs/beta_distribution_2_5.png', format="png")
 # plt.show()
@@ -49,9 +69,9 @@ import matplotlib.pyplot as plt
 
 # f
 
-plt.title('f distribution \n k=??, θ=1?')
-plt.plot(ds.x_f_values, ds.y_f_values)
-# plt.savefig('imgs/approximated normal distribution_25.png', format="png")
-plt.show()
-# print(ds.x_gamma_values_getting_normal)
-print(ds.y_f_values)
+# plt.title('f distribution \n k=??, θ=1?')
+# plt.plot(ds.x_f_values, ds.y_f_values)
+# # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
+# plt.show()
+# # print(ds.x_gamma_values_getting_normal)
+# print(ds.y_f_values)
