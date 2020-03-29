@@ -14,9 +14,10 @@ plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
 plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
 plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
 plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
-# plt.savefig('imgs/gamma_distributions.png', format="png")
 plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=2'], loc='upper right')
 plt.show()
+plt.savefig('imgs/gamma_distributions.png', format="png")
+
 # print(ds.x_beta_values)
 # print(ds.y_beta_values)
 
