@@ -23,7 +23,7 @@ two constructions
 `Γ(k) = (k − 1)!`
 - using the improper integral from `[0,∞)` for complex numbers
 
-<img src="./imgs/gamma_2_2.png" height="300px" width="400px">
+<img src="./imgs/gamma_distributions.png" height="300px" width="400px">
 
 ### erlang is a case of gamma
 two parameters
