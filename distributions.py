@@ -38,15 +38,6 @@ def gamma_distribution(x, k, theta):
 # check the gamma
 # print(gamma_distribution(1.4, 3, 1))
 
-def gamma_distribution_scipy(x, k ,theta):
-    '''two parameters -  shape k, scale theta
-    x value is a random variable to pass in
-
-    will add case if rate parameter beta is used'''
-    num = (x ** (k-1)) * (math.e ** (-x/theta))
-    dem = gamma(k) * (theta**k)
-    return num / dem
-
 def int_gamma_distribution(x, k, theta):
     '''two parameters -  shape k, scale theta
     x value is a random variable to pass in

@@ -14,7 +14,7 @@ plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
 plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
 plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
 plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
-plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=2'], loc='upper right')
+plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=1'], loc='upper right')
 plt.savefig('imgs/gamma_distributions.png', format="png")
 plt.show()
 # plt.savefig('imgs/gamma_distributions.png', format="png")
@@ -35,6 +35,7 @@ plt.show()
 # erlang
 
 # plt.title('erlang distribution \n k=9, θ=1')
+# make it purple
 # plt.plot(ds.x_gamma_values, ds.y_erlang_values)
 # plt.savefig('imgs/erlang_distribution_9_1.png', format="png")
 # plt.show()
