@@ -8,15 +8,15 @@ import matplotlib.pyplot as plt
 # ds.int_y_gamma_values_5_1
 # ds.int_y_gamma_values_9_1
 
-plt.title('gamma distributions')
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
-plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=1'], loc='upper right')
-plt.savefig('imgs/gamma_distributions.png', format="png")
-plt.show()
+# plt.title('gamma distributions')
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
+# plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=1'], loc='upper right')
+# plt.savefig('imgs/gamma_distributions.png', format="png")
+# plt.show()
 # plt.savefig('imgs/gamma_distributions.png', format="png")
 
 # print(ds.x_beta_values)
@@ -34,11 +34,13 @@ plt.show()
 
 # erlang
 
-# plt.title('erlang distribution \n k=9, θ=1')
+plt.title('erlang distribution \n k=9, θ=1')
 # make it purple
-# plt.plot(ds.x_gamma_values, ds.y_erlang_values)
-# plt.savefig('imgs/erlang_distribution_9_1.png', format="png")
-# plt.show()
+plt.plot(ds.x_gamma_values, ds.y_erlang_values, color='purple')
+plt.show()
+plt.savefig('imgs/erlang_distribution_9_1.png', format="png")
+# plt.savefig('imgs/gamma_distributions.png', format="png")
+
 # print(ds.x_gamma_values)
 # print(ds.y_erlang_values)
 

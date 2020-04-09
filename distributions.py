@@ -161,7 +161,7 @@ def normal_distribution(x, k, theta):
 # for now the normal distribution is approximated using the central limit theorem
 
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
-y_gamma_values_int = gamma_distribution_scipy(x_gamma_values_getting_normal, 25, 1/25)
+# y_gamma_values_int = gamma_distribution_scipy(x_gamma_values_getting_normal, 25, 1/25)
 
 
 # sampling for the t-distribution
