@@ -38,7 +38,7 @@ plt.title('erlang distribution \n k=9, θ=1')
 # make it purple
 plt.plot(ds.x_gamma_values, ds.y_erlang_values, color='purple')
 plt.show()
-plt.savefig('imgs/erlang_distribution_9_1.png', format="png")
+plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.png', format="png")
 # plt.savefig('imgs/gamma_distributions.png', format="png")
 
 # print(ds.x_gamma_values)
