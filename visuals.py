@@ -34,34 +34,15 @@ import matplotlib.pyplot as plt
 
 # erlang
 
-plt.title('erlang distribution \n k=9, θ=1')
-# make it purple
-plt.plot(ds.x_gamma_values, ds.y_erlang_values, color='purple')
-plt.show()
-plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.png', format="png")
+# plt.title('erlang distribution \n k=9, θ=1')
+# # make it purple
+# plt.plot(ds.x_gamma_values, ds.y_erlang_values, color='purple')
+# plt.show()
+# plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.png', format="png")
 # plt.savefig('imgs/gamma_distributions.png', format="png")
 
 # print(ds.x_gamma_values)
 # print(ds.y_erlang_values)
-
-# exponential
-
-# plt.title('exponential distribution \n λ=1')
-# plt.plot(ds.x_gamma_values, ds.y_exponential_values)
-# plt.savefig('imgs/exponential_distribution_1.png', format="png")
-# plt.show()
-# print(ds.x_gamma_values)
-# print(ds.y_exponential_values)
-
-# chi-squared
-
-# plt.title('chi-squared distribution \n k=3')
-# plt.plot(ds.x_gamma_values, ds.y_chi_squared_values)
-# plt.savefig('imgs/chi_squared_distribution_3.png', format="png")
-# plt.show()
-# print(ds.x_gamma_values)
-# print(ds.y_chi_squared_values)
-
 
 # normal
 
@@ -80,3 +61,25 @@ plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.png', forma
 # plt.show()
 # # print(ds.x_gamma_values_getting_normal)
 # print(ds.y_f_values)
+
+# exponential
+
+plt.title('exponential distribution \n λ=1')
+plt.plot(ds.x_gamma_values, ds.y_exponential_values)
+plt.savefig('imgs/exponential_distribution_1.png', format="png")
+plt.show()
+print(ds.x_gamma_values)
+print(ds.y_exponential_values)
+
+
+# chi-squared
+
+chi_title = 'chi-squared distribution \n k=3'
+chi_x_values, chi_y_values = ds.x_gamma_values, ds.y_chi_squared_values
+
+def plotting(title, x_values, y_values):
+    plt.title(title)
+    plt.plot(x_values, y_values)
+    plt.show()
+# plt.savefig('imgs/approximated normal distribution_25.png', format="png")
+# plotting(chi_title, chi_x_values, chi_y_values)
