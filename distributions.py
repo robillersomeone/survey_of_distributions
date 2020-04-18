@@ -1,7 +1,6 @@
 import math
 import numpy as np
 from scipy.integrate import quad
-from scipy.special import gamma
 import matplotlib.pyplot as plt
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
