@@ -1,6 +1,13 @@
 import distributions as ds
 import matplotlib.pyplot as plt
 
+def plotting(title, x_values, y_values, color = 'blue', legend = None):
+    plt.title(title)
+    plt.plot(x_values, y_values, color)
+    if legend != None:
+        plt.legend(legend, loc='upper right')
+    plt.show()
+
 # gamma
 # ds.int_y_gamma_values_1_2
 # ds.int_y_gamma_values_2_2
@@ -19,67 +26,43 @@ import matplotlib.pyplot as plt
 # plt.show()
 # plt.savefig('imgs/gamma_distributions.png', format="png")
 
-# print(ds.x_beta_values)
-# print(ds.y_beta_values)
-
-
 # beta
 
-# plt.title('beta distribution \n alpha=2, β=5')
-# plt.plot(ds.x_beta_values, ds.y_beta_values)
-# plt.savefig('imgs/beta_distribution_2_5.png', format="png")
-# plt.show()
-# print(ds.x_beta_values)
-# print(ds.y_beta_values)
+beta_title = 'beta distribution \n alpha=2, β=5'
+beta_x_values, beta_y_values = ds.x_beta_values, ds.y_beta_values
+beta_color='blue'
+# # plt.savefig('imgs/beta_distribution_2_5.png', format="png")
 
 # erlang
 
-# plt.title('erlang distribution \n k=9, θ=1')
-# # make it purple
-# plt.plot(ds.x_gamma_values, ds.y_erlang_values, color='purple')
-# plt.show()
-# plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.png', format="png")
-# plt.savefig('imgs/gamma_distributions.png', format="png")
-
-# print(ds.x_gamma_values)
-# print(ds.y_erlang_values)
-
-# normal
-
-# plt.title('approximated normal distribution \n k=25, θ=1/25')
-# plt.plot(ds.x_gamma_values_getting_normal, ds.y_gamma_values_int)
-# plt.savefig('imgs/approximated normal distribution_25.png', format="png")
-# plt.show()
-# print(ds.x_gamma_values_getting_normal)
-# print(ds.y_gamma_values_int)
-
-# f
-
-# plt.title('f distribution \n k=??, θ=1?')
-# plt.plot(ds.x_f_values, ds.y_f_values)
-# # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
-# plt.show()
-# # print(ds.x_gamma_values_getting_normal)
-# print(ds.y_f_values)
+erlang_title = 'erlang distribution \n k=9, θ=1'
+erlang_x_values, erlang_y_values = ds.x_gamma_values, ds.y_erlang_values
+erlang_color='purple'
+# plt.savefig('imgs/erlang_distribution_9_1.png', format="png")
 
 # exponential
 
-plt.title('exponential distribution \n λ=1')
-plt.plot(ds.x_gamma_values, ds.y_exponential_values)
-plt.savefig('imgs/exponential_distribution_1.png', format="png")
-plt.show()
-print(ds.x_gamma_values)
-print(ds.y_exponential_values)
-
+exp_title = 'exponential distribution \n λ=1'
+exp_x_values, exp_y_values = ds.x_gamma_values, ds.y_exponential_values
+# plt.savefig('imgs/exponential_distribution_1.png', format="png")
 
 # chi-squared
 
 chi_title = 'chi-squared distribution \n k=3'
 chi_x_values, chi_y_values = ds.x_gamma_values, ds.y_chi_squared_values
-
-def plotting(title, x_values, y_values):
-    plt.title(title)
-    plt.plot(x_values, y_values)
-    plt.show()
 # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
-# plotting(chi_title, chi_x_values, chi_y_values)
+
+# normal
+
+normal_title = 'approximated normal distribution \n k=25, θ=1/25'
+# normal_x_values, normal_y_values = ds.x_gamma_values_getting_normal, ds.y_gamma_values_int
+# # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
+
+# f
+
+f_title = 'f distribution \n k=??, θ=1?'
+f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
+# # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
+
+plotting(erlang_title, erlang_x_values, erlang_y_values, erlang_color)
+plt.savefig('imgs/erlang_distribution_9_1.png', format="png")
