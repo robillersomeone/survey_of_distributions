@@ -65,4 +65,4 @@ f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
 # # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
 
 plotting(erlang_title, erlang_x_values, erlang_y_values, erlang_color)
-plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.pnsaf', format="png")
+# plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.pnsaf', format="png")
