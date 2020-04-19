@@ -79,7 +79,7 @@ used in hypothesis testing, as goodness of fit and independence.
 
 <img src="./imgs/chi_squared_distribution_3.png" height="300px" width="400px">
 
-### f-distribution
+### f-distribution (Pearson type VI)
 two parameters
 - degrees of freedom in numerator (`n`, positive integer)
 - degrees of freedom in denominator (`m`, positive integer)
@@ -102,7 +102,7 @@ as the 'shape' parameter increases (for large `k`, or a `k -> ∞`) the gamma di
 
 <img src="./imgs/approximated_normal_distribution_25.png" height="300px" width="400px">
 
-### t-distribution
+### t-distribution (Pearson type VII)
 one parameters
 - degrees of freedom `𝜈`
 
