@@ -9,6 +9,7 @@ def plotting(title, x_values, y_values, color = 'blue', legend = None):
     plt.show()
 
 # gamma
+
 # ds.int_y_gamma_values_1_2
 # ds.int_y_gamma_values_2_2
 # ds.int_y_gamma_values_3_2
