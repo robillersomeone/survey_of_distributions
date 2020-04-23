@@ -3,7 +3,7 @@
 Looking at relationships between distributions through code
 
 ## Continuous Distributions
-for now, the starting point is the gamma in theory and code in `distributions.py`, due to the point of reference the gamma serves for other distributions.
+the starting point is the gamma in theory and code in `distributions.py`, due to the point of reference the gamma serves for other distributions.
 
 ### normal distribution
 two parameters
