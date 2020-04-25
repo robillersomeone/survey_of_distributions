@@ -20,10 +20,6 @@ def intergrandt(t, k):
 def integral_gamma_function(k):
     return quad(intergrandt, 0, np.inf, args=(k))[0]
 
-# vec_integral_gamma_function = np.vectorize(integral_gamma_function)
-# print(gamma_function(4))
-# print(integral_gamma_function(2))
-
 # pdf of gamma distribution
 def gamma_distribution(x, k, theta):
     '''two parameters -  shape k, scale theta
@@ -46,18 +42,6 @@ def int_gamma_distribution(x, k, theta):
     dem = integral_gamma_function(k) * (theta**k)
     return num / dem
 
-# get values (0,20) to plot
-x_gamma_values = np.arange(0, 20, .05)[1:]
-y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
-int_y_gamma_values_1_2 = int_gamma_distribution(x_gamma_values, 1, 2)
-int_y_gamma_values_2_2 = int_gamma_distribution(x_gamma_values, 2, 2)
-int_y_gamma_values_3_2 = int_gamma_distribution(x_gamma_values, 3, 2)
-int_y_gamma_values_5_1 = int_gamma_distribution(x_gamma_values, 5, 1)
-int_y_gamma_values_9_1 = int_gamma_distribution(x_gamma_values, 9, 1)
-
-# if y_gamma_values.all() == int_y_gamma_values.all():
-#     print('cool')
-
 # beta in relation to gamma
 
 # beta_function in terms of the gamma function
@@ -73,10 +57,6 @@ def beta_distribution(x, alpha, beta):
     num = (x**(alpha -1)) * ((1-x)**(beta - 1))
     dem = beta_function(alpha, beta)
     return num / dem
-# this is the support for beta
-x_beta_values = np.arange(0, 1, .01)[1:]
-# print(x_beta_values)
-y_beta_values = beta_distribution(x_beta_values, 2, 5)
 
 # Erlang in relation to gamma
 # built directly from the gammma distribution
@@ -91,8 +71,6 @@ def erlang_distribution(x, k, theta):
     else:
         return 'shape parameter is not an integer'
 
-y_erlang_values = erlang_distribution(x_gamma_values, 9, 1)
-
 def exponential_distribution(x, lambda_, k=1):
     '''one parameter - rate lambda
     the lambda is converted to scale theta for the gamma_distribution function
@@ -102,17 +80,10 @@ def exponential_distribution(x, lambda_, k=1):
     theta = 1 / lambda_
     return gamma_distribution(x, k, theta)
 
-y_exponential_values = exponential_distribution(x_gamma_values, 1)
-# print(y_exponential_values)
-
 def chi_squared_distribution(x, k, theta=2):
     '''one parameter -  shape k (known as degrees of freedom)
     x value is a random variable to pass in'''
     return gamma_distribution(x, (k/2), theta)
-
-# just takes x_gamma_values, chi-squared and gamma have the same support
-y_chi_squared_values = chi_squared_distribution(x_gamma_values, 6)
-
 
 def f_distribution(x, degree_1, degree_2, theta=2):
     '''two parameters -  degrees of freedoms degree_1, degree_2
@@ -185,3 +156,33 @@ def t_distribution(t, nu):
 #     return X_1 / (X_1 + X_2)
 
 # need to generate numbers to pass into the beta
+
+# vec_integral_gamma_function = np.vectorize(integral_gamma_function)
+# print(gamma_function(4))
+# print(integral_gamma_function(2))
+
+# get values (0,20) to plot
+x_gamma_values = np.arange(0, 20, .05)[1:]
+y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
+int_y_gamma_values_1_2 = int_gamma_distribution(x_gamma_values, 1, 2)
+int_y_gamma_values_2_2 = int_gamma_distribution(x_gamma_values, 2, 2)
+int_y_gamma_values_3_2 = int_gamma_distribution(x_gamma_values, 3, 2)
+int_y_gamma_values_5_1 = int_gamma_distribution(x_gamma_values, 5, 1)
+int_y_gamma_values_9_1 = int_gamma_distribution(x_gamma_values, 9, 1)
+
+# if y_gamma_values.all() == int_y_gamma_values.all():
+#     print('cool')
+
+# this is the support for beta
+x_beta_values = np.arange(0, 1, .01)[1:]
+# print(x_beta_values)
+y_beta_values = beta_distribution(x_beta_values, 2, 5)
+
+
+y_erlang_values = erlang_distribution(x_gamma_values, 9, 1)
+
+y_exponential_values = exponential_distribution(x_gamma_values, 1)
+# print(y_exponential_values)
+
+# just takes x_gamma_values, chi-squared and gamma have the same support
+y_chi_squared_values = chi_squared_distribution(x_gamma_values, 6)
