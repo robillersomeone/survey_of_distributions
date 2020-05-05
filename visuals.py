@@ -8,25 +8,6 @@ def plotting(title, x_values, y_values, color = 'blue', legend = None):
         plt.legend(legend, loc='upper right')
     plt.show()
 
-# gamma
-
-# ds.int_y_gamma_values_1_2
-# ds.int_y_gamma_values_2_2
-# ds.int_y_gamma_values_3_2
-# ds.int_y_gamma_values_5_1
-# ds.int_y_gamma_values_9_1
-
-# plt.title('gamma distributions')
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
-# plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=1'], loc='upper right')
-# plt.savefig('imgs/gamma_distributions.png', format="png")
-# plt.show()
-# plt.savefig('imgs/gamma_distributions.png', format="png")
-
 # beta
 
 beta_title = 'beta distribution \n alpha=2, β=5'
@@ -67,3 +48,23 @@ f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
 
 plotting(erlang_title, erlang_x_values, erlang_y_values, erlang_color)
 # plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.pnsaf', format="png")
+
+
+# gamma
+
+# ds.int_y_gamma_values_1_2
+# ds.int_y_gamma_values_2_2
+# ds.int_y_gamma_values_3_2
+# ds.int_y_gamma_values_5_1
+# ds.int_y_gamma_values_9_1
+
+# plt.title('gamma distributions')
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
+# plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=1'], loc='upper right')
+# plt.savefig('imgs/gamma_distributions.png', format="png")
+# plt.show()
+# plt.savefig('imgs/gamma_distributions.png', format="png")

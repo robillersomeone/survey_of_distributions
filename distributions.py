@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 def gamma_function(k):
     # only works fot integers
     return math.factorial((k-1))
-# implement the integral function
+
 # using quad function for real numbers
 def intergrandt(t, k):
     return np.power(t, (k-1)) * np.exp(-t)
@@ -29,9 +29,6 @@ def gamma_distribution(x, k, theta):
     num = (x ** (k-1)) * (math.e ** (-x/theta))
     dem = gamma_function(k) * (theta**k)
     return num / dem
-
-# check the gamma
-# print(gamma_distribution(1.4, 3, 1))
 
 def int_gamma_distribution(x, k, theta):
     '''two parameters -  shape k, scale theta
@@ -160,6 +157,10 @@ def t_distribution(t, nu):
 # vec_integral_gamma_function = np.vectorize(integral_gamma_function)
 # print(gamma_function(4))
 # print(integral_gamma_function(2))
+
+
+# check the gamma
+# print(gamma_distribution(1.4, 3, 1))
 
 # get values (0,20) to plot
 x_gamma_values = np.arange(0, 20, .05)[1:]
