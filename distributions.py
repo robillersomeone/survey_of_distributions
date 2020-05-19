@@ -187,3 +187,13 @@ y_exponential_values = exponential_distribution(x_gamma_values, 1)
 
 # just takes x_gamma_values, chi-squared and gamma have the same support
 y_chi_squared_values = chi_squared_distribution(x_gamma_values, 6)
+
+
+# # np.savetxt('data/baseline_x.csv', x_gamma_values, delimiter=',') 
+# np.savetxt('data/int_y_gamma_values_1_2.csv', int_y_gamma_values_1_2, delimiter=',') 
+# np.savetxt('data/int_y_gamma_values_2_2.csv', int_y_gamma_values_2_2, delimiter=',') 
+# np.savetxt('data/int_y_gamma_values_3_2.csv', int_y_gamma_values_3_2, delimiter=',') 
+# np.savetxt('data/int_y_gamma_values_5_1.csv', int_y_gamma_values_5_1, delimiter=',') 
+# np.savetxt('data/int_y_gamma_values_9_1.csv', int_y_gamma_values_9_1, delimiter=',') 
+
+print(type(x_gamma_values))
