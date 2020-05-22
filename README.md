@@ -30,12 +30,14 @@ two constructions
 ### erlang is a case of gamma
 two parameters
 - shape (`k` positive **integer**)
-- rate (`λ` positive real number, 'scale' - reciprocal of rate can also be used)
+- rate (`λ` positive real number, 'scale' - reciprocal of rate (`1/λ`) can also be used)
 
 **in relation to gamma** it's the gamma distribution with the shape parameter as an integer
 
 the sum of `k` independent exponentially distributed random variables with mean `θ`
 thought of as probability distribution of waiting time until `k-th` arrival.
+
+in relation to chi-squared, it's a chi-squared distribution with 2k degrees of freedom, when `scale=2` ~ generalized chi-squared distribution
 
 <img src="./imgs/erlang_distribution_9_1.png" height="300px" width="400px">
 
