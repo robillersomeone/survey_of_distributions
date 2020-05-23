@@ -39,6 +39,8 @@ thought of as probability distribution of waiting time until `k-th` arrival.
 
 in relation to chi-squared, it's a chi-squared distribution with 2k degrees of freedom, when `scale=2` ~ generalized chi-squared distribution
 
+the scale parameterization is implemented in `distributions.py` 
+
 <img src="./imgs/erlang_distribution_9_1.png" height="300px" width="400px">
 
 ### exponential distribution (Pearson type III)
@@ -93,6 +95,8 @@ two parameters
 used to model ratio of sample variances, for Analysis Of Variance (ANOVA) and regression
 
 f-distribution is also a specific parameterization of the beta prime distribution (inverted beta distribution)
+
+used in f-test in hypothesis testing. null hypothesis ~ two independent normal variances are equal.
 
 ### normal distribution
 two parameters
