@@ -59,7 +59,7 @@ def beta_distribution(x, alpha, beta):
 # built directly from the gammma distribution
 def erlang_distribution(x, k, theta):
     # might have to account for 'scale' vs 'rate' parameterization
-    # for right now, rate parameter is used
+    # for right now, scale parameter is used
     '''two parameters -  shape k, scale theta
     where k is an integer
     x value is a random variable to pass in'''
