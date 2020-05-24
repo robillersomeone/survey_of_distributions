@@ -10,31 +10,68 @@ import matplotlib.pyplot as plt
 
 # gamma function
 def gamma_function(k):
-    # only works fot integers
+    ''' for integer random variables
+    params
+    ------
+    k : int
+        random variable
+    returns
+    -------
+    gamma(k) : int
+    '''
     return math.factorial((k-1))
 
 # using quad function for real numbers
 def intergrandt(t, k):
     return np.power(t, (k-1)) * np.exp(-t)
-    # return (t **(k-1)) * np.exp(-t)
+    
 def integral_gamma_function(k):
     return quad(intergrandt, 0, np.inf, args=(k))[0]
 
 # pdf of gamma distribution
 def gamma_distribution(x, k, theta):
-    '''two parameters -  shape k, scale theta
-    x value is a random variable to pass in
+    '''two parameters -  shape k, scale theta, 
+        x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    k : int (positive)
+        shape paramter in gamma distribution
+    theta : int
+        scale parameter in gamma distribution
 
-    will add case if rate parameter beta is used'''
+    returns
+    -------
+    value in gamma distr for random variable : float
+    notes 
+    -----
+    will add case if rate parameter beta is used
+    '''
     num = (x ** (k-1)) * (math.e ** (-x/theta))
     dem = gamma_function(k) * (theta**k)
     return num / dem
 
 def int_gamma_distribution(x, k, theta):
-    '''two parameters -  shape k, scale theta
+    '''two parameters -  shape k, scale theta,
     x value is a random variable to pass in
+    uses integer verion of gamma function
+    params
+    ------
+    x : float
+        random variable
+    k : float (positive)
+        shape parameter in gamma distribution
+    theta : float
+        scale parameter in gamma distribution
 
-    will add case if rate parameter beta is used'''
+    returns
+    -------
+    value in gamma distr for random variable : float
+    notes 
+    -----
+    will add case if rate parameter beta is used
+    '''
     num = (x ** (k-1)) * (math.e ** (-x/theta))
     dem = integral_gamma_function(k) * (theta**k)
     return num / dem
@@ -48,9 +85,21 @@ def beta_function(x, y):
     return num / dem
 
 def beta_distribution(x, alpha, beta):
-    '''two parameters -  shape alpha, shape beta
+    '''two parameters -  shape alpha, shape beta,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    alpha : float (positive)
+        shape paramter in  beta distribution
+    beta : float
+        scale parameter in beta distribution
 
-    x value is a random variable to pass in'''
+    returns
+    -------
+    value in beta distr for random variable : float
+    '''
     num = (x**(alpha -1)) * ((1-x)**(beta - 1))
     dem = beta_function(alpha, beta)
     return num / dem
@@ -60,27 +109,70 @@ def beta_distribution(x, alpha, beta):
 def erlang_distribution(x, k, theta):
     # might have to account for 'scale' vs 'rate' parameterization
     # for right now, scale parameter is used
-    '''two parameters -  shape k, scale theta
-    where k is an integer
-    x value is a random variable to pass in'''
+    '''two parameters -  shape k, scale mu,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    k : int (positive)
+        shape paramter in gamma distribution
+    mu : float
+        scale parameter in gamma distribution
+
+    returns
+    -------
+    value in erlang distr for random variable : float
+    '''
     if isinstance(k, int):
-        return gamma_distribution(x, k, theta)
+        return gamma_distribution(x, k, mu)
     else:
         return 'shape parameter is not an integer'
 
 def exponential_distribution(x, lambda_, k=1):
-    '''one parameter - rate lambda
+    '''one parameter - rate (lambda)
     the lambda is converted to scale theta for the gamma_distribution function
     rate is a more common parameterization of the exp
     k (the shape param for gamma is set to one as a default)
-    x value is a random variable to pass in'''
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    lambda_ : int (positive)
+        rate paramter in exponential distribution
+        this function inverts lambda (the rate for expo) 
+        to theta (the scale for gamma)
+    k : 1 (int)
+        known as shape parameter in gamma distribution,
+        it is always =1 for the exponential distribution
+
+    returns
+    -------
+    value in exponential distr for random variable : float
+    '''
     theta = 1 / lambda_
     return gamma_distribution(x, k, theta)
 
-def chi_squared_distribution(x, k, theta=2):
-    '''one parameter -  shape k (known as degrees of freedom)
-    x value is a random variable to pass in'''
-    return gamma_distribution(x, (k/2), theta)
+def chi_squared_distribution(x, v, theta=2):
+    '''one parameter -  shape v (known as degrees of freedom),
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    v : int (positive)
+        shape paramter in chi-squared distribution
+        'degrees of freedom' in chi-squared
+    theta : 2 (int)
+        known as shape parameter in gamma distribution,
+        it is always =1 for the exponential distribution
+
+    returns
+    -------
+    value in exponential distr for random variable : float
+    '''
+    return gamma_distribution(x, (v/2), theta)
 
 def f_distribution(x, degree_1, degree_2, theta=2):
     '''two parameters -  degrees of freedoms degree_1, degree_2
