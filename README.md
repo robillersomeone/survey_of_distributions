@@ -1,8 +1,10 @@
 # Survey of Distributions
 
-Looking at relationships between distributions through code
+looking at relationships between distributions through code.
 
-the code for the webiste can be found [here](https://github.com/robillersomeone/robillersomeone.github.io)
+the code for the webiste can be found [here](https://github.com/robillersomeone/robillersomeone.github.io).
+
+typos are normally distributed, so if you see one please let me know.
 
 ## Continuous Distributions
 the starting point is the gamma in theory and code in `distributions.py`, due to the point of reference the gamma serves for other distributions.
