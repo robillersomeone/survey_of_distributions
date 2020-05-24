@@ -125,11 +125,6 @@ def normal_distribution(x, k, theta):
     updated_theta = ((1/k)**(1/2)) * theta
     return gamma_distribution(updated_x, k, updated_theta)
 
-# for now the normal distribution is approximated using the central limit theorem
-
-x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
-# y_gamma_values_int = gamma_distribution_scipy(x_gamma_values_getting_normal, 25, 1/25)
-
 
 # sampling for the t-distribution
 
@@ -152,48 +147,5 @@ def t_distribution(t, nu):
 #     X_2 = gamma_distribution(x, k_2, theta_2)
 #     return X_1 / (X_1 + X_2)
 
-# need to generate numbers to pass into the beta
-
-# vec_integral_gamma_function = np.vectorize(integral_gamma_function)
-# print(gamma_function(4))
-# print(integral_gamma_function(2))
 
 
-# check the gamma
-# print(gamma_distribution(1.4, 3, 1))
-
-# get values (0,20) to plot
-x_gamma_values = np.arange(0, 20, .05)[1:]
-y_gamma_values = gamma_distribution(x_gamma_values, 2, 2)
-int_y_gamma_values_1_2 = int_gamma_distribution(x_gamma_values, 1, 2)
-int_y_gamma_values_2_2 = int_gamma_distribution(x_gamma_values, 2, 2)
-int_y_gamma_values_3_2 = int_gamma_distribution(x_gamma_values, 3, 2)
-int_y_gamma_values_5_1 = int_gamma_distribution(x_gamma_values, 5, 1)
-int_y_gamma_values_9_1 = int_gamma_distribution(x_gamma_values, 9, 1)
-
-# if y_gamma_values.all() == int_y_gamma_values.all():
-#     print('cool')
-
-# this is the support for beta
-x_beta_values = np.arange(0, 1, .01)[1:]
-# print(x_beta_values)
-y_beta_values = beta_distribution(x_beta_values, 2, 5)
-
-
-y_erlang_values = erlang_distribution(x_gamma_values, 9, 1)
-
-y_exponential_values = exponential_distribution(x_gamma_values, 1)
-# print(y_exponential_values)
-
-# just takes x_gamma_values, chi-squared and gamma have the same support
-y_chi_squared_values = chi_squared_distribution(x_gamma_values, 6)
-
-
-# # np.savetxt('data/baseline_x.csv', x_gamma_values, delimiter=',') 
-# np.savetxt('data/int_y_gamma_values_1_2.csv', int_y_gamma_values_1_2, delimiter=',') 
-# np.savetxt('data/int_y_gamma_values_2_2.csv', int_y_gamma_values_2_2, delimiter=',') 
-# np.savetxt('data/int_y_gamma_values_3_2.csv', int_y_gamma_values_3_2, delimiter=',') 
-# np.savetxt('data/int_y_gamma_values_5_1.csv', int_y_gamma_values_5_1, delimiter=',') 
-# np.savetxt('data/int_y_gamma_values_9_1.csv', int_y_gamma_values_9_1, delimiter=',') 
-
-print(type(x_gamma_values))
