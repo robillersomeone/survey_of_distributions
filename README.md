@@ -142,15 +142,21 @@ two parameters
 - categories (`k`, where `k` is a integer ≥ 2)
 - concentration (`𝛼`, where `𝛼 > 0`)
 
+domain ~ thought of as a set of probability distrubtions
 
 **in relation to gamma** the gamma distribution can generate random vectors that form a dirichlet distribution
+- `k` independently distributed gamma distributions, each divided by `V` (the sum of the `k` distributions)
+
 
 multivariate generalization of beta distribution
 can be thought of as 'a distribution over distributions'
   - sampling from a dirichlet results in a distribution
 
+symmetric dirichlet distributions - where all parameters are equal.
 
-
+concentration parameter ~ how concentrated the proabability mass of from the distribution is likely to be
+  - with value less than 1 the mass is concentrated in a few components.
+  - value greater than 1 the mass is dispersed ~ equal in components.
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
