@@ -26,6 +26,7 @@ two constructions
 - using exponentials and the gamma function for positive integers:
 `Γ(k) = (k − 1)!`
 - using the improper integral from `[0,∞)` for complex numbers
+    - this is used to build the distributions that follow
 
 <img src="./imgs/gamma_distributions.png" height="300px" width="400px">
 
@@ -33,7 +34,6 @@ two constructions
 two parameters
 - shape (`k` positive **integer**)
 - rate (`λ` positive real number, 'scale' - reciprocal of rate (`1/λ`) can also be used)
-  - this is used to build the distributions that follow
 
 **in relation to gamma** it's the gamma distribution with the shape parameter as an integer
 
