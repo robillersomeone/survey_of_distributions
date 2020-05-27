@@ -9,6 +9,8 @@ typos are normally distributed, so if you see one please let me know.
 ## Continuous Distributions
 the starting point is the gamma in theory and code in `distributions.py`, due to the point of reference the gamma serves for other distributions.
 
+the graphing code can be found in the viz directory, all graphs are of the probability density function for the given distribution over a subset of their support, normally [0, 20)
+
 ### normal distribution
 two parameters
 - mean (`μ` location parameter)
