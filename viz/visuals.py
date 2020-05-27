@@ -1,4 +1,7 @@
-import distributions as ds
+import os, sys
+sys.path.append(os.path.abspath('../.'))
+
+import make_data as ds
 import matplotlib.pyplot as plt
 
 def plotting(title, x_values, y_values, color = 'blue', legend = None):
@@ -37,34 +40,28 @@ chi_x_values, chi_y_values = ds.x_gamma_values, ds.y_chi_squared_values
 # normal
 
 normal_title = 'approximated normal distribution \n k=25, θ=1/25'
-# normal_x_values, normal_y_values = ds.x_gamma_values_getting_normal, ds.y_gamma_values_int
+normal_x_values, normal_y_values = ds.x_gamma_values_getting_normal, ds.y_gamma_values_int
 # # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
 
 # f
 
 f_title = 'f distribution \n k=??, θ=1?'
-f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
+# f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
 # # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
 
-plotting(erlang_title, erlang_x_values, erlang_y_values, erlang_color)
+# plotting(erlang_title, erlang_x_values, erlang_y_values, erlang_color)
 # plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.pnsaf', format="png")
 
 
 # gamma
 
-# ds.int_y_gamma_values_1_2
-# ds.int_y_gamma_values_2_2
-# ds.int_y_gamma_values_3_2
-# ds.int_y_gamma_values_5_1
-# ds.int_y_gamma_values_9_1
-
-# plt.title('gamma distributions')
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
-# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
-# plt.legend(['alpha=1 β=2', 'alpha=2 β=2', 'alpha=3 β=2', 'alpha=5 β=1', 'alpha=9 β=1'], loc='upper right')
-# plt.savefig('imgs/gamma_distributions.png', format="png")
-# plt.show()
+plt.title('gamma distributions')
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
+plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
+plt.legend(['alpha=1 θ=2', 'alpha=2 θ=2', 'alpha=3 θ=2', 'alpha=5 θ=1', 'alpha=9 θ=1'], loc='upper right')
+# plt.savefig('../imgs/gamma_distributions.png', format="png")
+plt.show()
 # plt.savefig('imgs/gamma_distributions.png', format="png")
