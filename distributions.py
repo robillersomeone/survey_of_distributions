@@ -1,7 +1,6 @@
 import math
 import numpy as np
 from scipy.integrate import quad
-import matplotlib.pyplot as plt
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, normal (apprx)
