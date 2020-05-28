@@ -1,4 +1,5 @@
 import numpy as np
+# import survey_of_distributions.distributions as ds
 import distributions as ds
 np.set_printoptions(suppress=True)
 
@@ -51,7 +52,12 @@ y_exponential_values = ds.exponential_distribution(x_gamma_values, 1)
 y_chi_squared_values = ds.chi_squared_distribution(x_gamma_values, 6)
 
 
-
+# support for f 
+x_f_values = np.arange(0, 5, .02)[1:]
+y_f_values_1_1 = ds.f_distribution(x_f_values, 1, 1)
+y_f_values_2_1 = ds.f_distribution(x_f_values, 2, 1)
+y_f_values_5_2 = ds.f_distribution(x_f_values, 5, 2)
+y_f_values_10_1 = ds.f_distribution(x_f_values, 10, 1)
 
 
 # # for now the normal distribution is approximated using the central limit theorem

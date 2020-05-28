@@ -124,7 +124,7 @@ def erlang_distribution(x, k, theta):
     value in erlang distr for random variable : float
     '''
     if isinstance(k, int):
-        return gamma_distribution(x, k, mu)
+        return gamma_distribution(x, k, theta)
     else:
         return 'shape parameter is not an integer'
 
@@ -190,10 +190,8 @@ def f_distribution(x, degree_1, degree_2):
     returns
     -------
     value in f distr for random variable : float'''
-    num = integral_gamma_function((degree_1 + degree_2)/2) * (degree_1 ** (degree_1/2)) \
-        * (degree_2**(degree_2/2)) * (x **((degree_1/2)-1))
-    dem = integral_gamma_function(degree_1/2) * integral_gamma_function(degree_2/2) \ 
-        * ((degree_2 + (degree_1*x))**((degree_1 + degree_2)/2))
+    num = integral_gamma_function((degree_1 + degree_2)/2) * (degree_1 ** (degree_1/2)) * (degree_2**(degree_2/2)) * (x **((degree_1/2)-1))
+    dem = integral_gamma_function(degree_1/2) * integral_gamma_function(degree_2/2)  * ((degree_2 + (degree_1*x))**((degree_1 + degree_2)/2))
     return num / dem
 
 

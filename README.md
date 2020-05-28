@@ -103,6 +103,8 @@ f-distribution is also a specific parameterization of the beta prime distributio
 
 used in f-test in hypothesis testing. null hypothesis ~ two independent normal variances are equal.
 
+<img src="./imgs/f_distributions.png" height="300px" width="400px">
+
 ### normal distribution
 two parameters
 - location (`μ` mean parameter)

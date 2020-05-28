@@ -3,6 +3,8 @@ sys.path.append(os.path.abspath('../.'))
 
 import make_data as ds
 import matplotlib.pyplot as plt
+# to run form main dir for now
+# import survey_of_distributions.make_data as ds
 
 def plotting(title, x_values, y_values, color = 'blue', legend = None):
     plt.title(title)
@@ -46,8 +48,22 @@ normal_x_values, normal_y_values = ds.x_gamma_values_getting_normal, ds.y_gamma_
 # f
 
 f_title = 'f distribution \n k=??, θ=1?'
-f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
+f_x_values, f_y_values = ds.x_gamma_values, ds.y_f_values_5_2
+f_color = 'red'
 # # plt.savefig('imgs/f_distribution_.png', format="png")
+
+# plotting(f_title, f_x_values, f_y_values, f_color)
+
+plt.title('f distributions')
+plt.plot(ds.x_f_values, ds.y_f_values_1_1)
+plt.plot(ds.x_f_values, ds.y_f_values_2_1)
+plt.plot(ds.x_f_values, ds.y_f_values_5_2)
+plt.plot(ds.x_f_values, ds.y_f_values_10_1)
+plt.legend(['d1=1 d2=1', 'd1=2 d2=1', 'd1=5 d2=2', 'd1=10 d2=1'], loc='upper right')
+
+
+
+# plot for exp, erlang, chi, beta
 
 # plotting(erlang_title, erlang_x_values, erlang_y_values, erlang_color)
 # plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.pnsaf', format="png")
@@ -61,7 +77,8 @@ f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
 # plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
 # plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
 # plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
-plt.legend(['alpha=1 θ=2', 'alpha=2 θ=2', 'alpha=3 θ=2', 'alpha=5 θ=1', 'alpha=9 θ=1'], loc='upper right')
+# plt.legend(['alpha=1 θ=2', 'alpha=2 θ=2', 'alpha=3 θ=2', 'alpha=5 θ=1', 'alpha=9 θ=1'], loc='upper right')
 # plt.savefig('../imgs/gamma_distributions.png', format="png")
 plt.show()
 # plt.savefig('imgs/gamma_distributions.png', format="png")
+# plt.savefig('../imgs/f_distributions.png', format="png")
