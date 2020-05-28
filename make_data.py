@@ -40,14 +40,12 @@ y3 = int_y_gamma_values_3_2
 
 # # this is the support for beta
 x_beta_values = np.arange(0, 1, .01)[1:]
-# # print(x_beta_values)
 y_beta_values = ds.beta_distribution(x_beta_values, 2, 5)
 
-
+# these three are special cases of the gamma distribution
 y_erlang_values = ds.erlang_distribution(x_gamma_values, 9, 1)
 
 y_exponential_values = ds.exponential_distribution(x_gamma_values, 1)
-# # print(y_exponential_values)
 
 # # just takes x_gamma_values, chi-squared and gamma have the same support
 y_chi_squared_values = ds.chi_squared_distribution(x_gamma_values, 6)
@@ -59,7 +57,7 @@ y_chi_squared_values = ds.chi_squared_distribution(x_gamma_values, 6)
 # # for now the normal distribution is approximated using the central limit theorem
 
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
-y_gamma_values_int = ds.int_gamma_distribution(x_gamma_values_getting_normal, 25, 1/25)
+y_gamma_values_getting_normal = ds.int_gamma_distribution(x_gamma_values_getting_normal, 25, 1/25)
 
 
 

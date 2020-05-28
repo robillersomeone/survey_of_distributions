@@ -35,19 +35,19 @@ exp_x_values, exp_y_values = ds.x_gamma_values, ds.y_exponential_values
 
 chi_title = 'chi-squared distribution \n k=3'
 chi_x_values, chi_y_values = ds.x_gamma_values, ds.y_chi_squared_values
-# plt.savefig('imgs/approximated normal distribution_25.png', format="png")
+# plt.savefig('imgs/chi_squared_distribution_3.png', format="png")
 
 # normal
 
 normal_title = 'approximated normal distribution \n k=25, θ=1/25'
-normal_x_values, normal_y_values = ds.x_gamma_values_getting_normal, ds.y_gamma_values_int
+normal_x_values, normal_y_values = ds.x_gamma_values_getting_normal, ds.y_gamma_values_getting_normal
 # # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
 
 # f
 
 f_title = 'f distribution \n k=??, θ=1?'
-# f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
-# # plt.savefig('imgs/approximated normal distribution_25.png', format="png")
+f_x_values, f_y_values = ds.x_f_values, ds.y_f_values
+# # plt.savefig('imgs/f_distribution_.png', format="png")
 
 # plotting(erlang_title, erlang_x_values, erlang_y_values, erlang_color)
 # plt.savefig('imgs/erlang_distribution_9_1.pngerlang_distribution_9_1.pnsaf', format="png")
@@ -55,12 +55,12 @@ f_title = 'f distribution \n k=??, θ=1?'
 
 # gamma
 
-plt.title('gamma distributions')
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
-plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
+# plt.title('gamma distributions')
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_1_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_2_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_3_2)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_5_1)
+# plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
 plt.legend(['alpha=1 θ=2', 'alpha=2 θ=2', 'alpha=3 θ=2', 'alpha=5 θ=1', 'alpha=9 θ=1'], loc='upper right')
 # plt.savefig('../imgs/gamma_distributions.png', format="png")
 plt.show()

@@ -1,6 +1,6 @@
 import os, sys
 sys.path.append(os.path.abspath('../.'))
-import distributions as ds
+import make_data as ds
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button, RadioButtons
@@ -11,13 +11,11 @@ plt.subplots_adjust(left=0.25, bottom=0.25)
 x_gamma_values= np.arange(0, 20, .05)[1:]
 # start value for shape slider
 k0 =2
-# start value for slider frequency
-# f0 = 3
+# start value for scale slider
 theta0 = 2
-# how big the amp slider goes to?
-delta_f = 5.0
 
 # initial pdf
+# update for any distri
 distr = ds.int_gamma_distribution(x_gamma_values, k0, theta0)
 
 # plot the pdf
@@ -36,7 +34,6 @@ s_shape = Slider(axshape, 'shape', 0.1, 10.0, valinit=k0, dragging=True)
 # param 2 slider bar
 s_scale = Slider(axscale, 'scale', 0.1, 10.0, valinit=theta0, dragging=True)
 
-
 def update(val):
     # update shape
     shape = s_shape.val
@@ -54,7 +51,6 @@ s_scale.on_changed(update)
 resetax = plt.axes([0.8, 0.025, 0.1, 0.04])
 button = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')
 
-
 def reset(event):
     s_shape.reset()
     s_scale.reset()
@@ -62,7 +58,6 @@ button.on_clicked(reset)
 
 rax = plt.axes([0.025, 0.5, 0.15, 0.15], facecolor=axcolor)
 radio = RadioButtons(rax, ('red', 'blue', 'green'), active=0)
-
 
 def colorfunc(label):
     l.set_color(label)

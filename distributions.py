@@ -173,39 +173,33 @@ def chi_squared_distribution(x, v, theta=2):
     '''
     return gamma_distribution(x, (v/2), theta)
 
-def f_distribution(x, degree_1, degree_2, theta=2):
+def f_distribution(x, degree_1, degree_2):
     '''two parameters -  degrees of freedoms degree_1, degree_2
     for the two chi_squared distributions
-    x value is a random variable to pass in'''
-    # x_1 = np.random.choice(x_gamma_values, 100)
-    # x_2 = np.random.choice(x_gamma_values, 100)
-    # num = int_gamma_distribution(x_1, (degree_1/2), theta) / degree_1
-    # dem = int_gamma_distribution(x_2, (degree_2/2), theta) / degree_2
-    num = int_gamma_distribution(x, (degree_1/2), theta) / degree_1
-    dem = int_gamma_distribution(x, (degree_2/2), theta) / degree_2
-    return num/dem
-x_f_values = np.arange(0, 5, .05)[1:]
-y_f_values = f_distribution(x_f_values, 20,2)
-# right now, the num and dem are not independent
-# instead, randomly sample from the x_gamma_values for each distribution
-# x_1 = np.random.choice(x_gamma_values, 100)
-# x_2 = np.random.choice(x_gamma_values, 100)
-# x_f_distr = np.append(x_1, x_2)
-# x_f_distr = x_1/x_2
-# print(x_1)
-# print(x_2)
-# print(np.append(x_1, x_2))
-# y_f_values = f_distribution(x_1, x_2, 10,1)
-# print(len(x_1/x_2))
-# print(len(y_f_values))
-# y_f_values = f_distribution(x_gamma_values, 10,1)
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    degree_1 : int (positive)
+        shape paramter in chi-squared distribution
+        'degrees of freedom' in chi-squared
+    degree_2 : int (positive)
+        shape paramter in chi-squared distribution
+        'degrees of freedom' in chi-squared
+    returns
+    -------
+    value in f distr for random variable : float'''
+    num = integral_gamma_function((degree_1 + degree_2)/2) * (degree_1 ** (degree_1/2)) \
+        * (degree_2**(degree_2/2)) * (x **((degree_1/2)-1))
+    dem = integral_gamma_function(degree_1/2) * integral_gamma_function(degree_2/2) \ 
+        * ((degree_2 + (degree_1*x))**((degree_1 + degree_2)/2))
+    return num / dem
 
-# print(np.random.choice(x_gamma_values, 10))
-# print(len(x_gamma_values))
+
 # getting to normal
 # at first, increase k as a parameter
 # may implement a limit
-
 def normal_distribution(x, k, theta):
     '''two parameters -  shape k, scale theta
     scale theta refers to a theta = standard deviation of the normal
@@ -228,7 +222,7 @@ def t_distribution(t, nu):
     return num / dem
 
 
-# revisit
+# revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
 #     '''four parameters -  shape k, scale theta for each gamma
 #     value x a random variable to pass in
@@ -238,5 +232,36 @@ def t_distribution(t, nu):
 #     X_2 = gamma_distribution(x, k_2, theta_2)
 #     return X_1 / (X_1 + X_2)
 
+# revisit f
+# dividing two chi-squares is tricky
+# watch out for independence... 
+# f- distr is 2 random samples from 2 different populations
+# def f_distribution(x, degree_1, degree_2, theta=2):
+    # '''two parameters -  degrees of freedoms degree_1, degree_2
+    # for the two chi_squared distributions
+    # x value is a random variable to pass in'''
+    # x_1 = np.random.choice(x_gamma_values, 100)
+    # x_2 = np.random.choice(x_gamma_values, 100)
+    # num = int_gamma_distribution(x_1, (degree_1/2), theta) / degree_1
+    # dem = int_gamma_distribution(x_2, (degree_2/2), theta) / degree_2
+#     num = int_gamma_distribution(x, (degree_1/2), theta) / degree_1
+#     dem = int_gamma_distribution(x, (degree_2/2), theta) / degree_2
+#     return num/dem
+# x_f_values = np.arange(0, 5, .05)[1:]
+# y_f_values = f_distribution(x_f_values, 20,2)
+# right now, the num and dem are not independent
+# instead, randomly sample from the x_gamma_values for each distribution
+# x_1 = np.random.choice(x_gamma_values, 100)
+# x_2 = np.random.choice(x_gamma_values, 100)
+# x_f_distr = np.append(x_1, x_2)
+# x_f_distr = x_1/x_2
+# print(x_1)
+# print(x_2)
+# print(np.append(x_1, x_2))
+# y_f_values = f_distribution(x_1, x_2, 10,1)
+# print(len(x_1/x_2))
+# print(len(y_f_values))
+# y_f_values = f_distribution(x_gamma_values, 10,1)
 
-
+# print(np.random.choice(x_gamma_values, 10))
+# print(len(x_gamma_values))
