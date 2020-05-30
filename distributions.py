@@ -3,8 +3,8 @@ import numpy as np
 from scipy.integrate import quad
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
-# distribitions so far - gamma, beta, erlang, exponential, chi-squared, normal (apprx)
-# to fix - f, t
+# distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx)
+# to fix - t
 # to add - cauchy, dirichlet
 
 # gamma function
@@ -210,7 +210,7 @@ def normal_distribution(x, k, theta):
 
 
 # sampling for the t-distribution
-
+# pdf uses gamma function... add integral version
 def t_distribution(t, nu):
     '''one parameter -  shape nu (known as degrees of freedom)
     t value is a random variable to pass in

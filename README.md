@@ -65,21 +65,6 @@ has a memoryless property - past is not helpful in predicting the future.
 
 <img src="./imgs/exponential_distribution_1.png" height="300px" width="400px">
 
-### beta distribution (Pearson type I)
-two parameters
-- shape (`𝛼`)
-- shape (`β`)
-
-'distribution over distributions', defining binomial coefficient for continuous variables
-
-
-**in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another.
- a `gamma(1) / (gamma(1) + gamma(2))`
-
- the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
-
- <img src="./imgs/beta_distribution_2_5.png" height="300px" width="400px">
-
 ### chi-squared distribution (Pearson type III)
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
@@ -89,6 +74,20 @@ one parameter
 used in hypothesis testing, as goodness of fit and independence.
 
 <img src="./imgs/chi_squared_distribution_3.png" height="300px" width="400px">
+
+### beta distribution (Pearson type I)
+two parameters
+- shape (`𝛼`)
+- shape (`β`)
+
+'distribution over distributions', defining binomial coefficient for continuous variables
+
+
+**in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another, which takes the form `gamma(1) / (gamma(1) + gamma(2))`
+
+ the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
+
+ <img src="./imgs/beta_distribution_2_5.png" height="300px" width="400px">
 
 ### f-distribution (Pearson type VI)
 two parameters
@@ -102,6 +101,8 @@ used to model ratio of sample variances, for Analysis Of Variance (ANOVA) and re
 f-distribution is also a specific parameterization of the beta prime distribution (inverted beta distribution)
 
 used in f-test in hypothesis testing. null hypothesis ~ two independent normal variances are equal.
+
+in the code, it's built with the gamma function tranforming the sums of the degrees of freedom as well as the individual degrees of freedom - all divided by 2, the f-distribution can be thought of as two the chi-squared parameterizations of the gamma distribution.
 
 <img src="./imgs/f_distributions.png" height="300px" width="400px">
 

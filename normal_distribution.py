@@ -28,3 +28,6 @@ standard_normal = np.random.normal(mu, sigma, 1000)
 # start with degree of freedom equal to one
 
 chi_from_normal = [x**2 for x in standard_normal]
+
+# t distribution
+# from sampling a normal distribution
