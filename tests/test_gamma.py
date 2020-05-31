@@ -1,8 +1,8 @@
 import os, sys
 sys.path.append(os.path.abspath('../.'))
 
-import numpy as np
 import pytest
+import numpy as np
 import survey_of_distributions.distributions as ds
 
 # x values for support in distributions
