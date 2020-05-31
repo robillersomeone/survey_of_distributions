@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 # start with a distribution, in this case a gamma distribution with the shape and scale both equal to 2
 gamma_2_2 = ds.int_y_gamma_values_2_2
 
+# sample from the distribution
 sampled_data = [sum(np.random.choice(gamma_2_2, 70))/70 for _ in range(2500)]
 
 print(sampled_data[0], sampled_data[1], len(sampled_data))

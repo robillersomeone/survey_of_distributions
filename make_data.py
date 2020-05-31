@@ -45,23 +45,17 @@ int_y_gamma_values_3_2 = ds.int_gamma_distribution(x_gamma_values, 3, 2)
 int_y_gamma_values_5_1 = ds.int_gamma_distribution(x_gamma_values, 5, 1)
 int_y_gamma_values_9_1 = ds.int_gamma_distribution(x_gamma_values, 9, 1)
 
-
-# # need to generate numbers to pass into the beta
-
-# # this is the support for beta
-x_beta_values = np.arange(0, 1, .01)[1:]
-y_beta_values = ds.beta_distribution(x_beta_values, 2, 5)
-
 # these three are special cases of the gamma distribution
 y_erlang_values = ds.erlang_distribution(x_gamma_values, 9, 1)
 
 y_exponential_values = ds.exponential_distribution(x_gamma_values, 1)
 
-# # just takes x_gamma_values, chi-squared and gamma have the same support
-x = np.arange(0, 20, .05)[1:]
 y_chi_6 = ds.chi_squared_distribution(x_gamma_values, 6)
 y_chi_8 = ds.chi_squared_distribution(x_gamma_values,8)
  
+# this is the support for beta
+x_beta_values = np.arange(0, 1, .01)[1:]
+y_beta_values = ds.beta_distribution(x_beta_values, 2, 5)
 
 # support for f 
 x_f_values = np.arange(0, 5, .02)[1:]
@@ -70,25 +64,8 @@ y_f_values_2_1 = ds.f_distribution(x_f_values, 2, 1)
 y_f_values_5_2 = ds.f_distribution(x_f_values, 5, 2)
 y_f_values_10_1 = ds.f_distribution(x_f_values, 10, 1)
 
-
-# # for now the normal distribution is approximated using the central limit theorem
+# for now the normal distribution is approximated using the central limit theorem
 
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
 y_gamma_values_getting_normal = ds.int_gamma_distribution(x_gamma_values_getting_normal, 25, 1/25)
 
-
-
-
-
-# # # np.savetxt('data/baseline_x.csv', x_gamma_values, delimiter=',') 
-# # np.savetxt('data/int_y_gamma_values_1_2.csv', int_y_gamma_values_1_2, delimiter=',') 
-# # np.savetxt('data/int_y_gamma_values_2_2.csv', int_y_gamma_values_2_2, delimiter=',') 
-# # np.savetxt('data/int_y_gamma_values_3_2.csv', int_y_gamma_values_3_2, delimiter=',') 
-# # np.savetxt('data/int_y_gamma_values_5_1.csv', int_y_gamma_values_5_1, delimiter=',') 
-# # np.savetxt('data/int_y_gamma_values_9_1.csv', int_y_gamma_values_9_1, delimiter=',') 
-
-# # saving in column wise format
-# # test_x = np.column_stack((x_gamma_values, int_y_gamma_values_1_2), int_y_gamma_values_2_2)
-# # test_x =  np.stack((x_gamma_values, int_y_gamma_values_1_2), int_y_gamma_values_2_2),axis=1)
-# # np.savetxt('data/test.csv', test_x, delimiter=',') 
-# # print(type(x_gamma_values))
