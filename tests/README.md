@@ -1,7 +1,5 @@
 # tests
 
-## TODO
-
 implement tests for distributions built multiple ways
 
 - gamma
@@ -11,6 +9,9 @@ implement tests for distributions built multiple ways
     - distribution  
         - factorial
         - intergral
+
+
+## TODO
 
 - chi squared 
     - from gamma
