@@ -1,8 +1,8 @@
 # Survey of Distributions
 
-looking at relationships between distributions through code.
+looking at relationships between distributions.
 
-the code for the webiste can be found [here](https://github.com/robillersomeone/robillersomeone.github.io).
+the code for the site can be found [here](https://github.com/robillersomeone/robillersomeone.github.io).
 
 typos are normally distributed, so if you see one please let me know.
 
