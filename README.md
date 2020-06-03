@@ -185,6 +185,22 @@ under certain parameters the negative binomial converges to the poisson
 ### Pearson distributions
 four continuous distributions
 
+type I ~ generalized beta distribtuion
+
+type II ~ symmetric type I distributions
+
+type III ~ generalized gamma distribution ~ chi-squared
+
+type IV ~ cauchy distribution
+
+type V ~ inverse gamma distribution
+
+type VI ~ f-distribution or a beta prime
+
+type VII ~ t-distribution
+
+
+getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 ### Tweedie distribution
 
 
