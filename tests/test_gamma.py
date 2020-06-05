@@ -13,7 +13,7 @@ def test_gamma_function():
     assert ds.gamma_function(5) == ds.integral_gamma_function(5)
     assert ds.gamma_function(15) == ds.integral_gamma_function(15)
 
-
+# different gamma function implementations
 def test_gamma_distribution():
     assert ds.gamma_distribution(x,1,2).all() == ds.int_gamma_distribution(x,1,2).all()
     assert ds.gamma_distribution(x,2,2).all() == ds.int_gamma_distribution(x,2,2).all()
