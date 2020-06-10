@@ -163,6 +163,13 @@ symmetric dirichlet distributions - where all parameters are equal.
 concentration parameter ~ how concentrated the proabability mass of from the distribution is likely to be
   - with value less than 1 the mass is concentrated in a few components.
   - value greater than 1 the mass is dispersed ~ equal in components.
+  
+  
+
+### pareto distribution
+two parameters
+- scale (`x` > 0)
+- shape (`𝛼` > 0)
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
