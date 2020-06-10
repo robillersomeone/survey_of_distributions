@@ -168,8 +168,14 @@ concentration parameter ~ how concentrated the proabability mass of from the dis
 
 ### pareto distribution
 two parameters
-- scale (`x` > 0)
-- shape (`𝛼` > 0)
+- scale (`x`, positive real number > 0)
+- shape (`𝛼`, positive real number  > 0)
+
+power-law probability distribution.
+
+used all over the place.
+
+**in relation to gamma** the log of a pareto distribution divided by the minimum `x sub m` is an exponential distribution (a specific parameterization of the gamma)
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
@@ -180,12 +186,21 @@ parameters
  - number of failures ('r' where `r > 0`)
  - probability of success (`p`, for each experiment)
 
-
 number of successes in a sequence of independent and identically distributed (iid) **Bernoulli** trials before `r` failures
 
 can view the negative binomial as **poisson** distribution with `λ` being a random variable with a gamma distribution with shape `r` and scale `θ = p/(1-p)`
 
 under certain parameters the negative binomial converges to the poisson
+
+
+### zeta distribution
+parameters
+- rate? (`s`, where `s`> 1)
+
+which is made from the riemann zeta function
+
+support
+- positive integers
 
 ## To add
 
@@ -210,8 +225,9 @@ type VII ~ t-distribution
 getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 ### Tweedie distribution
 
+### yule-simon distribution
 
-
+### lévy distribution
 
 
 ## Sources
