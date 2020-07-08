@@ -177,6 +177,16 @@ used all over the place.
 
 **in relation to gamma** the log of a pareto distribution divided by the minimum `x sub m` is an exponential distribution (a specific parameterization of the gamma)
 
+### Rayleigh distribution
+one paramter
+- scale (`σ`, positive real number > 0)
+
+think of magnitude of uncorrelated, normally distributed components.
+ 
+**in relation to gamma** the sum of squared rayleigh distributions is a gamma distribution with`Γ( N, 2 * σ^2 )`. the rayleigh distribution of `σ=1` is a chi distribution with `ν=2`, also the square of a rayleigh distribution is a chi-squared distribtuion with degrees of freedom `k=2`. finally the square root of an exponential distribution is a rayleigh distribution with `R(1/ (2λ)^1/2)`
+
+
+
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
 
