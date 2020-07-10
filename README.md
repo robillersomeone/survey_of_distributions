@@ -80,14 +80,22 @@ two parameters
 - shape (`𝛼`)
 - shape (`β`)
 
+support `[0,1]`
+
 'distribution over distributions', defining binomial coefficient for continuous variables
 
 
 **in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another, which takes the form `gamma(1) / (gamma(1) + gamma(2))`
 
  the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
+ 
+ the multivariate beta distribution is the dirichlet distribution.
+ 
+ the beta distribution is the conjugate to binomial distribution.
 
  <img src="./imgs/beta_distribution_2_5.png" height="300px" width="400px">
+
+ADD: visual of alpha = beta, both > 1.
 
 ### f-distribution (Pearson type VI)
 two parameters
@@ -215,7 +223,7 @@ support
 ## To add
 
 ### Pearson distributions
-four continuous distributions
+four (or more) continuous distributions
 
 type I ~ generalized beta distribtuion
 
@@ -239,6 +247,8 @@ getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 
 ### lévy distribution
 
+### arcsine distribution
+special case of `Beta(.5, .5)`
 
 ## Sources
 
