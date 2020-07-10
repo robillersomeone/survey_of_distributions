@@ -87,15 +87,22 @@ support `[0,1]`
 
 **in relation to gamma** is a gamma distribution divided by the sum of that gamma distribution with another, which takes the form `gamma(1) / (gamma(1) + gamma(2))`
 
- the beta function is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
+ the beta *function* is the product of two iid gamma functions divided by the sum of the two random variables in a gamma function.
  
  the multivariate beta distribution is the dirichlet distribution.
  
  the beta distribution is the conjugate to binomial distribution.
 
- <img src="./imgs/beta_distribution_2_5.png" height="300px" width="400px">
 
-ADD: visual of alpha = beta, both > 1.
+<img src="./imgs/beta_distributions_alpha_equals_beta.png" height="300px" width="400px">
+
+
+### arcsine distribution
+
+special case of beta distribution where `Beta(.5, .5)`
+
+**in relation to gamma** it's a type of beta distribution, which is a ratio of gamma distributions.
+
 
 ### f-distribution (Pearson type VI)
 two parameters
@@ -247,8 +254,6 @@ getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 
 ### lévy distribution
 
-### arcsine distribution
-special case of `Beta(.5, .5)`
 
 ## Sources
 

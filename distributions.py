@@ -5,7 +5,7 @@ from scipy.integrate import quad
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx)
 # to fix - t
-# to add - cauchy, dirichlet
+# to add - cauchy, dirichlet, pareto, negative binomial, zeta
 
 # gamma function
 def gamma_function(k):
@@ -79,8 +79,8 @@ def int_gamma_distribution(x, k, theta):
 
 # beta_function in terms of the gamma function
 def beta_function(x, y):
-    num = gamma_function(x) * gamma_function(y)
-    dem = gamma_function(x + y)
+    num = integral_gamma_function(x) * integral_gamma_function(y)
+    dem = integral_gamma_function(x + y)
     return num / dem
 
 def beta_distribution(x, alpha, beta):
