@@ -93,15 +93,22 @@ support `[0,1]`
  
  the beta distribution is the conjugate to binomial distribution.
 
+here the beta distribution is symmetric, the alpha and beta parameters are equal positive integers.
 
 <img src="./imgs/beta_distributions_alpha_equals_beta.png" height="300px" width="400px">
 
+here the beta distribution is symmetric, the alpha and beta parameters are equal real numbers less than one. 
+
+<img src="./imgs/beta_distributions_alpha_equals_beta_fractions.png" height="300px" width="400px">
 
 ### arcsine distribution
 
 special case of beta distribution where `Beta(.5, .5)`
 
 **in relation to gamma** it's a type of beta distribution, which is a ratio of gamma distributions.
+
+
+<img src="./imgs/arcsin_distribution.png" height="300px" width="400px">
 
 
 ### f-distribution (Pearson type VI)

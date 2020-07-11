@@ -1,6 +1,6 @@
 import numpy as np
-# import survey_of_distributions.distributions as ds
-import distributions as ds
+import survey_of_distributions.distributions as ds
+# import distributions as ds
 np.set_printoptions(suppress=True)
 
 
@@ -55,7 +55,23 @@ y_chi_8 = ds.chi_squared_distribution(x_gamma_values,8)
  
 # this is the support for beta
 x_beta_values = np.arange(0, 1, .01)[1:]
-y_beta_values = ds.beta_distribution(x_beta_values, 2, 5)
+# where alpha=beta for positive integers
+y_beta_values_1_1 = ds.beta_distribution(x_beta_values, 1, 1)
+y_beta_values_2_2 = ds.beta_distribution(x_beta_values, 2, 2)
+y_beta_values_3_3 = ds.beta_distribution(x_beta_values, 3, 3)
+y_beta_values_4_4 = ds.beta_distribution(x_beta_values, 4, 4)
+y_beta_values_5_5 = ds.beta_distribution(x_beta_values, 5, 5)
+y_beta_values_6_6 = ds.beta_distribution(x_beta_values, 6, 6)
+
+y_beta_values_2_5 = ds.beta_distribution(x_beta_values, 2, 5)
+
+y_beta_values_frac_1_1 = ds.beta_distribution(x_beta_values, .1, .1)
+y_beta_values_frac_1_25 = ds.beta_distribution(x_beta_values, .25, .25)
+y_beta_values_frac_1_5 = ds.beta_distribution(x_beta_values, .5, .5)
+y_beta_values_frac_1_75 = ds.beta_distribution(x_beta_values, .75, .75)
+y_beta_values_frac_1_9 = ds.beta_distribution(x_beta_values, .9, .9)
+
+y_arcsin_values = ds.beta_distribution(x_beta_values, .5, .5)
 
 # support for f 
 x_f_values = np.arange(0, 5, .02)[1:]
@@ -69,3 +85,4 @@ y_f_values_10_1 = ds.f_distribution(x_f_values, 10, 1)
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
 y_gamma_values_getting_normal = ds.int_gamma_distribution(x_gamma_values_getting_normal, 25, 1/25)
 
+#
