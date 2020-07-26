@@ -215,8 +215,8 @@ def t_distribution(t, nu):
     '''one parameter -  shape nu (known as degrees of freedom)
     t value is a random variable to pass in
     from samples of a normally distributed population'''
-    num = gamma_function((nu + 1)/2) * ((1 + ((t**2)/ nu))**(-((nu + 1)/2)))
-    dem = ((nu * math.pi)**(1/2)) * gamma_function(nu/2)
+    num = integral_gamma_function((nu + 1)/2) * ((1 + ((t**2)/ nu))**(-((nu + 1)/2)))
+    dem = ((nu * math.pi)**(1/2)) * integral_gamma_function(nu/2)
     return num / dem
 
 
