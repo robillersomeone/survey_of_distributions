@@ -205,7 +205,7 @@ one paramter
 
 think of magnitude of uncorrelated, normally distributed components.
  
-**in relation to gamma** the sum of squared rayleigh distributions is a gamma distribution with`Γ( N, 2 * σ^2 )`. the rayleigh distribution of `σ=1` is a chi distribution with `ν=2`, also the square of a rayleigh distribution is a chi-squared distribtuion with degrees of freedom `k=2`. finally the square root of an exponential distribution is a rayleigh distribution with `R(1/ (2λ)^1/2)`
+**in relation to gamma** the sum of squared rayleigh distributions is a gamma distribution with`Γ( N, 2 * σ^2 )`. the rayleigh distribution of `σ=1` is a chi distribution with `ν=2`, also the square of a rayleigh distribution is a chi-squared distribution with degrees of freedom `k=2`. finally the square root of an exponential distribution is a rayleigh distribution with `R(1/ (2λ)^1/2)`
 
 
 
