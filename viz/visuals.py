@@ -17,7 +17,7 @@ def plotting(title, x_values, y_values, color = 'blue', legend = None):
 # beta
 
 beta_title = 'beta distribution \n alpha=2, β=5'
-beta_x_values, beta_y_values_2_5 = ds.x_beta_values, ds.y_beta_values_2_5
+beta_x_values, beta_y_values_2_5 = ds.x_beta_values, ds.y_beta_values_4_6
 beta_color='blue'
 # # plt.savefig('imgs/beta_distribution_2_5.png', format="png")
 
@@ -86,9 +86,20 @@ f_color = 'red'
 # plt.plot(ds.x_beta_values, ds.y_beta_values_frac_1_9)
 # plt.legend(['alpha=β=.1','alpha=β=.25','alpha=β=.5','alpha=β=.75','alpha=β=.9'], loc='upper right')
 
+plt.title('beta \n alpha=.4 β=.6')
+plt.plot(ds.x_beta_values, ds.y_beta_values_1_2)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_2_1)
+plt.plot(ds.x_beta_values, ds.y_beta_values_2_3)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_3_2)
+plt.plot(ds.x_beta_values, ds.y_beta_values_1_3)
+plt.plot(ds.x_beta_values, ds.y_beta_values_1_4)
+plt.plot(ds.x_beta_values, ds.y_beta_values_2_4)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_4_6)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_6_4)
+
 # arcsin
-plt.title('arcsin \n alpha=β=.5')
-plt.plot(ds.x_beta_values, ds.y_arcsin_values)
+# plt.title('arcsin \n alpha=β=.5')
+# plt.plot(ds.x_beta_values, ds.y_arcsin_values)
 
 # gamma
 

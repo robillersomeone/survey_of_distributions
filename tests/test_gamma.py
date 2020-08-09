@@ -17,3 +17,13 @@ def test_gamma_function():
 def test_gamma_distribution():
     assert ds.gamma_distribution(x,1,2).all() == ds.int_gamma_distribution(x,1,2).all()
     assert ds.gamma_distribution(x,2,2).all() == ds.int_gamma_distribution(x,2,2).all()
+
+
+# numpy samples
+shape, scale = 2., 2.  
+s = np.random.gamma(shape, scale, 1000)
+
+def test_gamma_numpy():
+    assert ds.int_gamma_distribution(x,2,2) == np.random.gamma(shape, scale, 1000))
+
+# scipy pdf
