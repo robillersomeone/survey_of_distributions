@@ -20,10 +20,9 @@ def test_gamma_distribution():
 
 
 # numpy samples
+# random samples from the numpy implementation
 shape, scale = 2., 2.  
-s = np.random.gamma(shape, scale, 1000)
-
 def test_gamma_numpy():
-    assert ds.int_gamma_distribution(x,2,2) == np.random.gamma(shape, scale, 1000))
+    assert ds.int_gamma_distribution(x,2,2) == np.random.gamma(shape, scale, 100)
 
 # scipy pdf

@@ -5,7 +5,7 @@ from scipy.integrate import quad
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx)
 # to fix - t
-# to add - cauchy, dirichlet, pareto, negative binomial, zeta
+# to add - laplace, cauchy, dirichlet, pareto, negative binomial, zeta
 
 # gamma function
 def gamma_function(k):
@@ -201,8 +201,8 @@ def f_distribution(x, degree_1, degree_2):
 def normal_distribution(x, k, theta):
     '''two parameters -  shape k, scale theta
     scale theta refers to a theta = standard deviation of the normal
-    updated_x and updated_theta are to keep the distribution stationary (updated_x, for stationary) and
-    keep the standard deviation (updated_theta, scale param)
+    updated_x - keep the distribution stationary (updated_x, for stationary) 
+    updated_theta - keep the standard deviation (updated_theta, scale param)
     x value is a random variable to pass in'''
     updated_x = (k-1) * (((1/k)**(1/2)) * theta) + x
     updated_theta = ((1/k)**(1/2)) * theta

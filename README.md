@@ -75,6 +75,26 @@ used in hypothesis testing, as goodness of fit and independence.
 
 <img src="./imgs/chi_squared_distribution_3.png" height="300px" width="400px">
 
+### laplace distribution
+two parameters
+- location (`μ` real number)
+- scale (`b` real number > 0)
+
+**in relation to gamma** the laplace distribution is made from the difference of two exponentials (a special case of the erlang distribution, which is a case of the gamma distribution)
+
+LASSO regression, is a bayesian regression with a laplace prior.
+
+related to the normal distribution
+  - normal - is the squared different from the mean
+  - laplace - is the absolute difference from the mean
+
+also, check out the laplace transform, which is neat.
+
+### gumbel distribution
+two parameters
+- location (`μ` real number)
+- scale (`β` real number > 0)
+
 ### beta distribution (Pearson type I)
 two parameters
 - shape (`𝛼`)
@@ -138,6 +158,8 @@ as the 'shape' parameter increases (for large `k`, or a `k -> ∞`) the gamma di
 
 **in relation to gamma** using the central limit theorem, the gamma (or any distribution with finite variance) will converge to the normal distribution
 
+RIDGE regression, is a bayesian regression with a normal prior
+
 <img src="./imgs/approximated_normal_distribution_25.png" height="300px" width="400px">
 
 ### t-distribution (Pearson type VII)
@@ -158,7 +180,7 @@ two parameters
 - location (`x` where `x` is real)
 - scale (`γ` where `γ > 0`)
 
-two independent standard normal divided by one another
+**in relation to gamma** two independent standard normal divided by one another
 
 cauchy distribution has no mean, variance, or higher moments defined.
 The mode and median are defined and equal to the location parameter.
@@ -255,12 +277,13 @@ type VII ~ t-distribution
 
 
 getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
-### Tweedie distribution
+### tweedie distribution
 
 ### yule-simon distribution
 
 ### lévy distribution
 
+### tukey lambda distribution
 
 ## Sources
 
