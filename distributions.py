@@ -5,7 +5,7 @@ from scipy.integrate import quad
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx)
 # to fix - t
-# to add - laplace, cauchy, dirichlet, pareto, negative binomial, zeta
+# to add - laplace, gumbel, fréchet, weibull, cauchy, dirichlet, pareto, negative binomial, zeta
 
 # gamma function
 def gamma_function(k):
@@ -189,7 +189,8 @@ def f_distribution(x, degree_1, degree_2):
         'degrees of freedom' in chi-squared
     returns
     -------
-    value in f distr for random variable : float'''
+    value in f distr for random variable : float
+    '''
     num = integral_gamma_function((degree_1 + degree_2)/2) * (degree_1 ** (degree_1/2)) * (degree_2**(degree_2/2)) * (x **((degree_1/2)-1))
     dem = integral_gamma_function(degree_1/2) * integral_gamma_function(degree_2/2)  * ((degree_2 + (degree_1*x))**((degree_1 + degree_2)/2))
     return num / dem
@@ -219,6 +220,35 @@ def t_distribution(t, nu):
     dem = ((nu * math.pi)**(1/2)) * integral_gamma_function(nu/2)
     return num / dem
 
+def laplace_distribution(x, mu, beta):
+    '''
+    two parameters - shape , scale
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    mu : float
+        shape parameter for laplace distribution
+    beta : float (positive)
+        scale parameter for laplace distribution
+
+    returns
+    -------
+    value in laplace distr for random variable : float
+    '''
+    return (1 / (2 * beta)) * np.exp( - abs(x - mu) / beta)
+
+def laplace_from_exponential_distribution(mu, beta):
+    '''
+    '''
+    pass
+
+
+def gumbel_distrubtion(mu, beta):
+    '''
+    '''
+    pass 
 
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):

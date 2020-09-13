@@ -80,9 +80,11 @@ two parameters
 - location (`μ` real number)
 - scale (`b` real number > 0)
 
-**in relation to gamma** the laplace distribution is made from the difference of two exponentials (a special case of the erlang distribution, which is a case of the gamma distribution)
+**in relation to gamma** the laplace distribution is made from the difference of two exponentials (a special case of the erlang distribution, which is a case of the gamma distribution), because of this if we take the absolute value of one laplace distribution we get a chi-square distribution, and a f-distribution if we use two laplaces distributions.
 
-LASSO regression, is a bayesian regression with a laplace prior.
+in LASSO regression, is a bayesian regression with a laplace prior.
+
+can be thought of a composite/double distribution
 
 related to the normal distribution
   - normal - is the squared different from the mean
@@ -90,17 +92,14 @@ related to the normal distribution
 
 also, check out the laplace transform, which is neat.
 
-### gumbel distribution
-two parameters
-- location (`μ` real number)
-- scale (`β` real number > 0)
+from laplace - the frequency of an error is an exponential function of its magnitude without the sign
 
 ### beta distribution (Pearson type I)
 two parameters
 - shape (`𝛼`)
 - shape (`β`)
 
-support `[0,1]`
+support : `[0,1]`, so good for probabilities
 
 'distribution over distributions', defining binomial coefficient for continuous variables
 
@@ -185,6 +184,8 @@ two parameters
 cauchy distribution has no mean, variance, or higher moments defined.
 The mode and median are defined and equal to the location parameter.
 
+it's the fourier transform of the laplace distribution
+
 `cauchy(0,1)` is a student's t with 1 degree of freedom `t(df=1)`, this is also called the standard cauchy distribution
 
 ### dirichlet distribution
@@ -221,15 +222,66 @@ used all over the place.
 
 **in relation to gamma** the log of a pareto distribution divided by the minimum `x sub m` is an exponential distribution (a specific parameterization of the gamma)
 
-### Rayleigh distribution
+### rayleigh distribution
 one paramter
 - scale (`σ`, positive real number > 0)
 
 think of magnitude of uncorrelated, normally distributed components.
  
-**in relation to gamma** the sum of squared rayleigh distributions is a gamma distribution with`Γ( N, 2 * σ^2 )`. the rayleigh distribution of `σ=1` is a chi distribution with `ν=2`, also the square of a rayleigh distribution is a chi-squared distribution with degrees of freedom `k=2`. finally the square root of an exponential distribution is a rayleigh distribution with `R(1/ (2λ)^1/2)`
+**in relation to gamma** the sum of squared rayleigh distributions is a gamma distribution with`Γ( N, 2 * σ^2 )`. 
 
+the rayleigh distribution of `σ=1` is a chi distribution with `ν=2`, also the square of a rayleigh distribution is a chi-squared distribution with degrees of freedom `k=2`. 
 
+finally the square root of an exponential distribution is a rayleigh distribution with `R(1/ (2λ)^1/2)`
+
+### gumbel distribution (extreme value distribution type I)
+two parameters
+- location (`μ` real number)
+- scale (`β` real number > 0)
+
+support : x is a real number
+
+**in relation to gamma** its the negative log of an exponential distribution with mean=1
+
+it models the distribution of the maximum of a number of samples of various distrubtions (pretty meta)
+
+its a generalization of the extreme value distribution
+
+the difference between two gumbel distribution random variables is a logistic distribution
+
+### fréchet distribution (extreme valur distribution type II)
+three parameters (two are optional)
+- shape (`𝛼` positive real number > 0, the shape is generalized to include the location and scale)
+- scale (`s=1` positive real number > 0, default value is 1, so is optional to change)
+- location of minimum (`m=0` real number, default value is 0, so it optional to change)
+
+supprt : `x > m`, for a random variable greater than the minimum
+
+**in relation to gamma** its the negative log of a uniform distribution raised to the negative `1/𝛼`
+
+if the location of the minimum is 0, then the reciprocal is a weibull distribution
+
+### weibull distribution (reversed weibull is extreme value distribution type III)
+two parameters
+- shape (`λ` real number > 0)
+- scale (`k` real number > 0)
+
+support : `[0,∞)`
+
+**in relation to gamma** it is an exponential distribution divided by the shape, raised to the scale parameter.
+
+the weibull distribution is all the negative natural log of the uniform distribution raised to 1 divided by the scale, all multiplied by the shape
+
+when `k=2` the weibull distribution is a rayleigh distribution with `σ=λ/√2`
+
+weibull distribution is the maximum entropy distribution 
+
+the weibull distribution can be thought of as the failure rate proportional to a power of time `k`
+- `k<1` the failure rate decreases over time
+- `k=1` constant failure rate
+- `k>1`failure rate increases over time
+
+there is also a three parameter weibull distribution, with a location parameter `θ` that is the time before the failure (weibull) process begins
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
