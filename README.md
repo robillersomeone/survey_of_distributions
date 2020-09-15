@@ -96,6 +96,8 @@ also, check out the laplace transform, which is neat.
 
 from laplace - the frequency of an error is an exponential function of its magnitude without the sign
 
+<img src="./imgs/laplace_distribution.png" height="300px" width="400px">
+
 ### beta distribution (Pearson type I)
 two parameters
 - shape (`𝛼`)
@@ -122,6 +124,12 @@ here the beta distribution is symmetric, the alpha and beta parameters are equal
 
 <img src="./imgs/beta_distributions_alpha_equals_beta_fractions.png" height="300px" width="400px">
 
+here the alpha parameter is greater than the beta parameter.
+
+
+here the beta parameter is greater than the alpha parameter.
+
+
 ### arcsine distribution
 
 special case of beta distribution where `Beta(.5, .5)`
@@ -131,11 +139,20 @@ special case of beta distribution where `Beta(.5, .5)`
 
 <img src="./imgs/arcsin_distribution.png" height="300px" width="400px">
 
+### uniform distribution
+
+special case of beta distribution where `Beta(1, 1)`
+
+**in relation to gamma** it's a type of beta distribution, which is a ratio of gamma distributions.
+
+<img src="./imgs/uniform_distribution.png" height="300px" width="400px">
 
 ### f-distribution (Pearson type VI)
 two parameters
 - degrees of freedom in numerator (`n`, positive integer)
 - degrees of freedom in denominator (`m`, positive integer)
+
+support : `[0,∞)`, if `n=1` then `(0,∞)`
 
 **in relation to gamma** f-distribution is the ratio of two chi squared distributions (where the chi-squared is a special case of the gamma distribution)
 
@@ -228,6 +245,8 @@ used all over the place.
 one paramter
 - scale (`σ`, positive real number > 0)
 
+support : `[0,∞)`
+
 think of magnitude of uncorrelated, normally distributed components.
  
 **in relation to gamma** the sum of squared rayleigh distributions is a gamma distribution with`Γ( N, 2 * σ^2 )`. 
@@ -305,6 +324,8 @@ two parameters
 - number of trial (`n>0` positive integer)
 - event probabilities (`p1, p2, ...` the probabilities sum to 1)
 
+support : 
+
 it's a generalization of the binonmial distribution
 
 ### zeta distribution
@@ -313,12 +334,11 @@ parameters
 
 which is made from the riemann zeta function
 
-support
-- positive integers
+support : positive integers
 
 ## To add
 
-### Pearson distributions
+### pearson distributions
 four (or more) continuous distributions
 
 type I ~ generalized beta distribtuion
@@ -344,6 +364,22 @@ getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 ### lévy distribution
 
 ### tukey lambda distribution
+
+## Support section
+
+distribution | support | support for vis | ideally
+------------ | ------- | --------------- | -------
+gamma        |         | (0,20]          | (0, 20)
+beta         | [0,1]   | (0,1)           | (0,1)
+f            |         | (0,1)           | (0,5)
+laplace      |         | (0,20)          | (-10,10)
+rayleigh     | [0,∞)   | (0,20)          | (0, 10)
+gumbel       | real numbers | (0, 20)    | (-5, 20)
+fréchet      |         | (0,20)probably too big          | (0,5)
+weibull      |         | (0,20)probably too big          | (0,2.5)
+
+ideally column, is just to zoom in on the shape and scale.
+
 
 ## Sources
 
