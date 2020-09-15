@@ -80,6 +80,8 @@ two parameters
 - location (`μ` real number)
 - scale (`b` real number > 0)
 
+support : real numbers (all of 'em)
+
 **in relation to gamma** the laplace distribution is made from the difference of two exponentials (a special case of the erlang distribution, which is a case of the gamma distribution), because of this if we take the absolute value of one laplace distribution we get a chi-square distribution, and a f-distribution if we use two laplaces distributions.
 
 in LASSO regression, is a bayesian regression with a laplace prior.
@@ -241,7 +243,7 @@ two parameters
 
 support : x is a real number
 
-**in relation to gamma** its the negative log of an exponential distribution with mean=1
+**in relation to gamma** its the negative log of an exponential distribution with mean=1, aka the exponential of an exponential.
 
 it models the distribution of the maximum of a number of samples of various distrubtions (pretty meta)
 
@@ -249,13 +251,13 @@ its a generalization of the extreme value distribution
 
 the difference between two gumbel distribution random variables is a logistic distribution
 
-### fréchet distribution (extreme valur distribution type II)
+### fréchet distribution (extreme value distribution type II)
 three parameters (two are optional)
 - shape (`𝛼` positive real number > 0, the shape is generalized to include the location and scale)
 - scale (`s=1` positive real number > 0, default value is 1, so is optional to change)
 - location of minimum (`m=0` real number, default value is 0, so it optional to change)
 
-supprt : `x > m`, for a random variable greater than the minimum
+support : `x > m`, for a random variable greater than the minimum
 
 **in relation to gamma** its the negative log of a uniform distribution raised to the negative `1/𝛼`
 
@@ -270,7 +272,7 @@ support : `[0,∞)`
 
 **in relation to gamma** it is an exponential distribution divided by the shape, raised to the scale parameter.
 
-the weibull distribution is all the negative natural log of the uniform distribution raised to 1 divided by the scale, all multiplied by the shape
+the weibull distribution is also the negative natural log of the uniform distribution raised to 1 divided by the scale, all multiplied by the shape
 
 when `k=2` the weibull distribution is a rayleigh distribution with `σ=λ/√2`
 
@@ -288,7 +290,7 @@ starting with the negative binomial distribution, due to relationship with gamma
 
 
 ### negative binomial
-parameters
+two parameters
  - number of failures ('r' where `r > 0`)
  - probability of success (`p`, for each experiment)
 
@@ -298,6 +300,12 @@ can view the negative binomial as **poisson** distribution with `λ` being a ran
 
 under certain parameters the negative binomial converges to the poisson
 
+### mulitnomial distribution
+two parameters
+- number of trial (`n>0` positive integer)
+- event probabilities (`p1, p2, ...` the probabilities sum to 1)
+
+it's a generalization of the binonmial distribution
 
 ### zeta distribution
 parameters
