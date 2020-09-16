@@ -1,6 +1,6 @@
 import numpy as np
-# import survey_of_distributions.distributions as ds
-import distributions as ds
+import survey_of_distributions.distributions as ds
+# import distributions as ds
 np.set_printoptions(suppress=True)
 
 
@@ -180,6 +180,32 @@ x_weibull_values_d3 = np.arange(0, 5, .05)[1:]
 y_weibull_values_1_1_d3 = ds.weibull_distribution(x_weibull_values_d3, 1, 1)
 y_weibull_values_1_2_d3 = ds.weibull_distribution(x_weibull_values_d3, 1, 2)
 
+
+# pareto
+x_pareto_values = np.arange(1, 5, .05)[:]
+
+y_pareto_values_1_1 = ds.pareto_distribution(x_pareto_values, 1, 1)
+y_pareto_values_1_2 = ds.pareto_distribution(x_pareto_values, 1, 2)
+y_pareto_values_1_3 = ds.pareto_distribution(x_pareto_values, 1, 3)
+
+# cauchy
+x_cauchy_values = np.arange(-4, 4, .05)[1:]
+
+y_cauchy_values_0_half = ds.cauchy_distribution(x_cauchy_values, 0, .5)
+y_cauchy_values_0_1 = ds.cauchy_distribution(x_cauchy_values, 0, 1)
+y_cauchy_values_0_2 = ds.cauchy_distribution(x_cauchy_values, 0, 2)
+y_cauchy_values_neg_2_1 = ds.cauchy_distribution(x_cauchy_values, -2, 1)
+
+# levy
+x_levy_values = np.arange(0, 5, .05)[1:]
+
+y_levy_values_0_half = ds.levy_distribution(x_levy_values, 0, .5)
+y_levy_values_0_1 = ds.levy_distribution(x_levy_values, 0, 1)
+y_levy_values_0_2 = ds.levy_distribution(x_levy_values, 0, 2)
+y_levy_values_0_4 = ds.levy_distribution(x_levy_values, 0, 4)
+y_levy_values_0_8 = ds.levy_distribution(x_levy_values, 0, 8)
+
+
 # for now the normal distribution is approximated using the central limit theorem
 
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
@@ -193,7 +219,7 @@ y_gamma_values_getting_normal = ds.int_gamma_distribution(x_gamma_values_getting
 
 # print(data_for_d3(x_f_values_d3,y_f_values_2_2_d3))
 
-print(data_for_d3(x_laplace_values_d3, y_laplace_values_10_1_d3))
+# print(data_for_d3(x_laplace_values_d3, y_laplace_values_10_1_d3))
 
 # might have to put in gamma support x values ...
 # print(data_for_d3(x_rayleigh_values_d3, y_rayleigh_values_1_d3))

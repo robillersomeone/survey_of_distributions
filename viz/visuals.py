@@ -17,6 +17,13 @@ chi-squared
 normal
 f
 laplace
+rayleigh
+gumbel
+fréchet
+weibull
+pareto
+cauchy
+lévy
 '''
 
 def plotting(title, x_values, y_values, color = 'blue', legend = None):
@@ -112,13 +119,37 @@ f_color = 'red'
 # plt.legend(['alpha=1 s=1 m=0','alpha=2 s=1 m=0','alpha=3 s=1 m=0','alpha=1 s=2 m=0', 'alpha=2 s=2 m=0', 'alpha=3 s=2 m=0'], loc='upper right')
 
 # weibull
-plt.title('weibull distribution')
-plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_half)
-plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_1)
-plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_1_half)
-plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_5)
-plt.legend(['λ=1 k=.5','λ=1 k=1','λ=1 k=1.5','λ=1 k=5'], loc='upper right')
+# plt.title('weibull distribution')
+# plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_half)
+# plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_1)
+# plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_1_half)
+# plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_5)
+# plt.legend(['λ=1 k=.5','λ=1 k=1','λ=1 k=1.5','λ=1 k=5'], loc='upper right')
 
+# pareto
+# plt.title('pareto distribution')
+# plt.plot(ds.x_pareto_values, ds.y_pareto_values_1_1)
+# plt.plot(ds.x_pareto_values, ds.y_pareto_values_1_2)
+# plt.plot(ds.x_pareto_values, ds.y_pareto_values_1_3)
+# plt.legend(['x_min=1 alpha=1', 'x_min=1 alpha=2'], loc='upper right')
+# plt.legend(['x_min=1 alpha=1', 'x_min=1 alpha=2', 'x_min=1 alpha=3'], loc='upper right')
+
+# cauchy
+# plt.title('cauchy distribution')
+# plt.plot(ds.x_cauchy_values, ds.y_cauchy_values_0_half)
+# plt.plot(ds.x_cauchy_values, ds.y_cauchy_values_0_1)
+# plt.plot(ds.x_cauchy_values, ds.y_cauchy_values_0_2)
+# plt.plot(ds.x_cauchy_values, ds.y_cauchy_values_neg_2_1)
+# plt.legend(['x_knot=0 gamma=.5', 'x_knot=0 gamma=1', 'x_knot=0 gamma=2', 'x_knot=-2 gamma=1'], loc='upper right')
+
+# levy
+plt.title('levy distribution')
+plt.plot(ds.x_levy_values, ds.y_levy_values_0_half)
+plt.plot(ds.x_levy_values, ds.y_levy_values_0_1)
+plt.plot(ds.x_levy_values, ds.y_levy_values_0_2)
+plt.plot(ds.x_levy_values, ds.y_levy_values_0_4)
+plt.plot(ds.x_levy_values, ds.y_levy_values_0_8)
+plt.legend(['μ=0 c=.5', 'μ=0 c=1', 'μ=0 c=2', 'μ=-2 c=4', 'μ=0 c=8'], loc='upper right')
 
 
 

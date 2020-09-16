@@ -16,10 +16,15 @@ two parameters
 - mean (`μ` location parameter)
 - variance (`σ^2` scale parameter)
 
+
+more later on...
+
 ### gamma distribution and special cases (Pearson type III)
 two parameters
 - shape (`k`, positive real numbers)
 - scale (`θ`, positive real numbers, `β` the inverse scale - 'rate' can also be used where `β=1/θ`)
+
+support : `(0,∞)`
 
 known as maximum entropy distribution
 for processes with waiting times between events... like the waiting time between poisson distributed events
@@ -37,6 +42,8 @@ two parameters
 - shape (`k` positive **integer**)
 - rate (`λ` positive real number, 'scale' - reciprocal of rate (`1/λ`) can also be used)
 
+support : `[0,∞)`
+
 **in relation to gamma** it's the gamma distribution with the shape parameter as an integer
 
 the sum of `k` independent exponentially distributed random variables with mean `θ`
@@ -51,6 +58,8 @@ the scale parameterization is implemented in `distributions.py`
 ### exponential distribution (Pearson type III)
 one parameter
 - rate (`λ` over the interval ``[0,∞)``)
+
+support : `[0,∞)`
 
 **in relation to gamma**
 - as an Erlang distribution with the shape parameter 'fixed' as `k=1`
@@ -68,6 +77,8 @@ has a memoryless property - past is not helpful in predicting the future.
 ### chi-squared distribution (Pearson type III)
 one parameter
 - degrees of freedom (`k`, the sum of the squared of independent standard normal distributions)
+
+support : `[0,∞)`
 
 **in relation to gamma** chi-squared is a special case of the gamma distribution with `ν` degrees of freedom, where `gamma(ν/2 ,2) = χ2(ν)`
 
@@ -174,6 +185,7 @@ two parameters
 - location (`μ` mean parameter)
 - scale (`σ^2` variance parameter)
 
+support : `(-∞,∞)` real numbers
 
 as the 'shape' parameter increases (for large `k`, or a `k -> ∞`) the gamma distribution converges to the normal distribution
 
@@ -189,6 +201,7 @@ one parameters
 
 **in relation to the gamma** the probability density function is given by the gamma function with the degrees of freedom
 
+support : `(-∞,∞)` real numbers
 
 arises from sampling, estimate the mean of a normally distributed population
 - sample size is small
@@ -201,6 +214,8 @@ two parameters
 - location (`x` where `x` is real)
 - scale (`γ` where `γ > 0`)
 
+support : `(-∞,∞)` real numbers
+
 **in relation to gamma** two independent standard normal divided by one another
 
 cauchy distribution has no mean, variance, or higher moments defined.
@@ -209,6 +224,8 @@ The mode and median are defined and equal to the location parameter.
 it's the fourier transform of the laplace distribution
 
 `cauchy(0,1)` is a student's t with 1 degree of freedom `t(df=1)`, this is also called the standard cauchy distribution
+
+<img src="./imgs/cauchy_distribution.png" height="300px" width="400px">
 
 ### dirichlet distribution
 two parameters
@@ -243,6 +260,8 @@ power-law probability distribution.
 used all over the place.
 
 **in relation to gamma** the log of a pareto distribution divided by the minimum `x sub m` is an exponential distribution (a specific parameterization of the gamma)
+
+<img src="./imgs/pareto_distribution.png" height="300px" width="400px">
 
 ### rayleigh distribution
 one paramter
@@ -316,6 +335,20 @@ there is also a three parameter weibull distribution, with a location parameter 
 
 <img src="./imgs/weibull_distribution.png" height="300px" width="400px">
 
+
+### lévy distribution
+two parameter
+- location (`μ`)
+- scale (`c>0`)
+
+support : `[μ,∞)`
+
+**in relation to gamma** the levy distribution with the `location=0` is an inverse gamma distribution with `shape=1/2`
+
+the inverse of normal distribution minus location parameter is the levy distribution
+
+<img src="./imgs/levy_distribution.png" height="300px" width="400px">
+
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
 
@@ -348,6 +381,13 @@ which is made from the riemann zeta function
 
 support : positive integers
 
+
+### yule-simon distribution
+one parameter
+- shape (`p>0`)
+
+support : positive integers
+
 ## To add
 
 ### pearson distributions
@@ -369,28 +409,35 @@ type VII ~ t-distribution
 
 
 getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
+
 ### tweedie distribution
-
-### yule-simon distribution
-
-### lévy distribution
 
 ### tukey lambda distribution
 
-## Support section
+## support section
 
 distribution | support | support for vis | ideally
 ------------ | ------- | --------------- | -------
-gamma        |         | (0,20]          | (0, 20)
+gamma        | [0,∞)   | (0,20]          | (0,20)
+erlang       | [0,∞)   | (0,20]          | (0,20)
+exponential  | [0,∞)   | (0,20]          | (0,20)
+chi-squared  | [0,∞)   | (0,20]          | (0,20) 
+laplace      | real numbers | (0,20)     | (-10,10)
 beta         | [0,1]   | (0,1)           | (0,1)
-f            |         | (0,5)           | (0,5)
-laplace      | real numbers | (0,20)          | (-10,10)
-rayleigh     | [0,∞)   | (0,5)          | (0, 10)
-gumbel       | real numbers | (0, 20)    | (-5, 20)
-fréchet      |  x > m  | (0,5)probably too big          | (0,5)
-weibull      | [0,∞)   | (0,5)probably too big          | (0,2.5)
+arcsine      | [0,1]   | (0,1)           | (0,1)
+uniform      | [0,1]   | (0,1)           | (0,1)
+f            | [0,∞)   | (0,5)           | (0,5)
+normal       | real numbers | (0,5)      | (-5,-5)
+t            | real numbers | (0,5)      | (-5,-5)
+cauchy       | real numbers | (0,5)      | (-4,4)
+dirichlet    |
+pareto       | [x_min,∞) | (0,5)         | (0,5)
+rayleigh     | [0,∞)   | (0,5)           | (0,10)
+gumbel       | real numbers | (0, 20)    | (-5,20)
+fréchet      |  x > m  | (0,5)           | (0,5)
+weibull      | [0,∞)   | (0,5)           | (0,2.5)
+lévy         | [μ,∞)   | (0,5)           | (0,5)
 
-ideally column, is just to zoom in on the shape and scale.
 
 ## Sources
 

@@ -40,3 +40,6 @@ implement tests for distributions built multiple ways
 - normal
     - approximate multiple ways
         - gamma
+
+- t
+    - cauchy(0,1) == t(1)
