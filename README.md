@@ -126,8 +126,11 @@ here the beta distribution is symmetric, the alpha and beta parameters are equal
 
 here the alpha parameter is greater than the beta parameter.
 
+<img src="./imgs/beta_distr_alpha_greater.png" height="300px" width="400px">
 
 here the beta parameter is greater than the alpha parameter.
+
+<img src="./imgs/beta_distr_alpha_less.png" height="300px" width="400px">
 
 
 ### arcsine distribution
@@ -255,6 +258,9 @@ the rayleigh distribution of `σ=1` is a chi distribution with `ν=2`, also the 
 
 finally the square root of an exponential distribution is a rayleigh distribution with `R(1/ (2λ)^1/2)`
 
+
+<img src="./imgs/rayleigh_distribution.png" height="300px" width="400px">
+
 ### gumbel distribution (extreme value distribution type I)
 two parameters
 - location (`μ` real number)
@@ -270,6 +276,8 @@ its a generalization of the extreme value distribution
 
 the difference between two gumbel distribution random variables is a logistic distribution
 
+<img src="./imgs/gumbel_distribution.png" height="300px" width="400px">
+
 ### fréchet distribution (extreme value distribution type II)
 three parameters (two are optional)
 - shape (`𝛼` positive real number > 0, the shape is generalized to include the location and scale)
@@ -281,6 +289,8 @@ support : `x > m`, for a random variable greater than the minimum
 **in relation to gamma** its the negative log of a uniform distribution raised to the negative `1/𝛼`
 
 if the location of the minimum is 0, then the reciprocal is a weibull distribution
+
+<img src="./imgs/frechet_distribution.png" height="300px" width="400px">
 
 ### weibull distribution (reversed weibull is extreme value distribution type III)
 two parameters
@@ -303,6 +313,8 @@ the weibull distribution can be thought of as the failure rate proportional to a
 - `k>1`failure rate increases over time
 
 there is also a three parameter weibull distribution, with a location parameter `θ` that is the time before the failure (weibull) process begins
+
+<img src="./imgs/weibull_distribution.png" height="300px" width="400px">
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
@@ -372,11 +384,11 @@ distribution | support | support for vis | ideally
 gamma        |         | (0,20]          | (0, 20)
 beta         | [0,1]   | (0,1)           | (0,1)
 f            |         | (0,1)           | (0,5)
-laplace      |         | (0,20)          | (-10,10)
+laplace      | real numbers | (0,20)          | (-10,10)
 rayleigh     | [0,∞)   | (0,20)          | (0, 10)
 gumbel       | real numbers | (0, 20)    | (-5, 20)
-fréchet      |         | (0,20)probably too big          | (0,5)
-weibull      |         | (0,20)probably too big          | (0,2.5)
+fréchet      |  x > m  | (0,20)probably too big          | (0,5)
+weibull      | [0,∞)   | (0,20)probably too big          | (0,2.5)
 
 ideally column, is just to zoom in on the shape and scale.
 

@@ -7,6 +7,18 @@ import matplotlib.pyplot as plt
 # to run form main dir for now
 import survey_of_distributions.make_data as ds
 
+
+'''
+plotting function
+beta
+erlang
+exponential
+chi-squared
+normal
+f
+laplace
+'''
+
 def plotting(title, x_values, y_values, color = 'blue', legend = None):
     plt.title(title)
     plt.plot(x_values, y_values, color)
@@ -63,6 +75,52 @@ f_color = 'red'
 # plt.legend(['d1=1 d2=1', 'd1=2 d2=1', 'd1=5 d2=2', 'd1=10 d2=1'], loc='upper right')
 
 
+# laplace
+# plt.title('laplace distribtuions')
+# plt.plot(ds.x_laplace_values, ds.y_laplace_0_1)
+# plt.plot(ds.x_laplace_values, ds.y_laplace_0_2)
+# plt.plot(ds.x_laplace_values, ds.y_laplace_0_4)
+# plt.plot(ds.x_laplace_values, ds.y_laplace_2_2)
+# plt.legend(['μ=0 b=1','μ=0 b=2','μ=0 b=4','μ=2 b=2'], loc='upper right')
+
+# rayleigh
+# plt.title('rayleigh distribution')
+# plt.plot(ds.x_rayleigh_values, ds.y_rayleigh_half)
+# plt.plot(ds.x_rayleigh_values, ds.y_rayleigh_1)
+# plt.plot(ds.x_rayleigh_values, ds.y_rayleigh_2)
+# plt.plot(ds.x_rayleigh_values, ds.y_rayleigh_3)
+# plt.plot(ds.x_rayleigh_values, ds.y_rayleigh_4)
+# plt.legend(['σ=.5','σ=1','σ=2','σ=3', 'σ=4'], loc='upper right')
+
+
+# gumbel
+# plt.title('gumbel distribution')
+# plt.plot(ds.x_gumbel_values, ds.y_gumbel_values_half_2)
+# plt.plot(ds.x_gumbel_values, ds.y_gumbel_values_1_2)
+# plt.plot(ds.x_gumbel_values, ds.y_gumbel_values_1_half_3)
+# plt.plot(ds.x_gumbel_values, ds.y_gumbel_values_3_4)
+# plt.legend(['μ=.5  β=2','μ=1 β=2','μ=1.5  β=3','μ=3  β=4'], loc='upper right')
+
+# fréchet
+# plt.title('fréchet distribution')
+# plt.plot(ds.x_frechet_values, ds.y_frechet_values_1_1_0)
+# plt.plot(ds.x_frechet_values, ds.y_frechet_values_2_1_0)
+# plt.plot(ds.x_frechet_values, ds.y_frechet_values_3_1_0)
+# plt.plot(ds.x_frechet_values, ds.y_frechet_values_1_2_0)
+# plt.plot(ds.x_frechet_values, ds.y_frechet_values_2_2_0)
+# plt.plot(ds.x_frechet_values, ds.y_frechet_values_3_2_0)
+# plt.legend(['alpha=1 s=1 m=0','alpha=2 s=1 m=0','alpha=3 s=1 m=0','alpha=1 s=2 m=0', 'alpha=2 s=2 m=0', 'alpha=3 s=2 m=0'], loc='upper right')
+
+# weibull
+plt.title('weibull distribution')
+plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_half)
+plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_1)
+plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_1_half)
+plt.plot(ds.x_weibull_values, ds.y_weibull_values_1_5)
+plt.legend(['λ=1 k=.5','λ=1 k=1','λ=1 k=1.5','λ=1 k=5'], loc='upper right')
+
+
+
 
 # plot for exp, erlang, chi, beta
 
@@ -79,6 +137,7 @@ f_color = 'red'
 # plt.plot(ds.x_beta_values, ds.y_beta_values_6_6)
 # plt.legend(['alpha=β=2','alpha=β=3','alpha=β=4','alpha=β=5','alpha=β=6'], loc='upper right')
 
+# beta, params < 1
 # plt.plot(ds.x_beta_values, ds.y_beta_values_frac_1_1)
 # plt.plot(ds.x_beta_values, ds.y_beta_values_frac_1_25)
 # plt.plot(ds.x_beta_values, ds.y_beta_values_frac_1_5)
@@ -86,19 +145,31 @@ f_color = 'red'
 # plt.plot(ds.x_beta_values, ds.y_beta_values_frac_1_9)
 # plt.legend(['alpha=β=.1','alpha=β=.25','alpha=β=.5','alpha=β=.75','alpha=β=.9'], loc='upper right')
 
-plt.title('beta \n alpha=.4 β=.6')
-plt.plot(ds.x_beta_values, ds.y_beta_values_1_2)
-# plt.plot(ds.x_beta_values, ds.y_beta_values_2_1)
-plt.plot(ds.x_beta_values, ds.y_beta_values_2_3)
-# plt.plot(ds.x_beta_values, ds.y_beta_values_3_2)
-plt.plot(ds.x_beta_values, ds.y_beta_values_1_3)
-plt.plot(ds.x_beta_values, ds.y_beta_values_1_4)
-plt.plot(ds.x_beta_values, ds.y_beta_values_2_4)
+# beta, alpha < beta
+# plt.title('beta distribution \n alpha < β')
+# plt.plot(ds.x_beta_values, ds.y_beta_values_1_2)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_1_3)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_2_3)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_1_4)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_2_4)
 # plt.plot(ds.x_beta_values, ds.y_beta_values_4_6)
+# plt.legend(['alpha=1 β=3','alpha=2 β=3', 'alpha=4 β=6'], loc='upper right')
+# plt.legend(['alpha=1 β=2','alpha=2 β=3','alpha=1 β=3','alpha=1 β=4','alpha=2 β=4', 'alpha=4 β=6'], loc='upper right')
+
+# beta, alpha > beta
+# plt.title('beta distribution \n alpha > β')
+# plt.plot(ds.x_beta_values, ds.y_beta_values_3_1)
+# plt.plot(ds.x_beta_values, ds.y_beta_values_3_2)
 # plt.plot(ds.x_beta_values, ds.y_beta_values_6_4)
+# plt.legend(['alpha=2 β=1','alpha=3 β=2','alpha=6 β=4'], loc='upper right')
+
 
 # arcsin
 # plt.title('arcsin \n alpha=β=.5')
+# plt.plot(ds.x_beta_values, ds.y_arcsin_values)
+
+# uniform
+# plt.title('uniform \n alpha=β=1')
 # plt.plot(ds.x_beta_values, ds.y_arcsin_values)
 
 # gamma
@@ -111,6 +182,8 @@ plt.plot(ds.x_beta_values, ds.y_beta_values_2_4)
 # plt.plot(ds.x_gamma_values, ds.int_y_gamma_values_9_1)
 # plt.legend(['alpha=1 θ=2', 'alpha=2 θ=2', 'alpha=3 θ=2', 'alpha=5 θ=1', 'alpha=9 θ=1'], loc='upper right')
 # plt.savefig('../imgs/gamma_distributions.png', format="png")
+
+
 plt.show()
 # plt.savefig('imgs/gamma_distributions.png', format="png")
 

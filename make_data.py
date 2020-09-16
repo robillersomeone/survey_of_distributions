@@ -1,8 +1,23 @@
 import numpy as np
-# import survey_of_distributions.distributions as ds
-import distributions as ds
+import survey_of_distributions.distributions as ds
+# import distributions as ds
 np.set_printoptions(suppress=True)
 
+
+'''
+use import survey_of_distributions.distributions as ds when calling from viz directory
+d3 function
+support for gamma
+gamma and special cases
+support for beta
+beta and special cases
+support for f
+f 
+support for laplace
+laplace
+rayleigh
+normal via CLT
+'''
 
 def data_for_d3(x, y):
     """
@@ -93,10 +108,55 @@ y_arcsin_values = ds.beta_distribution(x_beta_values, .5, .5)
 
 # support for f 
 x_f_values = np.arange(0, 5, .02)[1:]
+# f
 y_f_values_1_1 = ds.f_distribution(x_f_values, 1, 1)
 y_f_values_2_1 = ds.f_distribution(x_f_values, 2, 1)
 y_f_values_5_2 = ds.f_distribution(x_f_values, 5, 2)
 y_f_values_10_1 = ds.f_distribution(x_f_values, 10, 1)
+
+# support for laplace
+x_laplace_values = np.arange(-10, 10, .05)[1:]
+
+y_laplace_values_0_1 = ds.laplace_distribution(x_laplace_values, 0, 1)
+y_laplace_values_0_2 = ds.laplace_distribution(x_laplace_values, 0, 2)
+y_laplace_values_0_4 = ds.laplace_distribution(x_laplace_values, 0, 4)
+y_laplace_values_2_2 = ds.laplace_distribution(x_laplace_values, 2, 2)
+
+# rayleigh
+x_rayleigh_values = np.arange(0, 10, .025)[1:]
+
+y_rayleigh_values_half = ds.rayleigh_distribution(x_rayleigh_values, .5)
+y_rayleigh_values_1 = ds.rayleigh_distribution(x_rayleigh_values, 1)
+y_rayleigh_values_2 = ds.rayleigh_distribution(x_rayleigh_values, 2)
+y_rayleigh_values_3 = ds.rayleigh_distribution(x_rayleigh_values, 3)
+y_rayleigh_values_4 = ds.rayleigh_distribution(x_rayleigh_values, 4)
+
+# gumbel
+x_gumbel_values = np.arange(-5, 20, .5)[1:]
+
+y_gumbel_values_half_2 = ds.gumbel_distribution(x_gumbel_values, .5, 2)
+y_gumbel_values_1_2 = ds.gumbel_distribution(x_gumbel_values, 1, 2)
+y_gumbel_values_1_half_3 = ds.gumbel_distribution(x_gumbel_values, 1.5, 3)
+y_gumbel_values_3_4 = ds.gumbel_distribution(x_gumbel_values, 3, 4)
+
+# fréchet
+x_frechet_values = np.arange(0, 4, .01)[1:]
+
+y_frechet_values_1_1_0 = ds.frechet_distribution(x_frechet_values, 1, 1, 0)
+y_frechet_values_2_1_0 = ds.frechet_distribution(x_frechet_values, 2, 1, 0)
+y_frechet_values_3_1_0 = ds.frechet_distribution(x_frechet_values, 3, 1, 0)
+y_frechet_values_1_2_0 = ds.frechet_distribution(x_frechet_values, 1, 2, 0)
+y_frechet_values_2_2_0 = ds.frechet_distribution(x_frechet_values, 2, 2, 0)
+y_frechet_values_3_2_0 = ds.frechet_distribution(x_frechet_values, 3, 2, 0)
+
+# weibull
+x_weibull_values = np.arange(0, 3, .01)[1:]
+
+y_weibull_values_1_half = ds.weibull_distribution(x_weibull_values, 1, .5)
+y_weibull_values_1_1 = ds.weibull_distribution(x_weibull_values, 1, 1)
+y_weibull_values_1_1_half = ds.weibull_distribution(x_weibull_values, 1, 1.5)
+y_weibull_values_1_5 = ds.weibull_distribution(x_weibull_values, 1, 5)
+
 
 # for now the normal distribution is approximated using the central limit theorem
 
@@ -105,4 +165,9 @@ y_gamma_values_getting_normal = ds.int_gamma_distribution(x_gamma_values_getting
 
 # data for d3
 
-print(data_for_d3(x_beta_values,y_beta_values_4_6))
+# print(data_for_d3(x_beta_values,y_beta_values_4_6))
+
+# print(data_for_d3(x_beta_values,y_laplace_values_10_1))
+# laplace data for d3
+# location = 10
+# print(data_for_d3(x_beta_values,y_laplace_values_10_1))

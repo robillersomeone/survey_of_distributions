@@ -33,6 +33,10 @@ implement tests for distributions built multiple ways
     - gamma/beta function
         - test relationship through implementation
 
+- laplace
+    - standard uniform
+    - exponential
+
 - normal
     - approximate multiple ways
         - gamma

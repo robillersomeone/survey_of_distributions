@@ -3,9 +3,9 @@ import numpy as np
 from scipy.integrate import quad
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
-# distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx)
+# distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh
 # to fix - t
-# to add - laplace, gumbel, fréchet, weibull, rayleigh, cauchy, dirichlet, pareto, negative binomial, zeta
+# to add - laplace from exp, gumbel, fréchet, weibull, cauchy, dirichlet, pareto, negative binomial, zeta
 
 # gamma function
 def gamma_function(k):
@@ -239,16 +239,34 @@ def laplace_distribution(x, mu, beta):
     '''
     return (1 / (2 * beta)) * np.exp( - abs(x - mu) / beta)
 
-def laplace_from_exponential_distribution(mu, beta):
+def laplace_from_exponential_distribution(x, mu, beta):
     '''
     '''
     pass
 
+def rayleigh_distribution(x, sigma):
+    '''
+    '''
+    exponent = -(x ** 2) / (2 * (sigma ** 2))
+    return (x / (sigma ** 2)) * np.exp(exponent)
 
-def gumbel_distrubtion(mu, beta):
+def gumbel_distribution(x, mu, beta):
     '''
     '''
-    pass 
+    z = (x - mu) / beta
+    coeff = 1 / beta 
+    return coeff * np.exp(- (z + np.exp(-z)))
+
+def frechet_distribution(x, alpha, s=1, m=0):
+    '''
+    '''
+    standardized = ( (x - m) / s)
+    return (alpha / s) * ( standardized ** (-1 - alpha) ) * np.exp( -(standardized ** (-alpha) ) )
+
+def weibull_distribution(x, lambda_, k):
+    '''
+    '''
+    return (k / lambda_) * ( (x/ lambda_) ** (k - 1)) * np.exp( - ((x / lambda_) ** k))
 
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
