@@ -3,9 +3,9 @@ import numpy as np
 from scipy.integrate import quad
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
-# distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh
+# distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
 # to fix - t
-# to add - laplace from exp, gumbel, fréchet, weibull, cauchy, dirichlet, pareto, negative binomial, zeta
+# to add - laplace from exp, cauchy, dirichlet, pareto, negative binomial, zeta
 
 # gamma function
 def gamma_function(k):

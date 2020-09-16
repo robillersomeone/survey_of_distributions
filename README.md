@@ -383,16 +383,15 @@ distribution | support | support for vis | ideally
 ------------ | ------- | --------------- | -------
 gamma        |         | (0,20]          | (0, 20)
 beta         | [0,1]   | (0,1)           | (0,1)
-f            |         | (0,1)           | (0,5)
+f            |         | (0,5)           | (0,5)
 laplace      | real numbers | (0,20)          | (-10,10)
-rayleigh     | [0,∞)   | (0,20)          | (0, 10)
+rayleigh     | [0,∞)   | (0,5)          | (0, 10)
 gumbel       | real numbers | (0, 20)    | (-5, 20)
-fréchet      |  x > m  | (0,20)probably too big          | (0,5)
-weibull      | [0,∞)   | (0,20)probably too big          | (0,2.5)
+fréchet      |  x > m  | (0,5)probably too big          | (0,5)
+weibull      | [0,∞)   | (0,5)probably too big          | (0,2.5)
 
 ideally column, is just to zoom in on the shape and scale.
 
-
 ## Sources
 
-[wiki list of distribitions](https://en.wikipedia.org/wiki/List_of_probability_distributions)
+[wiki list of distributions](https://en.wikipedia.org/wiki/List_of_probability_distributions)
