@@ -161,6 +161,21 @@ special case of beta distribution where `Beta(1, 1)`
 
 <img src="./imgs/uniform_distribution.png" height="300px" width="400px">
 
+### beta prime distribution (pearson type VI)
+two parameters
+- shape (`𝛼`)
+- shape (`β`)
+
+support : `[0,∞)`
+
+beta prime is the conjugate prior distribution of the bernoulli expressed in odds.
+
+**in relation to gamma** it's the ratio of two gamma distributions, both with `scale=1`
+
+the inverted dirichlet distribution is a generalization of the beta prime distribution
+
+beta prime makes the log-logistic distribution
+
 ### f-distribution (Pearson type VI)
 two parameters
 - degrees of freedom in numerator (`n`, positive integer)
@@ -257,9 +272,11 @@ two parameters
 
 power-law probability distribution.
 
-used all over the place.
+used all over the place 80% of the time
 
 **in relation to gamma** the log of a pareto distribution divided by the minimum `x sub m` is an exponential distribution (a specific parameterization of the gamma)
+
+check out relationship to gumbel
 
 <img src="./imgs/pareto_distribution.png" height="300px" width="400px">
 
@@ -280,12 +297,27 @@ finally the square root of an exponential distribution is a rayleigh distributio
 
 <img src="./imgs/rayleigh_distribution.png" height="300px" width="400px">
 
+### rice distribution
+two parameters
+- distance from reference point and the center of the bivariate distribution (`ν>=0`)
+- spread (`σ>=0`)
+
+support : `[0,∞)`
+
+it the magnitude of a circularly-symmetric bivariate normal random variable
+
+**in relation to gamma** the square of the rice distribution when `ν>=0` is an exponential distribution (which is a case of the gamma distribution).
+
+rice(0,σ) is a rayleigh(σ)
+
+rice distribution is the multivariate generalization of the folded normal distribution
+
 ### gumbel distribution (extreme value distribution type I)
 two parameters
 - location (`μ` real number)
 - scale (`β` real number > 0)
 
-support : x is a real number
+support : `(-∞,∞)` x is a real number
 
 **in relation to gamma** its the negative log of an exponential distribution with mean=1, aka the exponential of an exponential.
 
@@ -348,6 +380,8 @@ support : `[μ,∞)`
 the inverse of normal distribution minus location parameter is the levy distribution
 
 <img src="./imgs/levy_distribution.png" height="300px" width="400px">
+
+
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
@@ -414,6 +448,85 @@ getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 
 ### tukey lambda distribution
 
+### poisson
+
+### continuous bernoulli distribution
+
+### kumaraswamy distribution
+
+### irwin-hall distribution
+
+### logit-normal distribution
+alternative to the dirichlet distribution 
+
+aka it captures correlations in components of probability vectors
+
+### burr distribution?
+
+### exponential-logarithmic distribution
+
+### chi distribution
+for fun
+
+### gompertz distribution
+
+### inverse chi-squared
+prior and posterior distribution for unknown variance of the normal distribution in bayesian inference
+
+### inverse gamma distribution
+
+### log-cauchy distribution
+
+### log-logistic distribution
+
+### log-normal distribution
+
+### lomax distribution (pareto type II)
+
+### maxwell-boltzmann distribution
+
+### nakagami distribution
+
+### noncentral chi-squared distribution
+in case of likelihood-ratio tests
+
+### phase-type distribution
+convolution of exponential distributions
+
+### wishart distribution
+gamma distribution generalization to multiple dimensions
+
+### wilks lambda distribution
+two independent wishart distributions
+
+for multivariate hypothesis testing
+
+### generalized normal distribution
+
+### fisher's z-distribution
+for more stats testing
+
+### holtsmark distribution
+special case of a stable distribution
+
+### logistic distribution
+
+### noncentral t-distribution
+even more stats tests
+
+### slash distribution
+
+### stable distribution
+
+### q-exponential distribution
+this is a tsallis distribution
+### q-gaussian distribution
+this is a tsallis distribution
+### q-weibull distribution
+this is a tsallis distribution
+
+generlization of weibull and lomax distribution
+
 ## support section
 
 distribution | support | support for vis | ideally
@@ -424,6 +537,7 @@ exponential  | [0,∞)   | (0,20]          | (0,20)
 chi-squared  | [0,∞)   | (0,20]          | (0,20) 
 laplace      | real numbers | (0,20)     | (-10,10)
 beta         | [0,1]   | (0,1)           | (0,1)
+beta prime   | 
 arcsine      | [0,1]   | (0,1)           | (0,1)
 uniform      | [0,1]   | (0,1)           | (0,1)
 f            | [0,∞)   | (0,5)           | (0,5)
@@ -437,7 +551,7 @@ gumbel       | real numbers | (0, 20)    | (-5,20)
 fréchet      |  x > m  | (0,5)           | (0,5)
 weibull      | [0,∞)   | (0,5)           | (0,2.5)
 lévy         | [μ,∞)   | (0,5)           | (0,5)
-
+rice         | [0,∞)   | (0,20)          | (0,20)
 
 ## Sources
 

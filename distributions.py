@@ -1,12 +1,14 @@
 import math
 import numpy as np
 from scipy.integrate import quad
+# bessel function for rice distribution
+import scipy.special.jv
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
 # pareto, levy, cauchy
 # to fix - t
-# to add - laplace from exp, dirichlet, negative binomial, zeta
+# to add - laplace from exp, dirichlet, negative binomial, zeta, rice
 
 # gamma function
 def gamma_function(k):
@@ -400,6 +402,19 @@ def cauchy_distribution(x, x_knot, gamma):
     coef = np.pi * gamma
     return 1 / (coef * (1 + ( ( (x - x_knot) / gamma) ** 2 ) ) )
 
+def rice_distribution(x):
+    '''
+    scipy.special.jv for bessel function
+    '''
+    pass
+
+def rice_distribution_from_poisson(x):
+    '''
+    generate data with poisson
+    generate a chi-squared distribution with data
+    rice = sigma * square root of chi squared
+    '''
+    pass
 
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
