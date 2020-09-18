@@ -444,14 +444,6 @@ type VII ~ t-distribution
 
 getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 
-### tweedie distribution
-
-### tukey lambda distribution
-
-### poisson
-
-### continuous bernoulli distribution
-
 ### kumaraswamy distribution
 two parameters
 - shape (`a>0`)
@@ -619,18 +611,7 @@ in case of likelihood-ratio tests
 
 **in relation to gamma** linear combo of noncentral chi-squared distributions make a generalized chi-squared distribution
 
-sqaure root of a noncentral chi-squared distribution is a rice distribution
-
-### phase-type distribution
-convolution of exponential distributions
-
-### wishart distribution
-gamma distribution generalization to multiple dimensions
-
-### wilks lambda distribution
-two independent wishart distributions
-
-for multivariate hypothesis testing
+square root of a noncentral chi-squared distribution is a rice distribution
 
 ### generalized normal distribution
 three parameters
@@ -745,6 +726,25 @@ support : `[0,∞)` for `q>=1`
 this is a tsallis distribution
 
 **in relation to gamma** generalization of weibull and lomax distribution
+
+### phase-type distribution
+convolution of exponential distributions
+
+### wishart distribution
+gamma distribution generalization to multiple dimensions
+
+### wilks lambda distribution
+two independent wishart distributions
+
+for multivariate hypothesis testing
+
+### tweedie distribution
+
+### tukey lambda distribution
+
+### poisson
+
+### continuous bernoulli distribution
 
 ## support section
 
