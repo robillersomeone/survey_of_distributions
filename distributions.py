@@ -8,7 +8,7 @@ import scipy.special.jv
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
 # pareto, levy, cauchy
 # to fix - t
-# to add - laplace from exp, dirichlet, negative binomial, zeta, rice
+# to add - laplace from exp, dirichlet, negative binomial, zeta, rice, chi, nakagami, logistic, kumaraswamy
 
 # gamma function
 def gamma_function(k):

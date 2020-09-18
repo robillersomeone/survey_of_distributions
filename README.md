@@ -453,42 +453,173 @@ getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 ### continuous bernoulli distribution
 
 ### kumaraswamy distribution
+two parameters
+- shape (`a>0`)
+- shape (`b>0`)
+
+support : (0,1)
+
+**in relation to gamma** the negative log of the kumaraswamy(a,1) is the exponential(a)
+
+also, is a special case of the beta distribution
+
+kumaraswamy(1,1) is a uniform distribution
 
 ### irwin-hall distribution
+one parameter
+- number of uniform distribution (`n` natural number)
+
+support : `[0,n]`
+
+uniform sum distribution
+
+**in relation to gamma**
+sum of uniform(0,1) distributions
 
 ### logit-normal distribution
-alternative to the dirichlet distribution 
+two parameters
+- squared scale (`σ^2`)
+- location (`μ`)
 
-aka it captures correlations in components of probability vectors
+support : `(0,1)`, thanks logistic function
 
-### burr distribution?
+**in relation to gamma** logistic transform of the normal distribution
+
+alternative to the dirichlet distribution, aka it captures correlations in components of probability vectors
+
+### burr distribution
+two parameters
+- c (`c>0`)
+- k (`k>0`)
+
+support : `x>0`
+
+**in relation to gamma** burr(1, k) is the lomax distribution
 
 ### exponential-logarithmic distribution
+two parameters
+- p (from `(0,1)`)
+- beta (`β>0`)
+
+support : `[0,∞)`
+
 
 ### chi distribution
-for fun
+one parameter
+- degrees of freedom (`k>0`)
+
+support : `[0,∞)`
+
+**in relation to gamma** square it to get the chi-squared distribution (which is a special case of the gamma distribution)
+
+if `degrees of freedom=1` the chi distribution is a half normal distribution
+
+if `degrees of freedom=2` the chi distribution is a rayleigh distribution
+
+if `degrees of freedom=3` the chi distribution is a maxwell distribution
+
+the absolute value of a standard normal distribution is a chi distribution
 
 ### gompertz distribution
+two parameters
+- shape (`eta>0`)
+- scale (`b>0`)
+
+support : `[0,∞)`
+
+**in relation to gamma** the gamma distribution is a conjugate prior to gompertz likelihood
+
 
 ### inverse chi-squared
+one parameter
+- degrees of freedom (`ν`)
+
+support : `(0,∞)`
+
+**in relation to gamma** invert it to get chi-squared (which is a special case of the gamma distribution)
+
 prior and posterior distribution for unknown variance of the normal distribution in bayesian inference
 
 ### inverse gamma distribution
+two parameters
+- shape (`𝛼>0`)
+- scale (`β>0`)
+
+support : `(0,∞)`
+
+**in relation to gamma** just invert it (but be careful with scale parameter)
+
+levy distribution is a specific parameterization of the inverse gamma distribution
 
 ### log-cauchy distribution
+two parameters
+- location (`μ`)
+- scale (`σ`)
+
+support : `(0,∞)`
+
+**in relation to gamma** e raised to the cauchy distribution is the log-cauchy distribution
 
 ### log-logistic distribution
+two parameters
+- scale (`𝛼>0`)
+- shape (`β>0`)
+
+support : `[0,∞)`
+
+**in relation to gamma** log-logistic is a specific case of the beta prime distribution
 
 ### log-normal distribution
+two parameters
+- location (`μ`)
+- scale (`σ`)
+
+support : `(0,∞)`
+
+**in relation to gamma** ^ μ + σ* standard normal distribution
 
 ### lomax distribution (pareto type II)
+two parameters
+- shape (`𝛼>0`)
+- scale (`λ>0`)
+
+support :`x>=0`
+
+**in relation to gamma** lomax distribution is a mixture of exponential distributions, with the rate being a gamma distribution
 
 ### maxwell-boltzmann distribution
+one parameter
+- scale (`a>0`)
+
+support : `(0,∞)`
+
+**in relation to gamma** is a chi-squared(3) with a scale parameter
 
 ### nakagami distribution
+two parameters
+- shape (`μ>=.5`)
+- spread (`w>0`, can also use omega)
+
+support : `x>0`
+
+used to model wireless signals
+
+**in relation to gamma** the square root of a gamma distribution is the nakagami distribution
+
+nakagami distribution is the square root of a scaled chi distribution, this is generalization of the chi distribution
 
 ### noncentral chi-squared distribution
+two paramters
+- degrees of freedom (`k>0`)
+- non-centrality parameter (`λ>0`)
+
+support : `[0,∞)`
+
 in case of likelihood-ratio tests
+
+**in relation to gamma** linear combo of noncentral chi-squared distributions make a generalized chi-squared distribution
+
+sqaure root of a noncentral chi-squared distribution is a rice distribution
 
 ### phase-type distribution
 convolution of exponential distributions
@@ -502,30 +633,118 @@ two independent wishart distributions
 for multivariate hypothesis testing
 
 ### generalized normal distribution
+three parameters
+- location (`μ`)
+- scale (`𝛼>0`)
+- shape (`β>0`)
+
+support : `(-∞,∞)`
+
+**in relation to gamma** built with the gamma function
 
 ### fisher's z-distribution
+two parameters
+- degrees of freedom (`d>0`)
+- degrees of freedom (`d>0`)
+
+support : `(-∞,∞)`
+
 for more stats testing
 
+**in relation to gamma** half the log of an f-distribution
+
 ### holtsmark distribution
-special case of a stable distribution
+two parameters
+ - scale (`c` from `(0,∞)`)
+ - location (`μ`)
+
+support : real numbers
+
+special case of a stable distribution(beta=0, and alpha=3/2), where PDF can be made with the hypergeometric function
 
 ### logistic distribution
+two parameters
+- location (`μ`)
+- scale (`s>0`)
+
+support : `(-∞,∞)`
+
+used in logistic regression!
+
+**in relation to gamma** scaled log of the ratio of two exponential(1) distributions (which is a special case of the gamma distribution)
+
+log of uniforms can get to the logistic distribution as well
+
+the different of two gumbel distributions is a logistic distribution
 
 ### noncentral t-distribution
+two parameters
+- degrees of freedom (`v>0`)
+- noncentrality (`μ`)
+
 even more stats tests
 
+**in relation to gamma** the probability density function is given by the gamma function with the degrees of freedom, noncentrally of course.
+
 ### slash distribution
+no parameters!
+
+support : `(-∞,∞)`
+
+just a standard normal distribution divided by a standard uniform distribution
+
+used in simulation, and has heavier tails than a normal distribution
 
 ### stable distribution
+ four parameters
+ - stability (`𝛼` from `(0,2]`)
+ - skewness (`β` from `[-1,1]`)
+ - scale (`c` from `(0,∞)`)
+ - location (`μ`)
+
+
+support : depends on 𝛼 and β
+
+ special cases
+ - cauchy
+ - levy
+ - normal
+
+ those three have closed form expressions for the PDFs, the rest don't.
 
 ### q-exponential distribution
-this is a tsallis distribution
-### q-gaussian distribution
-this is a tsallis distribution
-### q-weibull distribution
+two parameters
+- shape (`q<2`)
+- rate (`λ>0`)
+
+support : `[0,∞)` for `q>=1`
+
 this is a tsallis distribution
 
-generlization of weibull and lomax distribution
+**in relation to gamma** q-exponential distribution is a generalized lomax distribution
+
+### q-gaussian distribution
+two parameters
+- shape (`q<3`)
+- `β>0`
+
+this is a tsallis distribution
+
+support : `(-∞,∞)` for `1<=q<3`
+
+**in relation to gamma** it's a scaled t distribution
+
+### q-weibull distribution
+three parameters
+- shape (`q<2`)
+- rate (`λ>0`)
+- shape (`funny k>0`)
+
+support : `[0,∞)` for `q>=1`
+
+this is a tsallis distribution
+
+**in relation to gamma** generalization of weibull and lomax distribution
 
 ## support section
 
