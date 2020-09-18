@@ -86,6 +86,41 @@ used in hypothesis testing, as goodness of fit and independence.
 
 <img src="./imgs/chi_squared_distribution_3.png" height="300px" width="400px">
 
+### chi distribution
+one parameter
+- degrees of freedom (`k>0`)
+
+support : `[0,∞)`
+
+**in relation to gamma** square it to get the chi-squared distribution (which is a special case of the gamma distribution)
+
+if `degrees of freedom=1` the chi distribution is a half normal distribution
+
+if `degrees of freedom=2` the chi distribution is a rayleigh distribution
+
+if `degrees of freedom=3` the chi distribution is a maxwell distribution
+
+the absolute value of a standard normal distribution is a chi distribution
+
+<img src="./imgs/chi_distribution.png" height="300px" width="400px">
+
+### nakagami distribution
+two parameters
+- shape (`μ>=.5`)
+- spread (`w>0`, can also use omega)
+
+support : `x>0`
+
+used to model wireless signals
+
+**in relation to gamma** the square root of a gamma distribution is the nakagami distribution
+
+nakagami distribution is the square root of a scaled chi distribution, this is generalization of the chi distribution.
+
+nakagami distribution with `shape=1` is a rayleight and a weibull distribution, also if `spread=2` it's an exponential distribution.
+
+<img src="./imgs/nakagami_distribution.png" height="300px" width="400px">
+
 ### laplace distribution
 two parameters
 - location (`μ` real number)
@@ -160,6 +195,21 @@ special case of beta distribution where `Beta(1, 1)`
 **in relation to gamma** it's a type of beta distribution, which is a ratio of gamma distributions.
 
 <img src="./imgs/uniform_distribution.png" height="300px" width="400px">
+
+### kumaraswamy distribution
+two parameters
+- shape (`a>0`)
+- shape (`b>0`)
+
+support : (0,1)
+
+**in relation to gamma** the negative log of the kumaraswamy(a,1) is the exponential(a)
+
+also, is a special case of the beta distribution
+
+kumaraswamy(1,1) is a uniform distribution
+
+<img src="./imgs/kumaraswamy_distribution.png" height="300px" width="400px">
 
 ### beta prime distribution (pearson type VI)
 two parameters
@@ -444,18 +494,6 @@ type VII ~ t-distribution
 
 getting normal ~ take the limit of a I, III, IV, V, or VI distribution.
 
-### kumaraswamy distribution
-two parameters
-- shape (`a>0`)
-- shape (`b>0`)
-
-support : (0,1)
-
-**in relation to gamma** the negative log of the kumaraswamy(a,1) is the exponential(a)
-
-also, is a special case of the beta distribution
-
-kumaraswamy(1,1) is a uniform distribution
 
 ### irwin-hall distribution
 one parameter
@@ -496,21 +534,6 @@ two parameters
 support : `[0,∞)`
 
 
-### chi distribution
-one parameter
-- degrees of freedom (`k>0`)
-
-support : `[0,∞)`
-
-**in relation to gamma** square it to get the chi-squared distribution (which is a special case of the gamma distribution)
-
-if `degrees of freedom=1` the chi distribution is a half normal distribution
-
-if `degrees of freedom=2` the chi distribution is a rayleigh distribution
-
-if `degrees of freedom=3` the chi distribution is a maxwell distribution
-
-the absolute value of a standard normal distribution is a chi distribution
 
 ### gompertz distribution
 two parameters
@@ -586,19 +609,6 @@ one parameter
 support : `(0,∞)`
 
 **in relation to gamma** is a chi-squared(3) with a scale parameter
-
-### nakagami distribution
-two parameters
-- shape (`μ>=.5`)
-- spread (`w>0`, can also use omega)
-
-support : `x>0`
-
-used to model wireless signals
-
-**in relation to gamma** the square root of a gamma distribution is the nakagami distribution
-
-nakagami distribution is the square root of a scaled chi distribution, this is generalization of the chi distribution
 
 ### noncentral chi-squared distribution
 two paramters

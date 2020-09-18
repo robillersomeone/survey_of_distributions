@@ -69,6 +69,7 @@ y_erlang_values = ds.erlang_distribution(x_gamma_values, 9, 1)
 
 y_exponential_values = ds.exponential_distribution(x_gamma_values, 1)
 
+
 y_chi_6 = ds.chi_squared_distribution(x_gamma_values, 6)
 y_chi_8 = ds.chi_squared_distribution(x_gamma_values,8)
  
@@ -204,6 +205,40 @@ y_levy_values_0_1 = ds.levy_distribution(x_levy_values, 0, 1)
 y_levy_values_0_2 = ds.levy_distribution(x_levy_values, 0, 2)
 y_levy_values_0_4 = ds.levy_distribution(x_levy_values, 0, 4)
 y_levy_values_0_8 = ds.levy_distribution(x_levy_values, 0, 8)
+
+# chi
+
+x_chi_values = np.arange(0, 4, .01)[1:]
+# x_chi_values = np.arange(0, 20, .05)[1:]
+
+y_chi_values_1 = ds.chi_distribution(x_chi_values, 1)
+y_chi_values_2 = ds.chi_distribution(x_chi_values, 2)
+y_chi_values_3 = ds.chi_distribution(x_chi_values, 3)
+y_chi_values_4 = ds.chi_distribution(x_chi_values, 4)
+y_chi_values_5 = ds.chi_distribution(x_chi_values, 5)
+y_chi_values_6 = ds.chi_distribution(x_chi_values, 6)
+
+
+
+# kumaraswamy
+x_kumaraswamy_values = x_beta_values = np.arange(0, 1, .01)[1:]
+
+y_kumaraswamy_values_half_half = ds.kumaraswamy_distribution(x_kumaraswamy_values, .5, .5)
+y_kumaraswamy_values_half_1 = ds.kumaraswamy_distribution(x_kumaraswamy_values, .5, 1)
+y_kumaraswamy_values_1_1 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 1, 1)
+y_kumaraswamy_values_2_2 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 2, 2)
+y_kumaraswamy_values_2_3 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 2, 3)
+y_kumaraswamy_values_2_5 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 2, 5)
+
+
+# nakagami
+x_nakagami_values = np.arange(0, 4, .01)[1:]
+
+y_nakagami_values_half_1 = ds.nakagami_distribution(x_nakagami_values, .5, 1)
+y_nakagami_values_1_1 = ds.nakagami_distribution(x_nakagami_values, 1, 1)
+y_nakagami_values_1_3 = ds.nakagami_distribution(x_nakagami_values, 1, 3)
+y_nakagami_values_2_1 = ds.nakagami_distribution(x_nakagami_values, 2, 1)
+y_nakagami_values_2_2 = ds.nakagami_distribution(x_nakagami_values, 2, 2)
 
 
 # for now the normal distribution is approximated using the central limit theorem

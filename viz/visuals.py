@@ -143,15 +143,41 @@ f_color = 'red'
 # plt.legend(['x_knot=0 gamma=.5', 'x_knot=0 gamma=1', 'x_knot=0 gamma=2', 'x_knot=-2 gamma=1'], loc='upper right')
 
 # levy
-plt.title('levy distribution')
-plt.plot(ds.x_levy_values, ds.y_levy_values_0_half)
-plt.plot(ds.x_levy_values, ds.y_levy_values_0_1)
-plt.plot(ds.x_levy_values, ds.y_levy_values_0_2)
-plt.plot(ds.x_levy_values, ds.y_levy_values_0_4)
-plt.plot(ds.x_levy_values, ds.y_levy_values_0_8)
-plt.legend(['μ=0 c=.5', 'μ=0 c=1', 'μ=0 c=2', 'μ=-2 c=4', 'μ=0 c=8'], loc='upper right')
+# plt.title('levy distribution')
+# plt.plot(ds.x_levy_values, ds.y_levy_values_0_half)
+# plt.plot(ds.x_levy_values, ds.y_levy_values_0_1)
+# plt.plot(ds.x_levy_values, ds.y_levy_values_0_2)
+# plt.plot(ds.x_levy_values, ds.y_levy_values_0_4)
+# plt.plot(ds.x_levy_values, ds.y_levy_values_0_8)
+# plt.legend(['μ=0 c=.5', 'μ=0 c=1', 'μ=0 c=2', 'μ=-2 c=4', 'μ=0 c=8'], loc='upper right')
 
+# chi 
+# plt.title('chi distribution')
+# plt.plot(ds.x_chi_values, ds.y_chi_values_1)
+# plt.plot(ds.x_chi_values, ds.y_chi_values_2)
+# plt.plot(ds.x_chi_values, ds.y_chi_values_3)
+# plt.plot(ds.x_chi_values, ds.y_chi_values_4)
+# plt.plot(ds.x_chi_values, ds.y_chi_values_5)
+# plt.legend(['k=1','k=2','k=3','k=4','k=5'], loc='upper right')
 
+# kumaraswamy
+# plt.title('kumaraswamy distribution')
+# plt.plot(ds.x_kumaraswamy_values, ds.y_kumaraswamy_values_half_half)
+# plt.plot(ds.x_kumaraswamy_values, ds.y_kumaraswamy_values_half_1)
+# plt.plot(ds.x_kumaraswamy_values, ds.y_kumaraswamy_values_1_1)
+# plt.plot(ds.x_kumaraswamy_values, ds.y_kumaraswamy_values_2_2)
+# plt.plot(ds.x_kumaraswamy_values, ds.y_kumaraswamy_values_2_3)
+# plt.plot(ds.x_kumaraswamy_values, ds.y_kumaraswamy_values_2_5)
+# plt.legend(['alpha=.5 β=.5','alpha=2 β=2', 'alpha=2 β=3', 'alpha=2 β=5'], loc='upper right')
+
+# nakagami
+plt.title('nakagami distribution')
+plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_half_1)
+plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_1_1)
+plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_1_3)
+plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_1)
+plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_2)
+plt.legend(['μ=.5, omega=1', 'μ=1, omega=1', 'μ=.5, omega=3', 'μ=2, omega=1', 'μ=2, omega=2'], loc='upper right')
 
 # plot for exp, erlang, chi, beta
 

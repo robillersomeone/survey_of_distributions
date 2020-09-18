@@ -2,13 +2,14 @@ import math
 import numpy as np
 from scipy.integrate import quad
 # bessel function for rice distribution
-import scipy.special.jv
+# import scipy.special.jv
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
-# pareto, levy, cauchy
+# pareto, levy, cauchy, chi, kumaraswamy, nakagami
 # to fix - t
-# to add - laplace from exp, dirichlet, negative binomial, zeta, rice, chi, nakagami, logistic, kumaraswamy
+# to add - laplace from exp, dirichlet, negative binomial, zeta, 
+# rice, logistic, beta prime, lomax
 
 # gamma function
 def gamma_function(k):
@@ -100,7 +101,7 @@ def beta_distribution(x, alpha, beta):
     alpha : float (positive)
         shape paramter in  beta distribution
     beta : float
-        scale parameter in beta distribution
+        shape parameter in beta distribution
 
     returns
     -------
@@ -182,6 +183,48 @@ def chi_squared_distribution(x, v, theta=2):
     value in exponential distr for random variable : float
     '''
     return gamma_distribution(x, (v/2), theta)
+
+def chi_distribution(x, v):
+    '''
+    one parameter -  shape v (known as degrees of freedom),
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    v : int (positive)
+        shape paramter in chi-squared distribution
+        'degrees of freedom' in chi-squared
+
+    returns
+    -------
+    value in exponential distr for random variable : float
+    '''
+    num = (2 ** (1 - (v/2 ))) * (x ** (v-1)) * np.exp( -(x * x) / 2)
+    den = integral_gamma_function(v /2)
+    return num / den
+    
+def chi_distribution_from_squared(x, v, theta=2):
+    '''
+    one parameter -  shape v (known as degrees of freedom),
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    v : int (positive)
+        shape paramter in chi-squared distribution
+        'degrees of freedom' in chi-squared
+    theta : 2 (int)
+        known as shape parameter in gamma distribution,
+        it is always =1 for the exponential distribution
+
+    returns
+    -------
+    value in exponential distr for random variable : float
+    '''
+    # return [n ** .5 for n in int_gamma_distribution(x, (v/2), theta)]
+    return int_gamma_distribution(x, (v/2), theta) ** .5
 
 def f_distribution(x, degree_1, degree_2):
     '''
@@ -416,6 +459,47 @@ def rice_distribution_from_poisson(x):
     '''
     pass
 
+def kumaraswamy_distribution(x, a, b):
+    '''
+    two parameters -  shape alpha, shape beta,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    alpha : float (positive)
+        shape paramter in  kumaraswamy distribution
+    beta : float (positive)
+        shape parameter in kumaraswamy distribution
+
+    returns
+    -------
+    value in kumaraswamy distr for random variable : float
+    '''
+    return a * b * (x ** (a - 1)) * ( (1 - x ** a) ** (b - 1))
+
+def nakagami_distribution(x, mu, omega):
+    '''
+    two parameters -  shape mu, spread omega,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    mu : float (positive)
+        shape paramter in  nakagami distribution
+    omega : float (positive)
+        spread parameter in nakagami distribution
+
+    returns
+    -------
+    value in nakagami distr for random variable : float
+    '''
+    # coef = ((2 * mu) ** mu) / (integral_gamma_function(mu) * omega ** mu)
+    # return coef * (x **( (2 *mu) - 1 )) * np.exp((-mu/omega) * x ** 2)
+    coef_1 = 2 / integral_gamma_function(mu)
+    coef_2 = (mu / omega) ** mu
+    return coef_1 * coef_2 * (x ** ((2 * mu) - 1) ) * np.exp( - (mu / omega) * x ** 2)
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
 #     '''four parameters -  shape k, scale theta for each gamma
