@@ -284,6 +284,51 @@ y_logit_normal_values_point_3_1 = ds.logit_normal_distribution(x_logit_normal_va
 y_logit_normal_values_1_1 = ds.logit_normal_distribution(x_logit_normal_values, 1, 1)
 y_logit_normal_values_3_1 = ds.logit_normal_distribution(x_logit_normal_values, 3.16, 1)
 
+# exponential-logarithmic
+x_exponential_logarthmic_values = np.arange(0, 3, .01)[1:]
+
+y_exponential_logarthmic_values_half_1 = ds.exponential_logarithmic_distribution(x_exponential_logarthmic_values, .5, 1)
+y_exponential_logarthmic_values_half_2 = ds.exponential_logarithmic_distribution(x_exponential_logarthmic_values, .5, 2)
+y_exponential_logarthmic_values_half_3 = ds.exponential_logarithmic_distribution(x_exponential_logarthmic_values, .5, 3)
+
+# gompertz
+x_gompertz_values = np.arange(0, 5, .01)[:]
+
+# y_gompertz_values_point_1_1 = ds.gompertz_distribution(x_gompertz_values, .1, 1)
+# y_gompertz_values_2_1 = ds.gompertz_distribution(x_gompertz_values, 2.0, 1)
+# y_gompertz_values_3_1 = ds.gompertz_distribution(x_gompertz_values, 3, 1)
+y_gompertz_values_1_2 = ds.gompertz_distribution(x_gompertz_values, 1, 2)
+y_gompertz_values_point_1_2 = ds.gompertz_distribution(x_gompertz_values, .1, 2)
+y_gompertz_values_half_3 = ds.gompertz_distribution(x_gompertz_values, .5, 3)
+
+# inverse-gamma 
+x_inverse_gamma_values = np.arange(0, 3, .01)[1:]
+
+y_inverse_gamma_values_1_1 = ds.inverse_gamma_distribution(x_inverse_gamma_values, 1, 1)
+y_inverse_gamma_values_2_1 = ds.inverse_gamma_distribution(x_inverse_gamma_values, 2, 1)
+y_inverse_gamma_values_3_1 = ds.inverse_gamma_distribution(x_inverse_gamma_values, 3, 1)
+y_inverse_gamma_values_3_half = ds.inverse_gamma_distribution(x_inverse_gamma_values, 3, .5)
+
+# inverse-chi-squared
+x_inverse_chi_squared_values = np.arange(0, 1, .01)[1:]
+
+y_inverse_chi_squared_values_1 = ds.inverse_chi_squared_distribution(x_inverse_chi_squared_values, 1)
+y_inverse_chi_squared_values_2 = ds.inverse_chi_squared_distribution(x_inverse_chi_squared_values, 2)
+y_inverse_chi_squared_values_3 = ds.inverse_chi_squared_distribution(x_inverse_chi_squared_values, 3)
+y_inverse_chi_squared_values_4 = ds.inverse_chi_squared_distribution(x_inverse_chi_squared_values, 4)
+y_inverse_chi_squared_values_5 = ds.inverse_chi_squared_distribution(x_inverse_chi_squared_values, 5)
+y_inverse_chi_squared_values_6 = ds.inverse_chi_squared_distribution(x_inverse_chi_squared_values, 6)
+
+# log-cauchy
+x_log_cauchy_values = np.arange(0, 3, .01)[1:]
+
+y_log_cauchy_values_0_half = ds.log_cauchy_distribution(x_log_cauchy_values, 0, .5)
+y_log_cauchy_values_0_1 = ds.log_cauchy_distribution(x_log_cauchy_values, 0, 1)
+y_log_cauchy_values_0_2 = ds.log_cauchy_distribution(x_log_cauchy_values, 0, 2)
+y_log_cauchy_values_1_half = ds.log_cauchy_distribution(x_log_cauchy_values, 1, .5)
+y_log_cauchy_values_1_1 = ds.log_cauchy_distribution(x_log_cauchy_values, 1, 1)
+
+
 # for now the normal distribution is approximated using the central limit theorem
 
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]

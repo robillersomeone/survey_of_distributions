@@ -44,3 +44,7 @@ implement tests for distributions built multiple ways
 
 - t
     - cauchy(0,1) == t(1)
+
+- inverse functions
+    - gamma
+    - chi-squared

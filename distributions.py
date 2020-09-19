@@ -7,10 +7,11 @@ from scipy.special import logit
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
-# pareto, levy, cauchy, chi, kumaraswamy, nakagami, lomax, burr, beta prime, logit-normal
+# pareto, levy, cauchy, chi, kumaraswamy, nakagami, lomax, burr, beta prime, logit-normal, exponential-logarithmic
+# gompertz, inverse-gamma, inverse-chi-squared,
 # to fix - t
 # to add - laplace from exp, dirichlet, negative binomial, zeta, 
-# rice, exponential-logarithmic
+# rice,
 
 # gamma function
 def gamma_function(k):
@@ -492,6 +493,50 @@ def burr_distribution(x, c, k):
     const = c * k
     return const* random_var
 
+def inverse_gamma_distribution(x, alpha, beta):
+    '''
+    two parameters -  shape k, scale beta, 
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    alpha : int (positive)
+        shape paramter in inverse-gamma distribution
+    beta : int (positive)
+        scale parameter in inverse-gamma distribution
+
+    returns
+    -------
+    value in inverse-gamma distr for random variable : float
+    
+    '''
+    coef = (beta ** alpha) / integral_gamma_function(alpha)
+    return coef * (x **(-alpha -1)) * np.exp(- beta /  x)
+
+def inverse_chi_squared_distribution(x, v, beta=.5):
+    '''
+    one parameter -  shape v (known as degrees of freedom),
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    v : int (positive)
+        shape paramter in invers-chi-squared distribution
+        'degrees of freedom' in inverse-chi-squared
+    beta : .5 (int)
+        known as scale parameter in inverse-gamma distribution,
+        it is always =.5 for the inverse-chi-squared distribution
+
+    returns
+    -------
+    value in inverse-chi-squared distr for random variable : float
+    '''
+    return inverse_gamma_distribution(x, (v/2), beta) 
+
+
+
 def levy_distribution(x, mu, c):
     '''
     two parameters _ location, scale
@@ -614,8 +659,88 @@ def logistic_distribution(x, mu, scale):
 
 def exponential_logarithmic_distribution(x, p, beta):
     '''
+    two parameters - probability, rate
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    p : float 
+        probability paramter in  exponential-logarithmic distribution
+    beta : float (positive)
+        rate parameter in exponential-logarithmic distribution
+
+    returns
+    -------
+    value in exponential-logarithmic distr for random variable : float
     '''
-    return (beta* (1-p) np.exp(-beta * x)) / ((1 - (1-p) np.exp(-beta * x)) * (- np.log(p)))
+    return (beta* (1-p) * np.exp(-beta * x)) / ((1 - (1-p) * np.exp(-beta * x)) * (- np.log(p)))
+
+def gompertz_distribution(x, eta, beta):
+    '''
+    two parameters - shape, scale
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    eta : float (positive)
+        shape paramter in  gompertz distribution
+    beta : float (positive)
+        scale parameter in gompertz distribution
+
+    returns
+    -------
+    value in gompertz distr for random variable : float
+    '''
+    # coef = beta * eta
+    # exponent_2= np.exp(beta * x)
+    # exponent = eta + (beta * x) - (eta * exponent_2)
+    # return coef * np.exp(exponent)
+    # return   np.exp(eta + (beta * x) - (eta * np.exp(beta * x)))
+    #  second version 
+    # return eta * (np.exp(beta * x)) * np.exp((- (eta / beta))* ((np.exp(beta * x)) - 1))
+    # third version
+    return eta * (beta ** x) * np.exp( - eta * ( ((beta ** x) -1) / (np.log(beta)) ))
+
+def log_cauchy_distribution(x, mu, sigma):
+    '''
+    two parameters
+
+    params
+    ------
+    x : float
+        random variable
+    mu : float
+        location parameter for log-cauchy distribution
+    sigma : float (positive)
+        scale parameter for log-cauchy distribution    
+
+    returns 
+    -------
+    value in log-cauchy distr for random variable : float
+    '''
+    coef = (1 / (x * np.pi))
+    return coef * (sigma / ( ((np.log(x) - mu) **2) + sigma ** 2) )
+
+def log_cauchy_distribution_from_cauchy(x, mu, sigma):
+    '''
+    two parameters
+
+    params
+    ------
+    x : float
+        random variable
+    mu : float
+        location parameter for log-cauchy distribution
+    sigma : float (positive)
+        scale parameter for log-cauchy distribution    
+
+    returns 
+    -------
+    value in log-cauchy distr for random variable : float
+    '''
+    return np.exp(cauchy_distribution(x, mu, sigma))
 
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):

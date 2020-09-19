@@ -206,14 +206,58 @@ f_color = 'red'
 # plt.legend(['μ=2, scale=1', 'μ=5, scale=2', 'μ=6, scale=2', 'μ=9, scale=3', 'μ=9, scale=4'], loc='upper right')
 
 # logit normal
-plt.title('logit-normal distribution')
-plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_point_3_0)
-plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_1_0)
-plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_3_0)
-plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_point_3_1)
-plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_1_1)
-plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_3_1)
-plt.legend(['σ=.32 μ=0', 'σ=1 μ=0', 'σ=3.16 μ=0', 'σ=.32 μ=1', 'σ=1 μ=1', 'σ=3.16 μ=1'], loc='upper right')
+# plt.title('logit-normal distribution')
+# plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_point_3_0)
+# plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_1_0)
+# plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_3_0)
+# plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_point_3_1)
+# plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_1_1)
+# plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_3_1)
+# plt.legend(['σ=.32 μ=0', 'σ=1 μ=0', 'σ=3.16 μ=0', 'σ=.32 μ=1', 'σ=1 μ=1', 'σ=3.16 μ=1'], loc='upper right')
+
+# exponential-logarithmic 
+# plt.title('exponential-logarithmic distribution')
+# plt.plot(ds.x_exponential_logarthmic_values, ds.y_exponential_logarthmic_values_half_1)
+# plt.plot(ds.x_exponential_logarthmic_values, ds.y_exponential_logarthmic_values_half_2)
+# plt.plot(ds.x_exponential_logarthmic_values, ds.y_exponential_logarthmic_values_half_3)
+# plt.legend(['p=.5 β=1', 'p=.5 β=2', 'p=.5 β=3'], loc='upper right')
+
+# gompertz
+# plt.title('gompertz distribution')
+# plt.plot(ds.x_gompertz_values, ds.y_gompertz_values_point_1_1)
+# plt.plot(ds.x_gompertz_values, ds.y_gompertz_values_2_1)
+# plt.plot(ds.x_gompertz_values, ds.y_gompertz_values_3_1)
+# plt.plot(ds.x_gompertz_values, ds.y_gompertz_values_1_2)
+# plt.plot(ds.x_gompertz_values, ds.y_gompertz_values_point_1_2)
+# plt.plot(ds.x_gompertz_values, ds.y_gompertz_values_half_3)
+# plt.legend(['η=1 b=2', 'η=.5 b=3','η=.1 b=2'], loc='upper right')
+
+# inverse-gamma 
+# plt.title('inverse gamma distribution')
+# plt.plot(ds.x_inverse_gamma_values, ds.y_inverse_gamma_values_1_1)
+# plt.plot(ds.x_inverse_gamma_values, ds.y_inverse_gamma_values_2_1)
+# plt.plot(ds.x_inverse_gamma_values, ds.y_inverse_gamma_values_3_1)
+# plt.plot(ds.x_inverse_gamma_values, ds.y_inverse_gamma_values_3_half)
+# plt.legend(['alpha=β=1','alpha=2 β=1','alpha=3 β=1','alpha=3 β=.5'], loc='upper right')
+
+# inverse-chi-squared
+# plt.title('inverse-chi-squared distribution')
+# plt.plot(ds.x_inverse_chi_squared_values, ds.y_inverse_chi_squared_values_1)
+# plt.plot(ds.x_inverse_chi_squared_values, ds.y_inverse_chi_squared_values_2)
+# plt.plot(ds.x_inverse_chi_squared_values, ds.y_inverse_chi_squared_values_3)
+# plt.plot(ds.x_inverse_chi_squared_values, ds.y_inverse_chi_squared_values_4)
+# plt.plot(ds.x_inverse_chi_squared_values, ds.y_inverse_chi_squared_values_5)
+# plt.plot(ds.x_inverse_chi_squared_values, ds.y_inverse_chi_squared_values_6)
+# plt.legend(['ν=1', 'ν=2', 'ν=3', 'ν=4', 'ν=5', 'ν=6'], loc='upper right')
+
+# log-cauchy
+plt.title('log-cauchy distribution')
+plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_half)
+plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_1)
+plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_2)
+plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_1_half)
+plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_1_1)
+
 
 # plot for exp, erlang, chi, beta
 

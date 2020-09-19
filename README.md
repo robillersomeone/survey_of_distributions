@@ -9,7 +9,7 @@ typos are normally distributed, so if you see one please let me know.
 ## Continuous Distributions
 the starting point is the gamma in theory and code in `distributions.py`, due to the point of reference the gamma serves for other distributions.
 
-the graphing code can be found in the viz directory, all graphs are of the probability density function for the given distribution over a subset of their support, normally [0, 20)
+the graphing code can be found in the viz directory, all graphs are of the probability density function for the given distribution over a subset of their support, normally [0, 20),[0,1], or [0,5].
 
 ### normal distribution
 two parameters
@@ -477,6 +477,53 @@ there is also a three parameter weibull distribution, with a location parameter 
 <img src="./imgs/weibull_distribution.png" height="300px" width="400px">
 
 
+### exponential-logarithmic distribution
+two parameters
+- p (from `(0,1)`)
+- beta (`β>0`)
+
+support : `[0,∞)`
+
+**in relation to gamma** the exponential-logarithmic distribution reduces to the exponential distribution when `p goes to 1`.
+
+<img src="./imgs/exponential_logarithmic_distribution.png" height="300px" width="400px">
+
+### gompertz distribution
+two parameters
+- shape (`eta>0`)
+- scale (`b>0`)
+
+support : `[0,∞)`
+
+**in relation to gamma** the gamma distribution is a conjugate prior to gompertz likelihood
+
+<img src="./imgs/gompertz_distribution.png" height="300px" width="400px">
+
+### inverse gamma distribution
+two parameters
+- shape (`𝛼>0`)
+- scale (`β>0`)
+
+support : `(0,∞)`
+
+**in relation to gamma** just invert it (but be careful with scale parameter)
+
+levy distribution is a specific parameterization of the inverse gamma distribution
+
+<img src="./imgs/inverse_gamma_distribution.png" height="300px" width="400px">
+
+### inverse chi-squared
+one parameter
+- degrees of freedom (`ν`)
+
+support : `(0,∞)`
+
+**in relation to gamma** invert it to get chi-squared (which is a special case of the gamma distribution)
+
+prior and posterior distribution for unknown variance of the normal distribution in bayesian inference
+
+<img src="./imgs/inverse_chi_squared_distribution.png" height="300px" width="400px">
+
 ### lévy distribution
 two parameter
 - location (`μ`)
@@ -490,7 +537,16 @@ the inverse of normal distribution minus location parameter is the levy distribu
 
 <img src="./imgs/levy_distribution.png" height="300px" width="400px">
 
+### log-cauchy distribution
+two parameters
+- location (`μ`)
+- scale (`σ`)
 
+support : `(0,∞)`
+
+**in relation to gamma** e raised to the cauchy distribution is the log-cauchy distribution
+
+<img src="./imgs/log_cauchy_distribution.png" height="300px" width="400px">
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
@@ -564,57 +620,6 @@ uniform sum distribution
 
 **in relation to gamma**
 sum of uniform(0,1) distributions
-
-
-
-### exponential-logarithmic distribution
-two parameters
-- p (from `(0,1)`)
-- beta (`β>0`)
-
-support : `[0,∞)`
-
-**in relation to gamma** the exponential-logarithmic distribution reduces to the exponential distribution when `p goes to 1`.
-
-### gompertz distribution
-two parameters
-- shape (`eta>0`)
-- scale (`b>0`)
-
-support : `[0,∞)`
-
-**in relation to gamma** the gamma distribution is a conjugate prior to gompertz likelihood
-
-
-### inverse chi-squared
-one parameter
-- degrees of freedom (`ν`)
-
-support : `(0,∞)`
-
-**in relation to gamma** invert it to get chi-squared (which is a special case of the gamma distribution)
-
-prior and posterior distribution for unknown variance of the normal distribution in bayesian inference
-
-### inverse gamma distribution
-two parameters
-- shape (`𝛼>0`)
-- scale (`β>0`)
-
-support : `(0,∞)`
-
-**in relation to gamma** just invert it (but be careful with scale parameter)
-
-levy distribution is a specific parameterization of the inverse gamma distribution
-
-### log-cauchy distribution
-two parameters
-- location (`μ`)
-- scale (`σ`)
-
-support : `(0,∞)`
-
-**in relation to gamma** e raised to the cauchy distribution is the log-cauchy distribution
 
 ### log-logistic distribution
 two parameters
