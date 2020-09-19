@@ -110,6 +110,14 @@ y_beta_values_frac_1_6_4 = ds.beta_distribution(x_beta_values, .6, .4)
 
 y_arcsin_values = ds.beta_distribution(x_beta_values, .5, .5)
 
+# beta prime
+x_beta_prime_values = np.arange(0, 5, .02)[1:]
+
+y_beta_prime_values_1_1 = ds.beta_prime_distribution(x_beta_prime_values, 1, 1)
+y_beta_prime_values_1_2 = ds.beta_prime_distribution(x_beta_prime_values, 1, 2)
+y_beta_prime_values_2_1 = ds.beta_prime_distribution(x_beta_prime_values, 2, 1)
+y_beta_prime_values_2_3 = ds.beta_prime_distribution(x_beta_prime_values, 2, 3)
+
 # support for f 
 x_f_values = np.arange(0, 5, .02)[1:]
 
@@ -189,6 +197,23 @@ y_pareto_values_1_1 = ds.pareto_distribution(x_pareto_values, 1, 1)
 y_pareto_values_1_2 = ds.pareto_distribution(x_pareto_values, 1, 2)
 y_pareto_values_1_3 = ds.pareto_distribution(x_pareto_values, 1, 3)
 
+# lomax
+x_lomax_values = np.arange(1, 5, .05)[:]
+
+y_lomax_values_1_2 = ds.lomax_distribution(x_lomax_values, 1, 2)
+y_lomax_values_2_2 = ds.lomax_distribution(x_lomax_values, 2, 2)
+y_lomax_values_4_2 = ds.lomax_distribution(x_lomax_values, 4, 2)
+y_lomax_values_6_1 = ds.lomax_distribution(x_lomax_values, 6, 1)
+
+# burr
+x_burr_values = np.arange(0, 5, .05)[1:]
+
+y_burr_values_1_1 = ds.burr_distribution(x_burr_values, 1, 1)
+y_burr_values_1_2 = ds.burr_distribution(x_burr_values, 1, 2)
+y_burr_values_1_3 = ds.burr_distribution(x_burr_values, 1, 3)
+y_burr_values_2_1 = ds.burr_distribution(x_burr_values, 2, 1)
+y_burr_values_3_1 = ds.burr_distribution(x_burr_values, 3, 1)
+
 # cauchy
 x_cauchy_values = np.arange(-4, 4, .05)[1:]
 
@@ -240,6 +265,14 @@ y_nakagami_values_1_3 = ds.nakagami_distribution(x_nakagami_values, 1, 3)
 y_nakagami_values_2_1 = ds.nakagami_distribution(x_nakagami_values, 2, 1)
 y_nakagami_values_2_2 = ds.nakagami_distribution(x_nakagami_values, 2, 2)
 
+# logistic
+x_logistic_values = np.arange(-5, 20, .1)[1:]
+
+y_logistic_values_2_1 = ds.logistic_distribution(x_logistic_values, 2, 1)
+y_logistic_values_5_2 = ds.logistic_distribution(x_logistic_values, 5, 2)
+y_logistic_values_6_2 = ds.logistic_distribution(x_logistic_values, 6, 2)
+y_logistic_values_9_3 = ds.logistic_distribution(x_logistic_values, 9, 3)
+y_logistic_values_9_4 = ds.logistic_distribution(x_logistic_values, 9, 4)
 
 # for now the normal distribution is approximated using the central limit theorem
 

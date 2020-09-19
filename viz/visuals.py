@@ -134,6 +134,23 @@ f_color = 'red'
 # plt.legend(['x_min=1 alpha=1', 'x_min=1 alpha=2'], loc='upper right')
 # plt.legend(['x_min=1 alpha=1', 'x_min=1 alpha=2', 'x_min=1 alpha=3'], loc='upper right')
 
+# lomax
+# plt.title('lomax distribution')
+# plt.plot(ds.x_lomax_values, ds.y_lomax_values_1_2)
+# plt.plot(ds.x_lomax_values, ds.y_lomax_values_2_2)
+# plt.plot(ds.x_lomax_values, ds.y_lomax_values_4_2)
+# plt.plot(ds.x_lomax_values, ds.y_lomax_values_6_1)
+# plt.legend(['alpha=1 λ=2', 'alpha=2 λ=2', 'alpha=4 λ=2', 'alpha=6 λ=1'], loc='upper right')
+
+# burr
+# plt.title('burr distribution')
+# plt.plot(ds.x_burr_values, ds.y_burr_values_1_1)
+# plt.plot(ds.x_burr_values, ds.y_burr_values_1_2)
+# plt.plot(ds.x_burr_values, ds.y_burr_values_1_3)
+# plt.plot(ds.x_burr_values, ds.y_burr_values_2_1)
+# plt.plot(ds.x_burr_values, ds.y_burr_values_3_1)
+# plt.legend(['c=1 k=1', 'c=1 k=2', 'c=1 k=3','c=2 k=1', 'c=3 k=1'], loc='upper right')
+
 # cauchy
 # plt.title('cauchy distribution')
 # plt.plot(ds.x_cauchy_values, ds.y_cauchy_values_0_half)
@@ -171,13 +188,22 @@ f_color = 'red'
 # plt.legend(['alpha=.5 β=.5','alpha=2 β=2', 'alpha=2 β=3', 'alpha=2 β=5'], loc='upper right')
 
 # nakagami
-plt.title('nakagami distribution')
-plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_half_1)
-plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_1_1)
-plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_1_3)
-plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_1)
-plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_2)
-plt.legend(['μ=.5, omega=1', 'μ=1, omega=1', 'μ=.5, omega=3', 'μ=2, omega=1', 'μ=2, omega=2'], loc='upper right')
+# plt.title('nakagami distribution')
+# plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_half_1)
+# plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_1_1)
+# plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_1_3)
+# plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_1)
+# plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_2)
+# plt.legend(['μ=.5, omega=1', 'μ=1, omega=1', 'μ=.5, omega=3', 'μ=2, omega=1', 'μ=2, omega=2'], loc='upper right')
+
+# logistic
+plt.title('logistic distribution')
+plt.plot(ds.x_logistic_values, ds.y_logistic_values_2_1)
+plt.plot(ds.x_logistic_values, ds.y_logistic_values_5_2)
+plt.plot(ds.x_logistic_values, ds.y_logistic_values_6_2)
+plt.plot(ds.x_logistic_values, ds.y_logistic_values_9_3)
+plt.plot(ds.x_logistic_values, ds.y_logistic_values_9_4)
+plt.legend(['μ=2, scale=1', 'μ=5, scale=2', 'μ=6, scale=2', 'μ=9, scale=3', 'μ=9, scale=4'], loc='upper right')
 
 # plot for exp, erlang, chi, beta
 
@@ -228,6 +254,15 @@ plt.legend(['μ=.5, omega=1', 'μ=1, omega=1', 'μ=.5, omega=3', 'μ=2, omega=1'
 # uniform
 # plt.title('uniform \n alpha=β=1')
 # plt.plot(ds.x_beta_values, ds.y_arcsin_values)
+
+# beta prime
+# plt.title('beta prime distribution')
+# plt.plot(ds.x_beta_prime_values, ds.y_beta_prime_values_1_1)
+# plt.plot(ds.x_beta_prime_values, ds.y_beta_prime_values_1_2)
+# plt.plot(ds.x_beta_prime_values, ds.y_beta_prime_values_2_1)
+# plt.plot(ds.x_beta_prime_values, ds.y_beta_prime_values_2_3)
+# plt.legend(['alpha=1 β=1','alpha=1 β=2','alpha=2 β=1','alpha=2 β=3'], loc='upper right')
+
 
 # gamma
 

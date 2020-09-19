@@ -28,6 +28,7 @@ implement tests for distributions built multiple ways
 - f distribution
     - gammma function
     - adding multiple gamma functions (chi-squared implementation)
+    - a lomax(1,1) distribution is the same as an f(2,2) distribution
 
 - beta
     - gamma/beta function

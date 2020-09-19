@@ -144,6 +144,23 @@ from laplace - the frequency of an error is an exponential function of its magni
 
 <img src="./imgs/laplace_distribution.png" height="300px" width="400px">
 
+### logistic distribution
+two parameters
+- location (`μ`)
+- scale (`s>0`)
+
+support : `(-∞,∞)`
+
+used in logistic regression!
+
+**in relation to gamma** scaled log of the ratio of two exponential(1) distributions (which is a special case of the gamma distribution)
+
+log of uniforms can get to the logistic distribution as well
+
+the different of two gumbel distributions is a logistic distribution
+
+<img src="./imgs/logistic_distribution.png" height="300px" width="400px">
+
 ### beta distribution (Pearson type I)
 two parameters
 - shape (`𝛼`)
@@ -329,6 +346,34 @@ used all over the place 80% of the time
 check out relationship to gumbel
 
 <img src="./imgs/pareto_distribution.png" height="300px" width="400px">
+
+### lomax distribution (pareto type II)
+two parameters
+- shape (`𝛼>0`)
+- scale (`λ>0`)
+
+support :`x>=0`
+
+used in queuing theory and internet traffic modeling
+
+**in relation to gamma** lomax distribution is a mixture of exponential distributions, with the rate being a gamma distribution.
+
+a lomax(1,1) distribution is the same as an f(2,2) distribution.
+
+lomax with scale=1 is a special case of the beta prime distribution.
+
+<img src="./imgs/lomax_distribution.png" height="300px" width="400px">
+
+### burr distribution
+two parameters
+- c (`c>0`)
+- k (`k>0`)
+
+support : `x>0`
+
+**in relation to gamma** burr(1, k) is the lomax distribution
+
+<img src="./imgs/burr_distribution.png" height="300px" width="400px">
 
 ### rayleigh distribution
 one paramter
@@ -517,14 +562,7 @@ support : `(0,1)`, thanks logistic function
 
 alternative to the dirichlet distribution, aka it captures correlations in components of probability vectors
 
-### burr distribution
-two parameters
-- c (`c>0`)
-- k (`k>0`)
 
-support : `x>0`
-
-**in relation to gamma** burr(1, k) is the lomax distribution
 
 ### exponential-logarithmic distribution
 two parameters
@@ -593,14 +631,7 @@ support : `(0,∞)`
 
 **in relation to gamma** ^ μ + σ* standard normal distribution
 
-### lomax distribution (pareto type II)
-two parameters
-- shape (`𝛼>0`)
-- scale (`λ>0`)
 
-support :`x>=0`
-
-**in relation to gamma** lomax distribution is a mixture of exponential distributions, with the rate being a gamma distribution
 
 ### maxwell-boltzmann distribution
 one parameter
@@ -653,20 +684,6 @@ support : real numbers
 
 special case of a stable distribution(beta=0, and alpha=3/2), where PDF can be made with the hypergeometric function
 
-### logistic distribution
-two parameters
-- location (`μ`)
-- scale (`s>0`)
-
-support : `(-∞,∞)`
-
-used in logistic regression!
-
-**in relation to gamma** scaled log of the ratio of two exponential(1) distributions (which is a special case of the gamma distribution)
-
-log of uniforms can get to the logistic distribution as well
-
-the different of two gumbel distributions is a logistic distribution
 
 ### noncentral t-distribution
 two parameters
@@ -748,6 +765,8 @@ two independent wishart distributions
 
 for multivariate hypothesis testing
 
+### dagum distribution
+
 ### tweedie distribution
 
 ### tukey lambda distribution
@@ -766,7 +785,7 @@ exponential  | [0,∞)   | (0,20]          | (0,20)
 chi-squared  | [0,∞)   | (0,20]          | (0,20) 
 laplace      | real numbers | (0,20)     | (-10,10)
 beta         | [0,1]   | (0,1)           | (0,1)
-beta prime   | 
+beta prime   | [0,∞)   | (0,5)           | (0,5)
 arcsine      | [0,1]   | (0,1)           | (0,1)
 uniform      | [0,1]   | (0,1)           | (0,1)
 f            | [0,∞)   | (0,5)           | (0,5)

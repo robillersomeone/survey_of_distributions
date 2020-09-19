@@ -6,10 +6,10 @@ from scipy.integrate import quad
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
-# pareto, levy, cauchy, chi, kumaraswamy, nakagami
+# pareto, levy, cauchy, chi, kumaraswamy, nakagami, lomax, burr, beta prime
 # to fix - t
 # to add - laplace from exp, dirichlet, negative binomial, zeta, 
-# rice, logistic, beta prime, lomax
+# rice
 
 # gamma function
 def gamma_function(k):
@@ -108,6 +108,27 @@ def beta_distribution(x, alpha, beta):
     value in beta distr for random variable : float
     '''
     num = (x**(alpha -1)) * ((1-x)**(beta - 1))
+    dem = beta_function(alpha, beta)
+    return num / dem
+
+def beta_prime_distribution(x, alpha, beta):
+    '''
+    two parameters -  shape alpha, shape beta,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    alpha : float (positive)
+        shape paramter in  beta prime distribution
+    beta : float
+        shape parameter in beta prime distribution
+
+    returns
+    -------
+    value in beta prime distr for random variable : float
+    '''
+    num = (x**(alpha -1)) * ((1+x)**(-alpha - beta))
     dem = beta_function(alpha, beta)
     return num / dem
 
@@ -401,6 +422,51 @@ def pareto_distribution(x, x_min, alpha):
     # add check for x < x_min
     return (alpha * (x_min ** alpha)) / (x ** (alpha + 1))
 
+def lomax_distribution(x, alpha, lambda_):
+    '''
+    two parameters - shape, scale
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    alpha : float (positive)
+        shape parameter for lomax distribution
+    lambda_ : float (positive)
+        scale parameter for lomax distribution
+
+    returns
+    -------
+    value in lomax distr for random variable : float
+    '''
+    return (alpha * lambda_) * ( (1 + (x / lambda_)) ** (- (alpha + 1)) )
+
+
+def burr_distribution(x, c, k):
+    '''
+    two parameters - shape, scale
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    c : float (positive)
+        shape parameter for burr distribution
+    k : float (positive)
+        scale parameter for burr distribution
+
+    returns
+    -------
+    value in burr distr for random variable : float
+    '''
+    top_exp = (c-1)
+    bottom_exp = (k+1)
+    num = (x**top_exp)
+    den = (1 + x ** c)
+    random_var = num / den
+    const = c * k
+    return const* random_var
+
 def levy_distribution(x, mu, c):
     '''
     two parameters _ location, scale
@@ -495,11 +561,32 @@ def nakagami_distribution(x, mu, omega):
     -------
     value in nakagami distr for random variable : float
     '''
-    # coef = ((2 * mu) ** mu) / (integral_gamma_function(mu) * omega ** mu)
-    # return coef * (x **( (2 *mu) - 1 )) * np.exp((-mu/omega) * x ** 2)
     coef_1 = 2 / integral_gamma_function(mu)
     coef_2 = (mu / omega) ** mu
     return coef_1 * coef_2 * (x ** ((2 * mu) - 1) ) * np.exp( - (mu / omega) * x ** 2)
+
+def logistic_distribution(x, mu, scale):
+    '''
+    two parameters -  shape mu, spread omega,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    mu : float 
+        location paramter in  logistic distribution
+    scale : float (positive)
+        scale parameter in logistic distribution
+
+    returns
+    -------
+    value in logistic distr for random variable : float
+    '''
+    expo = -((x - mu) / scale)
+    num = np.exp(expo)
+    den = scale * (1 + np.exp(expo)) ** 2
+    return num / den
+
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
 #     '''four parameters -  shape k, scale theta for each gamma
