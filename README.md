@@ -243,6 +243,8 @@ the inverted dirichlet distribution is a generalization of the beta prime distri
 
 beta prime makes the log-logistic distribution
 
+<img src="./imgs/beta_prime_distribution.png" height="300px" width="400px">
+
 ### f-distribution (Pearson type VI)
 two parameters
 - degrees of freedom in numerator (`n`, positive integer)
@@ -331,6 +333,18 @@ concentration parameter ~ how concentrated the proabability mass of from the dis
   - value greater than 1 the mass is dispersed ~ equal in components.
   
   
+  ### logit-normal distribution
+two parameters
+- squared scale (`σ^2`)
+- location (`μ`)
+
+support : `(0,1)`, thanks logistic function
+
+**in relation to gamma** logistic transform of the normal distribution
+
+alternative to the dirichlet distribution, aka it captures correlations in components of probability vectors
+
+<img src="./imgs/logit_normal_distribution.png" height="300px" width="400px">
 
 ### pareto distribution
 two parameters
@@ -551,17 +565,6 @@ uniform sum distribution
 **in relation to gamma**
 sum of uniform(0,1) distributions
 
-### logit-normal distribution
-two parameters
-- squared scale (`σ^2`)
-- location (`μ`)
-
-support : `(0,1)`, thanks logistic function
-
-**in relation to gamma** logistic transform of the normal distribution
-
-alternative to the dirichlet distribution, aka it captures correlations in components of probability vectors
-
 
 
 ### exponential-logarithmic distribution
@@ -571,7 +574,7 @@ two parameters
 
 support : `[0,∞)`
 
-
+**in relation to gamma** the exponential-logarithmic distribution reduces to the exponential distribution when `p goes to 1`.
 
 ### gompertz distribution
 two parameters

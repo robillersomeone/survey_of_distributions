@@ -1,15 +1,16 @@
 import math
 import numpy as np
 from scipy.integrate import quad
+from scipy.special import logit
 # bessel function for rice distribution
 # import scipy.special.jv
 
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
-# pareto, levy, cauchy, chi, kumaraswamy, nakagami, lomax, burr, beta prime
+# pareto, levy, cauchy, chi, kumaraswamy, nakagami, lomax, burr, beta prime, logit-normal
 # to fix - t
 # to add - laplace from exp, dirichlet, negative binomial, zeta, 
-# rice
+# rice, exponential-logarithmic
 
 # gamma function
 def gamma_function(k):
@@ -284,6 +285,30 @@ def normal_distribution(x, k, theta):
     updated_x = (k-1) * (((1/k)**(1/2)) * theta) + x
     updated_theta = ((1/k)**(1/2)) * theta
     return gamma_distribution(updated_x, k, updated_theta)
+
+def logit_normal_distribution(x, sigma, mu):
+    '''
+    two parameters - squared scale, location
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    sigma : float
+        squared scale parameter for logit-normal distribution
+    mu : float (positive)
+        location parameter for logit-normal distribution
+
+    returns
+    -------
+    value in logit-normal distr for random variable : float
+    '''
+    coef_1 = (1 / (sigma * (2 * np.pi)** .5))
+    random_var_1 = (1 / (x * (1 - x) ) )
+    # logit = math.log(np.abs(x)) - math.log(1 - np.abs(x))
+    exponent = ((logit(x) - mu) ** 2) / (2 * sigma ** 2)
+    return coef_1 * random_var_1 * np.exp(-exponent)
+
 
 
 # sampling for the t-distribution
@@ -586,6 +611,11 @@ def logistic_distribution(x, mu, scale):
     num = np.exp(expo)
     den = scale * (1 + np.exp(expo)) ** 2
     return num / den
+
+def exponential_logarithmic_distribution(x, p, beta):
+    '''
+    '''
+    return (beta* (1-p) np.exp(-beta * x)) / ((1 - (1-p) np.exp(-beta * x)) * (- np.log(p)))
 
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):

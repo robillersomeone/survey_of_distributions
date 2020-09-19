@@ -197,13 +197,23 @@ f_color = 'red'
 # plt.legend(['μ=.5, omega=1', 'μ=1, omega=1', 'μ=.5, omega=3', 'μ=2, omega=1', 'μ=2, omega=2'], loc='upper right')
 
 # logistic
-plt.title('logistic distribution')
-plt.plot(ds.x_logistic_values, ds.y_logistic_values_2_1)
-plt.plot(ds.x_logistic_values, ds.y_logistic_values_5_2)
-plt.plot(ds.x_logistic_values, ds.y_logistic_values_6_2)
-plt.plot(ds.x_logistic_values, ds.y_logistic_values_9_3)
-plt.plot(ds.x_logistic_values, ds.y_logistic_values_9_4)
-plt.legend(['μ=2, scale=1', 'μ=5, scale=2', 'μ=6, scale=2', 'μ=9, scale=3', 'μ=9, scale=4'], loc='upper right')
+# plt.title('logistic distribution')
+# plt.plot(ds.x_logistic_values, ds.y_logistic_values_2_1)
+# plt.plot(ds.x_logistic_values, ds.y_logistic_values_5_2)
+# plt.plot(ds.x_logistic_values, ds.y_logistic_values_6_2)
+# plt.plot(ds.x_logistic_values, ds.y_logistic_values_9_3)
+# plt.plot(ds.x_logistic_values, ds.y_logistic_values_9_4)
+# plt.legend(['μ=2, scale=1', 'μ=5, scale=2', 'μ=6, scale=2', 'μ=9, scale=3', 'μ=9, scale=4'], loc='upper right')
+
+# logit normal
+plt.title('logit-normal distribution')
+plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_point_3_0)
+plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_1_0)
+plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_3_0)
+plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_point_3_1)
+plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_1_1)
+plt.plot(ds.x_logit_normal_values, ds.y_logit_normal_values_3_1)
+plt.legend(['σ=.32 μ=0', 'σ=1 μ=0', 'σ=3.16 μ=0', 'σ=.32 μ=1', 'σ=1 μ=1', 'σ=3.16 μ=1'], loc='upper right')
 
 # plot for exp, erlang, chi, beta
 

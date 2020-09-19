@@ -274,6 +274,16 @@ y_logistic_values_6_2 = ds.logistic_distribution(x_logistic_values, 6, 2)
 y_logistic_values_9_3 = ds.logistic_distribution(x_logistic_values, 9, 3)
 y_logistic_values_9_4 = ds.logistic_distribution(x_logistic_values, 9, 4)
 
+# logit normal
+x_logit_normal_values = np.arange(0, 1, .01)[1:]
+
+y_logit_normal_values_point_3_0 = ds.logit_normal_distribution(x_logit_normal_values, .32, 0)
+y_logit_normal_values_1_0 = ds.logit_normal_distribution(x_logit_normal_values, 1, 0)
+y_logit_normal_values_3_0 = ds.logit_normal_distribution(x_logit_normal_values, 3.16, 0)
+y_logit_normal_values_point_3_1 = ds.logit_normal_distribution(x_logit_normal_values, .32, 1)
+y_logit_normal_values_1_1 = ds.logit_normal_distribution(x_logit_normal_values, 1, 1)
+y_logit_normal_values_3_1 = ds.logit_normal_distribution(x_logit_normal_values, 3.16, 1)
+
 # for now the normal distribution is approximated using the central limit theorem
 
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
