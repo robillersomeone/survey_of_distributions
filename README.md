@@ -634,7 +634,7 @@ support : `[0,1]`
 
 **in relation to gamma** an exponential distribution from `[0,1]` is equal to a continuous bernoulli distribution, with the corresponding lambda
 
-<img src="./imgs/continuous_bernoulli_distribution_distribution.png" height="300px" width="400px">
+<img src="./imgs/continuous_bernoulli_distribution.png" height="300px" width="400px">
 
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
@@ -800,12 +800,16 @@ this is a tsallis distribution
 **in relation to gamma** generalization of weibull and lomax distribution
 
 ### phase-type distribution
+
 convolution of exponential distributions
 
 ### wishart distribution
+matrix_value distribution
+
 gamma distribution generalization to multiple dimensions
 
 ### wilks lambda distribution
+matrix_value distribution
 two independent wishart distributions
 
 for multivariate hypothesis testing
@@ -819,6 +823,8 @@ support : real numbers
 
 special case of a stable distribution(beta=0, and alpha=3/2), where PDF can be made with the hypergeometric function
 
+### von mises distribution
+
 ### tweedie distribution
 
 ### tukey lambda distribution
@@ -829,7 +835,6 @@ special case of a stable distribution(beta=0, and alpha=3/2), where PDF can be m
 
 ### log series discrete distribution
 
-### von mises distribution
 
 ## support section
 
