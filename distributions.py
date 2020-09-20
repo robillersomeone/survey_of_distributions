@@ -9,10 +9,10 @@ from scipy.special import logit
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
 # pareto, levy, cauchy, chi, kumaraswamy, nakagami, lomax, burr, beta prime, logit-normal, exponential-logarithmic
 # gompertz, inverse-gamma, inverse-chi-squared, log-cauchy, log-logistic, log-normal, maxwell-boltzmann
-# generalized normal distribution
+# generalized normal distribution, fishers z-distribution
 # to fix - t
-# to add - laplace from exp, dirichlet, negative binomial, zeta, log-cauchy from cauchy
-# rice, q-exponential distribution
+# to add - laplace from exp, log-cauchy from cauchy, dirichlet, negative binomial, zeta,
+# rice, q-exponential, q-normal, q-weibull
 
 # gamma function
 def gamma_function(k):
@@ -823,6 +823,71 @@ def maxwell_boltzmann_distribution(x, a):
     exponent = (- (x ** 2)) / (2 * a ** 2)
     return coef * ( ((x **2) * np.exp(exponent) ) / a ** 3)
 
+def fishers_z_distribution(x, degree_1, degree_2):
+    '''
+    two parameters - both degrees of freedom
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    degree_1 : float 
+        scale paramter in  fishers z-distribution 
+    degree_2 : float 
+        scale paramter in  fishers z-distribution 
+
+    returns
+    -------
+    value in fishers z distr for random variable : float
+    '''
+    coef = (2 * (degree_1 ** (degree_1 /2)) *  (degree_2 ** (degree_2 /2))) / beta_function((degree_1/2), (degree_2 / 2))
+    return coef * (np.exp(degree_1 * x) / ((degree_1 * np.exp(2 * x) + degree_2) ** ((degree_1 + degree_2) / 2)) )
+
+
+def continuous_bernoulli_distribution(x, lambda_):
+    '''
+    one parameters - lambda
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    lambda_ : float 
+        shape paramter in  continuous bernoulli distribution
+
+    returns
+    -------
+    value in fishers continuous bernoulli distr for random variable : float
+    '''
+    if lambda_ == .5:
+        c = 2
+    else:
+        c = (2 * np.arctanh(1 - (2 * lambda_))) / (1 - (2 * lambda_))
+    return c * (lambda_ ** x) * ((1 - lambda_) ** (1-x))
+
+def dagum_distribution(x, p, a, b):
+    '''
+    three parameters - shape, shape, and scale
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    p : float 
+        shape paramter in  dagum distribution
+    a : float 
+        shape paramter in  dagum distribution
+    b : float 
+        scale paramter in  dagum distribution
+    returns
+    -------
+    value in dagum distr for random variable : float
+    '''
+    coef = (a * p) / x
+    num = (x / b) ** (a * p)
+    den = (( (x/b) ** a) + 1) ** (p + 1)
+    return coef * (num / den)
+
 def q_exponential_distribution(x, q, lambda_):
     '''
     '''
@@ -836,6 +901,13 @@ def q_gaussian_distribution(x, q, beta):
 def q_weibull_distribution(x, q, lambda_, k):
     '''
     '''
+    pass
+
+def slash_distribution(x):
+    # if x == 0:
+    # return generalized_normal_distribution(x, 0, 1, 2)
+    # return beta_distribution(x, 1, 1)
+    # return generalized_normal_distribution(x, 0, 1, 2) / beta_distribution(x, 1, 1)
     pass
 
 # revisit beta

@@ -360,10 +360,43 @@ y_generalized_normal_values_0_1_1_half = ds.generalized_normal_distribution(x_ge
 y_generalized_normal_values_0_1_3 = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 3)
 y_generalized_normal_values_0_1_8 = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 8)
 
+# fishers z 
+x_fishers_z_values = np.arange(-3, 3, .01)[:]
+
+y_fishers_z_values_1_1 = ds.fishers_z_distribution(x_fishers_z_values, 1, 1)
+y_fishers_z_values_2_1 = ds.fishers_z_distribution(x_fishers_z_values, 2, 1)
+y_fishers_z_values_5_2 = ds.fishers_z_distribution(x_fishers_z_values, 5, 2)
+
+# continuous bernoulli 
+x_continuous_bernoulli_values = x_beta_values
+
+y_continuous_bernoulli_values_1 = ds.continuous_bernoulli_distribution(x_continuous_bernoulli_values, .1)
+y_continuous_bernoulli_values_2 = ds.continuous_bernoulli_distribution(x_continuous_bernoulli_values, .2)
+y_continuous_bernoulli_values_4 = ds.continuous_bernoulli_distribution(x_continuous_bernoulli_values, .4)
+y_continuous_bernoulli_values_5 = ds.continuous_bernoulli_distribution(x_continuous_bernoulli_values, .5)
+y_continuous_bernoulli_values_6 = ds.continuous_bernoulli_distribution(x_continuous_bernoulli_values, .6)
+y_continuous_bernoulli_values_8 = ds.continuous_bernoulli_distribution(x_continuous_bernoulli_values, .8)
+y_continuous_bernoulli_values_9 = ds.continuous_bernoulli_distribution(x_continuous_bernoulli_values, .9)
+
+# dagum
+x_dagum_values = np.arange(0, 3, .01)[1:]
+
+y_dagum_values_1_half_1 = ds.dagum_distribution(x_dagum_values, 1, .5, 1)
+y_dagum_values_1_1_1 = ds.dagum_distribution(x_dagum_values, 1, 1, 1)
+y_dagum_values_1_2_1 = ds.dagum_distribution(x_dagum_values, 1, 2, 1)
+y_dagum_values_1_3_1 = ds.dagum_distribution(x_dagum_values, 1, 3, 1)
+y_dagum_values_1_4_1 = ds.dagum_distribution(x_dagum_values, 1, 4, 1)
+
+
 # for now the normal distribution is approximated using the central limit theorem
 
 x_gamma_values_getting_normal = np.arange(0, 2, .01)[1:]
 y_gamma_values_getting_normal = ds.int_gamma_distribution(x_gamma_values_getting_normal, 25, 1/25)
+
+# slash_distribution
+x_slash_values = x_generalized_normal_values
+
+y_slash_values = ds.slash_distribution(x_slash_values)
 
 # data for d3
 

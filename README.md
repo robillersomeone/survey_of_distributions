@@ -245,6 +245,18 @@ beta prime makes the log-logistic distribution
 
 <img src="./imgs/beta_prime_distribution.png" height="300px" width="400px">
 
+### dagum distribution
+three parameters
+- shape `p>0`
+- shape `a>0`
+- scale `b>0`
+
+support : `x>0`
+
+**in relation to gamma** the dagum distribution is a special case of the beta prime distribution
+
+<img src="./imgs/dagum_distribution.png" height="300px" width="400px">
+
 ### f-distribution (Pearson type VI)
 two parameters
 - degrees of freedom in numerator (`n`, positive integer)
@@ -290,6 +302,19 @@ support : `(-∞,∞)` real numbers
 arises from sampling, estimate the mean of a normally distributed population
 - sample size is small
 - population standard deviation is unknown
+
+### fisher's z-distribution
+two parameters
+- degrees of freedom (`d>0`)
+- degrees of freedom (`d>0`)
+
+support : `(-∞,∞)`
+
+for more stats testing
+
+**in relation to gamma** half the log of an f-distribution
+
+<img src="./imgs/fishers_z_distribution.png" height="300px" width="400px">
 
 ### generalized normal distribution
 three parameters
@@ -600,6 +625,17 @@ the scale parameter is speed proportional to the ratio of temperature to particl
 
 <img src="./imgs/maxwell_boltzmann_distribution.png" height="300px" width="400px">
 
+
+### continuous bernoulli distribution
+one parameter
+- shape `λ from (0,1)`
+
+support : `[0,1]`
+
+**in relation to gamma** an exponential distribution from `[0,1]` is equal to a continuous bernoulli distribution, with the corresponding lambda
+
+<img src="./imgs/continuous_bernoulli_distribution_distribution.png" height="300px" width="400px">
+
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
 
@@ -691,19 +727,6 @@ pdf uses the bessel function
 square root of a noncentral chi-squared distribution is a rice distribution
 
 
-### fisher's z-distribution
-two parameters
-- degrees of freedom (`d>0`)
-- degrees of freedom (`d>0`)
-
-support : `(-∞,∞)`
-
-for more stats testing
-
-**in relation to gamma** half the log of an f-distribution
-
-
-
 ### noncentral t-distribution
 two parameters
 - degrees of freedom (`v>0`)
@@ -729,6 +752,7 @@ used in simulation, and has heavier tails than a normal distribution
  - scale (`c` from `(0,∞)`)
  - location (`μ`)
 
+a stable distribution is one that is made from a linear combination of tow independent random variables with the same distribution.
 
 support : depends on 𝛼 and β
 
@@ -795,16 +819,17 @@ support : real numbers
 
 special case of a stable distribution(beta=0, and alpha=3/2), where PDF can be made with the hypergeometric function
 
-
-### dagum distribution
-
 ### tweedie distribution
 
 ### tukey lambda distribution
 
 ### poisson
 
-### continuous bernoulli distribution
+### geometric
+
+### log series discrete distribution
+
+### von mises distribution
 
 ## support section
 

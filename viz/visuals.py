@@ -284,14 +284,42 @@ f_color = 'red'
 # plt.legend(['a=1', 'a=2', 'a=5'], loc='upper right')
 
 # generalized normal
-plt.title('generalized normal distribution')
-plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_half)
-plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_1)
-plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_1_half)
-plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_3)
-plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_8)
-plt.legend(['μ=0 alpha=1 β=.5', 'μ=0 alpha=1 β=1', 'μ=0 alpha=1 β=1.5','μ=0 alpha=1 β=3', 'μ=0 alpha=1 β=8'], loc='upper right')
+# plt.title('generalized normal distribution')
+# plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_half)
+# plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_1)
+# plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_1_half)
+# plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_3)
+# plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_8)
+# plt.legend(['μ=0 alpha=1 β=.5', 'μ=0 alpha=1 β=1', 'μ=0 alpha=1 β=1.5','μ=0 alpha=1 β=3', 'μ=0 alpha=1 β=8'], loc='upper right')
 
+# fishers z distribution
+# plt.title('fishers z-distribution')
+# plt.plot(ds.x_fishers_z_values, ds.y_fishers_z_values_1_1)
+# plt.plot(ds.x_fishers_z_values, ds.y_fishers_z_values_2_1)
+# plt.plot(ds.x_fishers_z_values, ds.y_fishers_z_values_5_2)
+# plt.legend(['d1=1 d2=1', 'd1=2 d2=1', 'd1=5 d2=2'], loc='upper right')
+
+# continuous bernoulli 
+# plt.title('continuous bernoulli distribution')
+# plt.plot(ds.x_continuous_bernoulli_values, ds.y_continuous_bernoulli_values_1)
+# plt.plot(ds.x_continuous_bernoulli_values, ds.y_continuous_bernoulli_values_2)
+# plt.plot(ds.x_continuous_bernoulli_values, ds.y_continuous_bernoulli_values_4)
+# plt.plot(ds.x_continuous_bernoulli_values, ds.y_continuous_bernoulli_values_5)
+# plt.plot(ds.x_continuous_bernoulli_values, ds.y_continuous_bernoulli_values_6)
+# plt.plot(ds.x_continuous_bernoulli_values, ds.y_continuous_bernoulli_values_8)
+# plt.plot(ds.x_continuous_bernoulli_values, ds.y_continuous_bernoulli_values_9)
+# plt.legend(['λ=.1', 'λ=.2', 'λ=.4', 'λ=.5', 'λ=.6', 'λ=.8', 'λ=.9'])
+
+# dagum
+plt.title('dagum distribution')
+plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_half_1)
+plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_1_1)
+plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_2_1)
+plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_3_1)
+plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_4_1)
+plt.legend(['p=1 a=.5 b=1', 'p=1 a=1 b=1', 'p=1 a=2 b=1', 'p=1 a=3 b=1', 'p=1 a=4 b=1'], loc='upper right')
+
+# plt.plot(ds.x_slash_values, ds.y_slash_values)
 
 # plot for exp, erlang, chi, beta
 
