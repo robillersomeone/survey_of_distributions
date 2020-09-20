@@ -251,12 +251,46 @@ f_color = 'red'
 # plt.legend(['ν=1', 'ν=2', 'ν=3', 'ν=4', 'ν=5', 'ν=6'], loc='upper right')
 
 # log-cauchy
-plt.title('log-cauchy distribution')
-plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_half)
-plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_1)
-plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_2)
-plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_1_half)
-plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_1_1)
+# plt.title('log-cauchy distribution')
+# plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_half)
+# plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_1)
+# plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_0_2)
+# plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_1_half)
+# plt.plot(ds.x_log_cauchy_values, ds.y_log_cauchy_values_1_1)
+# plt.legend(['μ=0 σ=.5', 'μ=0 σ=1', 'μ=0 σ=3', 'μ=1 σ=.5', 'μ=1 σ=1'], loc='upper right')
+
+
+# log-logistic
+# plt.title('log-logistic distribution')
+# plt.plot(ds.x_log_logistic_values, ds.y_log_logistic_values_1_half)
+# plt.plot(ds.x_log_logistic_values, ds.y_log_logistic_values_1_1)
+# plt.plot(ds.x_log_logistic_values, ds.y_log_logistic_values_1_2)
+# plt.plot(ds.x_log_logistic_values, ds.y_log_logistic_values_1_4)
+# plt.plot(ds.x_log_logistic_values, ds.y_log_logistic_values_1_8)
+# plt.legend(['alpha=1 β=.5', 'alpha=1 β=1', 'alpha=1 β=2','alpha=1 β=4', 'alpha=1 β=8'], loc='upper right')
+
+# log-normal
+# plt.title('log-normal distribution')
+# plt.plot(ds.x_log_normal_values, ds.y_log_normal_values_0_quarter)
+# plt.plot(ds.x_log_normal_values, ds.y_log_normal_values_0_half)
+# plt.plot(ds.x_log_normal_values, ds.y_log_normal_values_0_1)
+# plt.legend(['μ=0 σ=.25', 'μ=0 σ=.5', 'μ=0 σ=1'], loc='upper right')
+
+# maxwell-boltzmann
+# plt.title('maxwell-boltzmann distribution')
+# plt.plot(ds.x_maxwell_boltzmann_values, ds.y_maxwell_boltzmann_values_1)
+# plt.plot(ds.x_maxwell_boltzmann_values, ds.y_maxwell_boltzmann_values_2)
+# plt.plot(ds.x_maxwell_boltzmann_values, ds.y_maxwell_boltzmann_values_5)
+# plt.legend(['a=1', 'a=2', 'a=5'], loc='upper right')
+
+# generalized normal
+plt.title('generalized normal distribution')
+plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_half)
+plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_1)
+plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_1_half)
+plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_3)
+plt.plot(ds.x_generalized_normal_values, ds.y_generalized_normal_values_0_1_8)
+plt.legend(['μ=0 alpha=1 β=.5', 'μ=0 alpha=1 β=1', 'μ=0 alpha=1 β=1.5','μ=0 alpha=1 β=3', 'μ=0 alpha=1 β=8'], loc='upper right')
 
 
 # plot for exp, erlang, chi, beta

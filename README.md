@@ -9,7 +9,7 @@ typos are normally distributed, so if you see one please let me know.
 ## Continuous Distributions
 the starting point is the gamma in theory and code in `distributions.py`, due to the point of reference the gamma serves for other distributions.
 
-the graphing code can be found in the viz directory, all graphs are of the probability density function for the given distribution over a subset of their support, normally [0, 20),[0,1], or [0,5].
+the graphing code can be found in the viz directory, all graphs are of the probability density function for the given distribution over a subset of their support, normally `[0, 20)`,`[0,1]`, or `[0,5]`.
 
 ### normal distribution
 two parameters
@@ -291,6 +291,21 @@ arises from sampling, estimate the mean of a normally distributed population
 - sample size is small
 - population standard deviation is unknown
 
+### generalized normal distribution
+three parameters
+- location (`μ`)
+- scale (`𝛼>0`)
+- shape (`β>0`)
+
+support : `(-∞,∞)`
+
+also called the exponential power distribution ot generalized error distribution
+
+**in relation to gamma** built with the gamma function
+
+when `β=2` its the normal distribution, and when `β=1` its the laplce distribution
+
+<img src="./imgs/generalized_normal_distribution.png" height="300px" width="400px">
 
 
 ### cauchy distribution (Pearson type IV)
@@ -548,6 +563,43 @@ support : `(0,∞)`
 
 <img src="./imgs/log_cauchy_distribution.png" height="300px" width="400px">
 
+### log-logistic distribution
+two parameters
+- scale (`𝛼>0`)
+- shape (`β>0`)
+
+support : `[0,∞)`
+
+**in relation to gamma** log-logistic is a specific case of the beta prime distribution
+
+when the shape=1 if log-logistic, it is a generalized pareto distribution
+
+<img src="./imgs/log_logistic_distribution.png" height="300px" width="400px">
+
+### log-normal distribution
+two parameters
+- location (`μ`)
+- scale (`σ`)
+
+support : `(0,∞)`
+
+**in relation to gamma** ^ μ + σ* standard normal distribution
+
+<img src="./imgs/log_normal_distribution.png" height="300px" width="400px">
+
+### maxwell-boltzmann distribution
+one parameter
+- scale (`a>0`)
+
+support : `(0,∞)`
+
+the scale parameter is speed proportional to the ratio of temperature to particle mass.
+
+**in relation to gamma** is a chi-squared(3) with a scale parameter, the 3 degrees of freedom are the components of the velocity vector
+
+
+<img src="./imgs/maxwell_boltzmann_distribution.png" height="300px" width="400px">
+
 ## Discrete Distributions
 starting with the negative binomial distribution, due to relationship with gamma
 
@@ -621,33 +673,7 @@ uniform sum distribution
 **in relation to gamma**
 sum of uniform(0,1) distributions
 
-### log-logistic distribution
-two parameters
-- scale (`𝛼>0`)
-- shape (`β>0`)
 
-support : `[0,∞)`
-
-**in relation to gamma** log-logistic is a specific case of the beta prime distribution
-
-### log-normal distribution
-two parameters
-- location (`μ`)
-- scale (`σ`)
-
-support : `(0,∞)`
-
-**in relation to gamma** ^ μ + σ* standard normal distribution
-
-
-
-### maxwell-boltzmann distribution
-one parameter
-- scale (`a>0`)
-
-support : `(0,∞)`
-
-**in relation to gamma** is a chi-squared(3) with a scale parameter
 
 ### noncentral chi-squared distribution
 two paramters
@@ -658,19 +684,12 @@ support : `[0,∞)`
 
 in case of likelihood-ratio tests
 
+pdf uses the bessel function
+
 **in relation to gamma** linear combo of noncentral chi-squared distributions make a generalized chi-squared distribution
 
 square root of a noncentral chi-squared distribution is a rice distribution
 
-### generalized normal distribution
-three parameters
-- location (`μ`)
-- scale (`𝛼>0`)
-- shape (`β>0`)
-
-support : `(-∞,∞)`
-
-**in relation to gamma** built with the gamma function
 
 ### fisher's z-distribution
 two parameters
@@ -683,14 +702,6 @@ for more stats testing
 
 **in relation to gamma** half the log of an f-distribution
 
-### holtsmark distribution
-two parameters
- - scale (`c` from `(0,∞)`)
- - location (`μ`)
-
-support : real numbers
-
-special case of a stable distribution(beta=0, and alpha=3/2), where PDF can be made with the hypergeometric function
 
 
 ### noncentral t-distribution
@@ -739,6 +750,8 @@ this is a tsallis distribution
 
 **in relation to gamma** q-exponential distribution is a generalized lomax distribution
 
+q-exponential distribution is a special case of the generalized pareto distribution
+
 ### q-gaussian distribution
 two parameters
 - shape (`q<3`)
@@ -772,6 +785,16 @@ gamma distribution generalization to multiple dimensions
 two independent wishart distributions
 
 for multivariate hypothesis testing
+
+### holtsmark distribution
+two parameters
+ - scale (`c` from `(0,∞)`)
+ - location (`μ`)
+
+support : real numbers
+
+special case of a stable distribution(beta=0, and alpha=3/2), where PDF can be made with the hypergeometric function
+
 
 ### dagum distribution
 

@@ -328,6 +328,37 @@ y_log_cauchy_values_0_2 = ds.log_cauchy_distribution(x_log_cauchy_values, 0, 2)
 y_log_cauchy_values_1_half = ds.log_cauchy_distribution(x_log_cauchy_values, 1, .5)
 y_log_cauchy_values_1_1 = ds.log_cauchy_distribution(x_log_cauchy_values, 1, 1)
 
+# log-logistic
+x_log_logistic_values = np.arange(0, 3, .01)[1:]
+
+y_log_logistic_values_1_half = ds.log_logistic_distribution(x_log_logistic_values, 1, .5)
+y_log_logistic_values_1_1 = ds.log_logistic_distribution(x_log_logistic_values, 1, 1)
+y_log_logistic_values_1_2 = ds.log_logistic_distribution(x_log_logistic_values, 1, 2)
+y_log_logistic_values_1_4 = ds.log_logistic_distribution(x_log_logistic_values, 1, 4)
+y_log_logistic_values_1_8 = ds.log_logistic_distribution(x_log_logistic_values, 1, 8)
+
+# log-normal
+x_log_normal_values = np.arange(0, 3, .01)[1:]
+
+y_log_normal_values_0_quarter = ds.log_normal_distribution(x_log_normal_values, 0, .25)
+y_log_normal_values_0_half = ds.log_normal_distribution(x_log_normal_values, 0, .5)
+y_log_normal_values_0_1 = ds.log_normal_distribution(x_log_normal_values, 0, 1)
+
+# maxwell-boltzmann
+x_maxwell_boltzmann_values = np.arange(0, 20, .05)[1:]
+
+y_maxwell_boltzmann_values_1 = ds.maxwell_boltzmann_distribution(x_maxwell_boltzmann_values, 1)
+y_maxwell_boltzmann_values_2 = ds.maxwell_boltzmann_distribution(x_maxwell_boltzmann_values, 2)
+y_maxwell_boltzmann_values_5 = ds.maxwell_boltzmann_distribution(x_maxwell_boltzmann_values, 5)
+
+# generalized normal
+x_generalized_normal_values = np.arange(-3, 3, .01)[:]
+
+y_generalized_normal_values_0_1_half = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, .5)
+y_generalized_normal_values_0_1_1 = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 1)
+y_generalized_normal_values_0_1_1_half = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 1.5)
+y_generalized_normal_values_0_1_3 = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 3)
+y_generalized_normal_values_0_1_8 = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 8)
 
 # for now the normal distribution is approximated using the central limit theorem
 

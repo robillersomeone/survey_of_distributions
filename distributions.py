@@ -8,10 +8,11 @@ from scipy.special import logit
 # 'distribution' functions map the pdf of a numpy range for their respective ranges
 # distribitions so far - gamma, beta, erlang, exponential, chi-squared, f, normal (apprx), laplace, rayleigh, gumbel, fréchet, weibull
 # pareto, levy, cauchy, chi, kumaraswamy, nakagami, lomax, burr, beta prime, logit-normal, exponential-logarithmic
-# gompertz, inverse-gamma, inverse-chi-squared,
+# gompertz, inverse-gamma, inverse-chi-squared, log-cauchy, log-logistic, log-normal, maxwell-boltzmann
+# generalized normal distribution
 # to fix - t
-# to add - laplace from exp, dirichlet, negative binomial, zeta, 
-# rice,
+# to add - laplace from exp, dirichlet, negative binomial, zeta, log-cauchy from cauchy
+# rice, q-exponential distribution
 
 # gamma function
 def gamma_function(k):
@@ -310,7 +311,28 @@ def logit_normal_distribution(x, sigma, mu):
     exponent = ((logit(x) - mu) ** 2) / (2 * sigma ** 2)
     return coef_1 * random_var_1 * np.exp(-exponent)
 
+def generalized_normal_distribution(x, mu, alpha, beta):
+    '''
+    three parameters - location, scale, shape
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    mu : float
+        squared scale parameter for generalized normal distribution
+    alpha : float (positive)
+        location parameter for generalized normal distribution
+    beta : float (positive)
+        location parameter for generalized normal distribution
 
+    returns
+    -------
+    value in generalized normal distr for random variable : float
+    '''
+    coef = beta / (2 * alpha * integral_gamma_function(1/beta))
+    exponent = (np.abs(x - mu) / alpha) ** beta
+    return coef * np.exp(- exponent)
 
 # sampling for the t-distribution
 # pdf uses gamma function... add integral version
@@ -535,8 +557,6 @@ def inverse_chi_squared_distribution(x, v, beta=.5):
     '''
     return inverse_gamma_distribution(x, (v/2), beta) 
 
-
-
 def levy_distribution(x, mu, c):
     '''
     two parameters _ location, scale
@@ -741,6 +761,82 @@ def log_cauchy_distribution_from_cauchy(x, mu, sigma):
     value in log-cauchy distr for random variable : float
     '''
     return np.exp(cauchy_distribution(x, mu, sigma))
+
+def log_logistic_distribution(x,alpha, beta):
+    '''
+    two parameters -  scale mu, shape omega,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    alpha : float 
+        scale paramter in  log-logistic distribution
+    beta : float (positive)
+        shape parameter in log-logistic distribution
+
+    returns
+    -------
+    value in log-logistic distr for random variable : float
+    '''
+    num = (beta / alpha) * ((x / alpha) ** (beta - 1))
+    den = (1 + ((x / alpha)** beta) ) ** 2
+    return num / den
+
+def log_normal_distribution(x, mu, sigma):
+    '''
+    two parameters -  shape mu, scale sigma,
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    mu : float 
+        shape paramter in  log-normal distribution
+    sigma : float (positive)
+        scale parameter in log-normal distribution
+
+    returns
+    -------
+    value in log-normal distr for random variable : float
+    '''
+    exponent = (((np.log(x)) - mu) ** 2 ) / (2 *sigma ** 2)
+    coef = 1 / (x * sigma * ( (sigma * np.pi) ** .5 ))
+    return coef * np.exp(- exponent)
+
+def maxwell_boltzmann_distribution(x, a):
+    '''
+    one parameter - scale
+    x value is a random variable to pass in
+    params
+    ------
+    x : float
+        random variable
+    a : float 
+        scale paramter in  maxwell-boltzmann distribution
+    
+    returns
+    -------
+    value in maxwell-boltzmann distr for random variable : float
+    '''
+    coef = (2 / np.pi) ** .5
+    exponent = (- (x ** 2)) / (2 * a ** 2)
+    return coef * ( ((x **2) * np.exp(exponent) ) / a ** 3)
+
+def q_exponential_distribution(x, q, lambda_):
+    '''
+    '''
+    pass
+
+def q_gaussian_distribution(x, q, beta):
+    '''
+    '''
+    pass
+
+def q_weibull_distribution(x, q, lambda_, k):
+    '''
+    '''
+    pass
 
 # revisit beta
 # def beta_from_gamma(x, k_1, theta_1, k_2, theta_2):
