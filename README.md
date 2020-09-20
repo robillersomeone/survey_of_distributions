@@ -117,7 +117,7 @@ used to model wireless signals
 
 nakagami distribution is the square root of a scaled chi distribution, this is generalization of the chi distribution.
 
-nakagami distribution with `shape=1` is a rayleight and a weibull distribution, also if `spread=2` it's an exponential distribution.
+nakagami distribution with `shape=1` is a rayleigh and a weibull distribution, also if `spread=2` it's an exponential distribution.
 
 <img src="./imgs/nakagami_distribution.png" height="300px" width="400px">
 
