@@ -303,7 +303,7 @@ arises from sampling, estimate the mean of a normally distributed population
 - sample size is small
 - population standard deviation is unknown
 
-<img src="./imgs/t_distributions.png" height="300px" width="400px">
+<img src="./imgs/t_distribution.png" height="300px" width="400px">
 
 ### fisher's z-distribution
 two parameters
@@ -864,6 +864,13 @@ weibull      | [0,∞)   | (0,5)           | (0,2.5)
 lévy         | [μ,∞)   | (0,5)           | (0,5)
 rice         | [0,∞)   | (0,20)          | (0,20)
 kumaraswamy  | [0,1]   | (0,1)           | (0,1)
+z            | real numbers | (0,5)      | (-5,-5)
+generalized normal distribution |  real numbers | (0,5)      | (-5,-5)
+chi          | [0,∞)   | (0,5)           | (0,5)
+nakagami     | [0,∞)   | (0,5)           | (0,5)
+maxwell-boltzmann | [0,∞)   | (0,20]          | (0,20) 
+inverse chi-squared | [0,∞)   | (0,1)           | (0,1)
+inverse gamma | [0,∞)   | (0,1)           | (0,1)
 
 ## Sources
 

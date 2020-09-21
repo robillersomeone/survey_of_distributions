@@ -1,6 +1,6 @@
 import numpy as np
-import survey_of_distributions.distributions as ds
-# import distributions as ds
+# import survey_of_distributions.distributions as ds
+import distributions as ds
 np.set_printoptions(suppress=True)
 
 
@@ -111,7 +111,7 @@ y_beta_values_frac_1_6_4 = ds.beta_distribution(x_beta_values, .6, .4)
 y_arcsin_values = ds.beta_distribution(x_beta_values, .5, .5)
 
 # beta prime
-x_beta_prime_values = np.arange(0, 5, .02)[1:]
+x_beta_prime_values = np.arange(0, 5, .05)[1:]
 
 y_beta_prime_values_1_1 = ds.beta_prime_distribution(x_beta_prime_values, 1, 1)
 y_beta_prime_values_1_2 = ds.beta_prime_distribution(x_beta_prime_values, 1, 2)
@@ -175,6 +175,7 @@ y_frechet_values_3_2_0 = ds.frechet_distribution(x_frechet_values, 3, 2, 0)
 
 x_frechet_values_d3 = np.arange(0, 5, .05)[1:]
 y_frechet_values_2_1_0_d3 = ds.frechet_distribution(x_frechet_values_d3, 2, 1, 0)
+
 # weibull
 x_weibull_values = np.arange(0, 3, .01)[1:]
 
@@ -197,6 +198,10 @@ y_pareto_values_1_1 = ds.pareto_distribution(x_pareto_values, 1, 1)
 y_pareto_values_1_2 = ds.pareto_distribution(x_pareto_values, 1, 2)
 y_pareto_values_1_3 = ds.pareto_distribution(x_pareto_values, 1, 3)
 
+x_pareto_values_d3 = np.arange(1, 6, .05)[:]
+y_pareto_values_d3 = ds.pareto_distribution(x_pareto_values_d3, 1, 3)
+x_pareto_values_d3 = x_pareto_values_d3 - 1
+
 # lomax
 x_lomax_values = np.arange(1, 5, .05)[:]
 
@@ -205,6 +210,9 @@ y_lomax_values_2_2 = ds.lomax_distribution(x_lomax_values, 2, 2)
 y_lomax_values_4_2 = ds.lomax_distribution(x_lomax_values, 4, 2)
 y_lomax_values_6_1 = ds.lomax_distribution(x_lomax_values, 6, 1)
 
+x_lomax_values_d3 = np.arange(1, 6, .05)[:]
+y_lomax_values_1_2_d3 = ds.lomax_distribution(x_lomax_values_d3, 1, 2)
+x_lomax_values_d3 = x_lomax_values_d3 - 1
 # burr
 x_burr_values = np.arange(0, 5, .05)[1:]
 
@@ -221,6 +229,9 @@ y_cauchy_values_0_half = ds.cauchy_distribution(x_cauchy_values, 0, .5)
 y_cauchy_values_0_1 = ds.cauchy_distribution(x_cauchy_values, 0, 1)
 y_cauchy_values_0_2 = ds.cauchy_distribution(x_cauchy_values, 0, 2)
 y_cauchy_values_neg_2_1 = ds.cauchy_distribution(x_cauchy_values, -2, 1)
+
+x_cauchy_values_d3 = np.arange(0, 5, .05)[1:]
+y_cauchy_values_d3 = ds.cauchy_distribution(x_cauchy_values_d3, 2.5, 2)
 
 # levy
 x_levy_values = np.arange(0, 5, .05)[1:]
@@ -243,6 +254,9 @@ y_chi_values_4 = ds.chi_distribution(x_chi_values, 4)
 y_chi_values_5 = ds.chi_distribution(x_chi_values, 5)
 y_chi_values_6 = ds.chi_distribution(x_chi_values, 6)
 
+x_chi_values_d3 = np.arange(0, 5, .05)[1:]
+y_chi_values_d3 = ds.chi_distribution(x_chi_values_d3, 2)
+
 # kumaraswamy
 x_kumaraswamy_values = x_beta_values = np.arange(0, 1, .01)[1:]
 
@@ -262,6 +276,9 @@ y_nakagami_values_1_3 = ds.nakagami_distribution(x_nakagami_values, 1, 3)
 y_nakagami_values_2_1 = ds.nakagami_distribution(x_nakagami_values, 2, 1)
 y_nakagami_values_2_2 = ds.nakagami_distribution(x_nakagami_values, 2, 2)
 
+x_nakagami_values_d3 = np.arange(0, 5, .05)[1:]
+y_nakagami_values_d3 = ds.nakagami_distribution(x_nakagami_values_d3, 1, 3)
+
 # logistic
 x_logistic_values = np.arange(-5, 20, .1)[1:]
 
@@ -270,6 +287,9 @@ y_logistic_values_5_2 = ds.logistic_distribution(x_logistic_values, 5, 2)
 y_logistic_values_6_2 = ds.logistic_distribution(x_logistic_values, 6, 2)
 y_logistic_values_9_3 = ds.logistic_distribution(x_logistic_values, 9, 3)
 y_logistic_values_9_4 = ds.logistic_distribution(x_logistic_values, 9, 4)
+
+x_logistic_values_d3 = np.arange(0, 20, .05)[1:]
+y_logistic_values_2_1_d3 = ds.logistic_distribution(x_logistic_values_d3, 2, 1)
 
 # logit normal
 x_logit_normal_values = np.arange(0, 1, .01)[1:]
@@ -306,6 +326,9 @@ y_inverse_gamma_values_2_1 = ds.inverse_gamma_distribution(x_inverse_gamma_value
 y_inverse_gamma_values_3_1 = ds.inverse_gamma_distribution(x_inverse_gamma_values, 3, 1)
 y_inverse_gamma_values_3_half = ds.inverse_gamma_distribution(x_inverse_gamma_values, 3, .5)
 
+x_inverse_gamma_values_d3 = np.arange(0, 1, .01)[1:]
+y_inverse_gamma_values_2_1_d3 = ds.inverse_gamma_distribution(x_inverse_gamma_values_d3, 2, 1)
+
 # inverse-chi-squared
 x_inverse_chi_squared_values = np.arange(0, 1, .01)[1:]
 
@@ -325,6 +348,9 @@ y_log_cauchy_values_0_2 = ds.log_cauchy_distribution(x_log_cauchy_values, 0, 2)
 y_log_cauchy_values_1_half = ds.log_cauchy_distribution(x_log_cauchy_values, 1, .5)
 y_log_cauchy_values_1_1 = ds.log_cauchy_distribution(x_log_cauchy_values, 1, 1)
 
+x_log_cauchy_values_d3 = np.arange(0, 5, .05)[1:]
+y_log_cauchy_values_0_1_d3 = ds.log_cauchy_distribution(x_log_cauchy_values_d3, 0, 1)
+
 # log-logistic
 x_log_logistic_values = np.arange(0, 3, .01)[1:]
 
@@ -334,12 +360,18 @@ y_log_logistic_values_1_2 = ds.log_logistic_distribution(x_log_logistic_values, 
 y_log_logistic_values_1_4 = ds.log_logistic_distribution(x_log_logistic_values, 1, 4)
 y_log_logistic_values_1_8 = ds.log_logistic_distribution(x_log_logistic_values, 1, 8)
 
+x_log_logistic_values_d3 = np.arange(0, 5, .05)[1:]
+y_log_logistic_values_1_4_d3 = ds.log_logistic_distribution(x_log_logistic_values_d3, 1, 4)
+
 # log-normal
 x_log_normal_values = np.arange(0, 3, .01)[1:]
 
 y_log_normal_values_0_quarter = ds.log_normal_distribution(x_log_normal_values, 0, .25)
 y_log_normal_values_0_half = ds.log_normal_distribution(x_log_normal_values, 0, .5)
 y_log_normal_values_0_1 = ds.log_normal_distribution(x_log_normal_values, 0, 1)
+
+x_log_normal_values_d3 = np.arange(0, 5, .05)[1:]
+y_log_normal_values_0_1_d3 = ds.log_normal_distribution(x_log_normal_values_d3, 0, 1)
 
 # maxwell-boltzmann
 x_maxwell_boltzmann_values = np.arange(0, 20, .05)[1:]
@@ -357,6 +389,10 @@ y_generalized_normal_values_0_1_1_half = ds.generalized_normal_distribution(x_ge
 y_generalized_normal_values_0_1_3 = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 3)
 y_generalized_normal_values_0_1_8 = ds.generalized_normal_distribution(x_generalized_normal_values, 0, 1, 8)
 
+x_generalized_normal_values_d3 = np.arange(0, 5, .05)[1:]
+y_generalized_normal_values_2_half_1_4_d3 = ds.generalized_normal_distribution(x_generalized_normal_values_d3, 2.5, 1, 4)
+y_generalized_normal_values_2_half_1_2_d3 = ds.generalized_normal_distribution(x_generalized_normal_values_d3, 2.5, 1, 2)
+
 # fishers z 
 x_fishers_z_values = np.arange(-3, 3, .01)[:]
 
@@ -364,6 +400,10 @@ y_fishers_z_values_1_1 = ds.fishers_z_distribution(x_fishers_z_values, 1, 1)
 y_fishers_z_values_2_1 = ds.fishers_z_distribution(x_fishers_z_values, 2, 1)
 y_fishers_z_values_5_2 = ds.fishers_z_distribution(x_fishers_z_values, 5, 2)
 
+x_z_values_d3 = np.arange(-2.5, 2.5, .05)[1:]
+y_z_5_2_d3 = ds.fishers_z_distribution(x_z_values_d3, 5,2)
+# now move x values
+x_z_values_d3 = x_z_values_d3 + 2.5
 # continuous bernoulli 
 x_continuous_bernoulli_values = x_beta_values
 
@@ -384,12 +424,20 @@ y_dagum_values_1_2_1 = ds.dagum_distribution(x_dagum_values, 1, 2, 1)
 y_dagum_values_1_3_1 = ds.dagum_distribution(x_dagum_values, 1, 3, 1)
 y_dagum_values_1_4_1 = ds.dagum_distribution(x_dagum_values, 1, 4, 1)
 
+x_dagum_values_d3 = np.arange(0, 5, .05)[1:]
+y_dagum_values_1_3_1_d3 = ds.dagum_distribution(x_dagum_values_d3, 1, 3, 1)
+
 # t
 x_t_values = np.arange(-3, 3, .01)[:]
 
 y_t_values_1 = ds.t_distribution(x_t_values, 1)
 y_t_values_2 = ds.t_distribution(x_t_values, 2)
 y_t_values_5 = ds.t_distribution(x_t_values, 5)
+
+x_t_values_d3 = np.arange(-2.5, 2.5, .05)[1:]
+y_t_vaules_1_d3 = ds.t_distribution(x_t_values_d3, 1)
+# now move x values
+x_t_values_d3 = x_t_values_d3 + 2.5
 
 # for now the normal distribution is approximated using the central limit theorem
 
@@ -426,5 +474,46 @@ y_slash_values = ds.slash_distribution(x_slash_values)
 # print(data_for_d3(x_weibull_values, y_weibull_values_1_2))
 # print(data_for_d3(x_weibull_values_d3, y_weibull_values_1_2_d3))
 
-print(data_for_d3(x_kumaraswamy_values, y_kumaraswamy_values_2_5))
+# print(data_for_d3(x_kumaraswamy_values, y_kumaraswamy_values_2_5))
 
+# print(data_for_d3(x_z_values_d3, y_z_5_2_d3))
+
+# print(data_for_d3(x_generalized_normal_values_d3, y_generalized_normal_values_2_half_1_4_d3))
+
+# print(data_for_d3(x_cauchy_values_d3, y_cauchy_values_d3))
+
+# print(data_for_d3(x_t_values_d3, y_t_vaules_1_d3))
+
+# print(data_for_d3(x_generalized_normal_values_d3, y_generalized_normal_values_2_half_1_2_d3))
+
+# print(data_for_d3(x_chi_values_d3, y_chi_values_d3))
+
+# print(data_for_d3(x_nakagami_values_d3, y_nakagami_values_d3))
+
+# print(data_for_d3(x_maxwell_boltzmann_values, y_maxwell_boltzmann_values_2))
+
+# print(data_for_d3(x_inverse_chi_squared_values, y_inverse_chi_squared_values_4))
+
+# print(data_for_d3(x_inverse_gamma_values_d3, y_inverse_gamma_values_2_1_d3))
+
+# print(data_for_d3(x_levy_values, y_levy_values_0_1))
+
+# print(data_for_d3(x_pareto_values_d3, y_pareto_values_d3))
+
+# print(data_for_d3(x_lomax_values_d3, y_lomax_values_1_2_d3))
+
+# print(data_for_d3(x_burr_values, y_burr_values_1_1))
+
+# print(data_for_d3(x_logistic_values_d3, y_logistic_values_2_1_d3))
+
+# print(data_for_d3(x_logit_normal_values, y_logit_normal_values_1_1))
+
+# print(data_for_d3(x_beta_prime_values, y_beta_prime_values_2_3))
+
+# print(data_for_d3(x_dagum_values_d3, y_dagum_values_1_3_1_d3))
+
+# print(data_for_d3(x_log_cauchy_values_d3, y_log_cauchy_values_0_1_d3))
+
+# print(data_for_d3(x_log_normal_values_d3, y_log_normal_values_0_1_d3))
+
+print(data_for_d3(x_log_logistic_values_d3, y_log_logistic_values_1_4_d3))

@@ -194,7 +194,7 @@ f_color = 'red'
 # plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_1_3)
 # plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_1)
 # plt.plot(ds.x_nakagami_values, ds.y_nakagami_values_2_2)
-# plt.legend(['μ=.5, omega=1', 'μ=1, omega=1', 'μ=.5, omega=3', 'μ=2, omega=1', 'μ=2, omega=2'], loc='upper right')
+# plt.legend(['μ=.5, omega=1', 'μ=1, omega=1', 'μ=1, omega=3', 'μ=2, omega=1', 'μ=2, omega=2'], loc='upper right')
 
 # logistic
 # plt.title('logistic distribution')
