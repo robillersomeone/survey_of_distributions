@@ -311,13 +311,20 @@ f_color = 'red'
 # plt.legend(['λ=.1', 'λ=.2', 'λ=.4', 'λ=.5', 'λ=.6', 'λ=.8', 'λ=.9'])
 
 # dagum
-plt.title('dagum distribution')
-plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_half_1)
-plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_1_1)
-plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_2_1)
-plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_3_1)
-plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_4_1)
-plt.legend(['p=1 a=.5 b=1', 'p=1 a=1 b=1', 'p=1 a=2 b=1', 'p=1 a=3 b=1', 'p=1 a=4 b=1'], loc='upper right')
+# plt.title('dagum distribution')
+# plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_half_1)
+# plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_1_1)
+# plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_2_1)
+# plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_3_1)
+# plt.plot(ds.x_dagum_values, ds.y_dagum_values_1_4_1)
+# plt.legend(['p=1 a=.5 b=1', 'p=1 a=1 b=1', 'p=1 a=2 b=1', 'p=1 a=3 b=1', 'p=1 a=4 b=1'], loc='upper right')
+
+# t 
+plt.title('t-distribution')
+plt.plot(ds.x_t_values, ds.y_t_values_1)
+plt.plot(ds.x_t_values, ds.y_t_values_2)
+plt.plot(ds.x_t_values, ds.y_t_values_5)
+plt.legend(['ν=1', 'ν=2', 'ν=5'], loc='upper right')
 
 # plt.plot(ds.x_slash_values, ds.y_slash_values)
 

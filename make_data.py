@@ -243,8 +243,6 @@ y_chi_values_4 = ds.chi_distribution(x_chi_values, 4)
 y_chi_values_5 = ds.chi_distribution(x_chi_values, 5)
 y_chi_values_6 = ds.chi_distribution(x_chi_values, 6)
 
-
-
 # kumaraswamy
 x_kumaraswamy_values = x_beta_values = np.arange(0, 1, .01)[1:]
 
@@ -254,7 +252,6 @@ y_kumaraswamy_values_1_1 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 1, 
 y_kumaraswamy_values_2_2 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 2, 2)
 y_kumaraswamy_values_2_3 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 2, 3)
 y_kumaraswamy_values_2_5 = ds.kumaraswamy_distribution(x_kumaraswamy_values, 2, 5)
-
 
 # nakagami
 x_nakagami_values = np.arange(0, 4, .01)[1:]
@@ -387,6 +384,12 @@ y_dagum_values_1_2_1 = ds.dagum_distribution(x_dagum_values, 1, 2, 1)
 y_dagum_values_1_3_1 = ds.dagum_distribution(x_dagum_values, 1, 3, 1)
 y_dagum_values_1_4_1 = ds.dagum_distribution(x_dagum_values, 1, 4, 1)
 
+# t
+x_t_values = np.arange(-3, 3, .01)[:]
+
+y_t_values_1 = ds.t_distribution(x_t_values, 1)
+y_t_values_2 = ds.t_distribution(x_t_values, 2)
+y_t_values_5 = ds.t_distribution(x_t_values, 5)
 
 # for now the normal distribution is approximated using the central limit theorem
 
@@ -422,4 +425,6 @@ y_slash_values = ds.slash_distribution(x_slash_values)
 
 # print(data_for_d3(x_weibull_values, y_weibull_values_1_2))
 # print(data_for_d3(x_weibull_values_d3, y_weibull_values_1_2_d3))
+
+print(data_for_d3(x_kumaraswamy_values, y_kumaraswamy_values_2_5))
 

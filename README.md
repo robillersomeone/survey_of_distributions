@@ -303,6 +303,8 @@ arises from sampling, estimate the mean of a normally distributed population
 - sample size is small
 - population standard deviation is unknown
 
+<img src="./imgs/t_distributions.png" height="300px" width="400px">
+
 ### fisher's z-distribution
 two parameters
 - degrees of freedom (`d>0`)
@@ -861,6 +863,7 @@ fréchet      |  x > m  | (0,5)           | (0,5)
 weibull      | [0,∞)   | (0,5)           | (0,2.5)
 lévy         | [μ,∞)   | (0,5)           | (0,5)
 rice         | [0,∞)   | (0,20)          | (0,20)
+kumaraswamy  | [0,1]   | (0,1)           | (0,1)
 
 ## Sources
 
